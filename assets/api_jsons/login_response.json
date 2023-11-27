@@ -1,0 +1,27 @@
+{
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEwNiwiaXNzIjoiaHR0cDovL3J1enVrdS50ZnJhLmdvLnR6L2FwaS9sb2dpbiIsImlhdCI6MTY4NjM5NDUwMCwiZXhwIjoxNjg2NDgwOTAwLCJuYmYiOjE2ODYzOTQ1MDAsImp0aSI6InVubDdaYkhjSUFhTHdrTUsifQ.FvZ6H0WzFT5ngeO60j0FL3SKDnkqDkinjQ9C9K6H_tU",
+    "user": {
+        "id": 106,
+        "full_name": "NGELELA AGROVET CO LTD - DEFAULT USER",
+        "username": "tfra-01-014",
+        "user_type": "agrodealer",
+        "userable_type": "App\\Modules\\Entities\\Models\\Entity",
+        "userable_id": "116",
+        "access_level": "Ward",
+        "app_user": "1",
+        "gender": "Male",
+        "phone": "0766 633449",
+        "email": "ngelelaagrovet@gmail.com",
+        "ward_id": null,
+        "sale_point_id": null,
+        "cooperative_union_id": null,
+        "primary_society_id": null,
+        "activated": null,
+        "is_active": null,
+        "image_url": null,
+        "created_at": "2022-07-31 22:22:07",
+        "updated_at": "2023-06-01 09:29:15",
+        "change_password": "0"
+    },
+    "code": 1
+}
