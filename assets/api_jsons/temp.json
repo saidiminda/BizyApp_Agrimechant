@@ -1,0 +1,12 @@
+{
+    "amcos": "",
+    "season_id": "season",
+    "farmer_id": "farmer",
+    "warehouse_id": "warehouse",
+    "village_season_activity_id": "",
+    "date": "date",
+    "input_id": "input_id",
+    "quantity": "quantity",
+    "rate": "rate",
+    "amount": "amount"
+}

@@ -5,6 +5,7 @@ import 'package:saidi_s_application3/core/app_export.dart';
 import 'package:saidi_s_application3/widgets/custom_drop_down.dart';
 import 'package:saidi_s_application3/widgets/custom_text_form_field.dart';
 
+// ignore: must_be_immutable
 class ServiceProviderTab extends StatelessWidget {
   ServiceProviderTab({Key? key})
       : super(

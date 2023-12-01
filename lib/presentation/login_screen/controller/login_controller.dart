@@ -69,7 +69,9 @@ class LoginController extends GetxController with GetTickerProviderStateMixin {
         log(response.body.toString());
         if (response.statusCode == 200) {
           LoginResponse loginResponse =
-              LoginResponse.fromJson(jsonDecode(jsonEncode(response.body)));
+              LoginResponse.fromJson(
+                jsonDecode(
+                  jsonEncode(response.body)));
           if (loginResponse.code == 1) {
             setAccessToken(loginResponse.token.toString());
             ProfileResponse userProfile =

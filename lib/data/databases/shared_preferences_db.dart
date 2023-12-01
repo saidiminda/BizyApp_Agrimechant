@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../presentation/input_collection_tab/models/member_orders_request_model.dart';
 import '../models/global_modal/profile_response_model.dart';
 
 // Function for setting daccess token in Shared Preference
@@ -68,6 +69,25 @@ void setprofileData(ProfileResponse data) async {
 //   await prefs.setString(
 //       'importers', jsonEncode(data.map((v) => v.toJson()).toList()));
 // }
+
+//Function for getting at set Farmer orders in Shared Preference
+Future<List<MemberOrdersRequest>> getMemberOrdersData() async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  final data = prefs.getString("member_orders") ?? "";
+  List<MemberOrdersRequest> importers = [];
+  importers = <MemberOrdersRequest>[];
+  if (data != "")
+    jsonDecode(data).forEach((v) {
+      importers.add(MemberOrdersRequest.fromJson(v));
+    });
+  return importers;
+}
+
+void setMemberOrdersData(List<MemberOrdersRequest> data) async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  await prefs.setString(
+      'member_orders', jsonEncode(data.map((v) => v.toJson()).toList()));
+}
 
 //Function for getting qr codes in Shared Preference
 Future<List<String>> getUsedQRCodes() async {

@@ -1,8 +1,10 @@
+import 'package:saidi_s_application3/presentation/input_collection_tab/input_collection_tab.screen.dart';
+
 import '../../core/utils/show_dialogs.dart';
 import '../../widgets/topNavBar.dart';
+import '../input_collection_tab/models/member_orders_request_model.dart';
 import '../iphone_14_plus_two_page/iphone_14_plus_two_page.dart';
 import 'controller/input_controller.dart';
-import 'models/listsaidimindas_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:saidi_s_application3/core/app_export.dart';
 import 'package:saidi_s_application3/widgets/custom_elevated_button.dart';
@@ -140,7 +142,6 @@ class InputScreen extends GetWidget<InputController> {
                                       !controller.appOrder.value;
                                   controller.ussdOrder.value = false;
                                 }),
-
                             Container(
                                 width: 36.h,
                                 margin: EdgeInsets.only(
@@ -177,17 +178,14 @@ class InputScreen extends GetWidget<InputController> {
                                           thickness: 1.v,
                                           color: appTheme.blueGray100)));
                             },
-                            itemCount: controller.iphone14PlusFiveModelObj.value
-                                .listsaidimindasItemList.value.length,
+                            itemCount:
+                                controller.iphone14PlusFiveModelObj.length,
                             itemBuilder: (context, index) {
-                              ListsaidimindasItemModel model = controller
-                                  .iphone14PlusFiveModelObj
-                                  .value
-                                  .listsaidimindasItemList
-                                  .value[index];
+                              MemberOrdersRequest model =
+                                  controller.iphone14PlusFiveModelObj[index];
                               return ListsaidimindasItemWidget(model,
                                   onTapAnkara: () {
-                                onTapAnkara();
+                                    showReciptDealog(model);
                               });
                             }))),
                   ),
@@ -195,17 +193,8 @@ class InputScreen extends GetWidget<InputController> {
               ),
             ),
             Iphone14PlusTwoPage(),
-            Iphone14PlusTwoPage(),
+            InputCollectionTabScreen(),
           ],
         ));
   }
-
-  /// Navigates to the reciptScreen when the action is triggered.
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the reciptScreen.
-  onTapAnkara() {
-    showReciptDealog();
-  }
-
- 
 }

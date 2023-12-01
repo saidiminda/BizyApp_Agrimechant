@@ -2,11 +2,15 @@ class StringConstant {
   // constants strings used on APIs Url
   // static String baseUrl = "https://ruzuku.tfra.go.tz/api/v1/";
   static String baseUrl = "http://196.192.77.33/ruzuku/api/v1/";
+  // static String baseUrl = "https://vkb.kilimodatahub.com/api/";
+
   static String endLoginApi = "login";
   static String endDashboardApi = "dashboard?userid=";
   static String endSendFarmersApi = "sync/offline";
   static String endSearchFarmerForEditApi =
       "search/farmer-for-edit?farmer_number=";
+  static String endAutoScanQrcodeApi = "autoscan-qr-code";
+  static String endStorePodApi = "store-pod";
 
   static String endStockAndUsedQrCodesApi = "orders/stock-and-used-qr-codes-v1";
   static String endGetFarmerApi = "single-farmer";

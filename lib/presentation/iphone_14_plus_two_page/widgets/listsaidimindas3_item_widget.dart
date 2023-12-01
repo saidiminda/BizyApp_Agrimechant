@@ -1,5 +1,6 @@
+import 'package:saidi_s_application3/presentation/input_collection_tab/models/member_orders_request_model.dart';
+
 import '../controller/iphone_14_plus_two_controller.dart';
-import '../models/listsaidimindas3_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:saidi_s_application3/core/app_export.dart';
 import 'package:saidi_s_application3/widgets/custom_elevated_button.dart';
@@ -7,14 +8,13 @@ import 'package:saidi_s_application3/widgets/custom_elevated_button.dart';
 // ignore: must_be_immutable
 class Listsaidimindas3ItemWidget extends StatelessWidget {
   Listsaidimindas3ItemWidget(
-    this.listsaidimindas3ItemModelObj, {
+    this.memberOrder, {
     Key? key,
     this.onTapOnarisiti,
   }) : super(
           key: key,
         );
-
-  Listsaidimindas3ItemModel listsaidimindas3ItemModelObj;
+  MemberOrdersRequest memberOrder;
 
   var controller = Get.find<Iphone14PlusTwoController>();
 
@@ -35,7 +35,9 @@ class Listsaidimindas3ItemWidget extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(left: 24.h),
             child: Text(
-              "msg_saidi_minda_saidi".tr.toUpperCase(),
+              memberOrder.farmer != null
+                  ? memberOrder.farmer!.name!.toUpperCase()
+                  : memberOrder.phoneNumber.toString(),
               style: theme.textTheme.titleMedium,
             ),
           ),
@@ -57,7 +59,10 @@ class Listsaidimindas3ItemWidget extends StatelessWidget {
               top: 2.v,
             ),
             child: Text(
-              "msg_maize_seeds_2".tr,
+              memberOrder.updatedFarmerOrganizations!
+                  .map((e) => e.itemName)
+                  .toList()
+                  .toString(),
               style: theme.textTheme.labelLarge,
             ),
           ),
@@ -77,7 +82,10 @@ class Listsaidimindas3ItemWidget extends StatelessWidget {
               top: 1.v,
             ),
             child: Text(
-              "lbl_2".tr,
+              memberOrder.updatedFarmerOrganizations!
+                  .map((e) => e.deliveredCount)
+                  .toList()
+                  .toString(),
               style: theme.textTheme.labelLarge,
             ),
           ),
@@ -97,7 +105,9 @@ class Listsaidimindas3ItemWidget extends StatelessWidget {
               top: 2.v,
             ),
             child: Text(
-              "msg_zinduka_vijana_group".tr.toUpperCase(),
+              memberOrder.farmer != null
+                  ? memberOrder.farmer!.farmerOrganisation!.toUpperCase()
+                  : memberOrder.memberId.toString(),
               style: theme.textTheme.labelLarge,
             ),
           ),

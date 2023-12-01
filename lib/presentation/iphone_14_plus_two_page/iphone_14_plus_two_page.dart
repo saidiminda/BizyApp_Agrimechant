@@ -1,8 +1,8 @@
+import 'package:saidi_s_application3/presentation/input_collection_tab/models/member_orders_request_model.dart';
+
 import '../../core/utils/show_dialogs.dart';
 import '../iphone_14_plus_two_page/widgets/listsaidimindas3_item_widget.dart';
 import 'controller/iphone_14_plus_two_controller.dart';
-import 'models/iphone_14_plus_two_model.dart';
-import 'models/listsaidimindas3_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:saidi_s_application3/core/app_export.dart';
 
@@ -10,8 +10,7 @@ import 'package:saidi_s_application3/core/app_export.dart';
 class Iphone14PlusTwoPage extends StatelessWidget {
   Iphone14PlusTwoPage({Key? key}) : super(key: key);
 
-  Iphone14PlusTwoController controller =
-      Get.put(Iphone14PlusTwoController(Iphone14PlusTwoModel().obs));
+  Iphone14PlusTwoController controller = Get.put(Iphone14PlusTwoController());
 
   @override
   Widget build(BuildContext context) {
@@ -60,35 +59,16 @@ class Iphone14PlusTwoPage extends StatelessWidget {
                                   thickness: 1.v,
                                   color: appTheme.blueGray100)));
                     },
-                    itemCount: controller.iphone14PlusTwoModelObj.value
-                        .listsaidimindas3ItemList.value.length,
+                    itemCount: controller.listsaidimindas3ItemList.length,
                     itemBuilder: (context, index) {
-                      Listsaidimindas3ItemModel model = controller
-                          .iphone14PlusTwoModelObj
-                          .value
-                          .listsaidimindas3ItemList
-                          .value[index];
+                      MemberOrdersRequest model =
+                          controller.listsaidimindas3ItemList[index];
                       return Listsaidimindas3ItemWidget(model,
                           onTapOnarisiti: () {
-                        onTapOnarisiti();
+                        showReciptOneDealog(model);
                       });
                     })),
               ),
             ])));
-  }
-
-  /// Navigates to the reciptOneScreen when the action is triggered.
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the reciptOneScreen.
-  onTapOnarisiti() {
-    showReciptOneDealog();
-  }
-
-  /// Navigates to the reciptOneScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the reciptOneScreen.
-  onTapOnarisiti1() {
-    showReciptOneDealog();
   }
 }

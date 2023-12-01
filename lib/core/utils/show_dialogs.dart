@@ -3,12 +3,14 @@
 import 'package:flutter/services.dart';
 // import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:saidi_s_application3/core/app_export.dart';
+import 'package:saidi_s_application3/presentation/input_collection_tab/models/member_orders_request_model.dart';
 
 import '../../widgets/custom_elevated_button.dart';
 
 //Show recipt dealog
-void showReciptDealog() {
+void showReciptDealog(MemberOrdersRequest order) {
   Get.dialog(
     Scaffold(
       backgroundColor: Colors.transparent,
@@ -119,7 +121,9 @@ void showReciptDealog() {
                   top: 1.v,
                 ),
                 child: Text(
-                  "msg_saidi_minda_saidi".tr,
+                  order.farmer != null
+                      ? order.farmer!.name!.toUpperCase()
+                      : order.phoneNumber.toString(),
                   style: theme.textTheme.labelLarge,
                 ),
               ),
@@ -139,17 +143,10 @@ void showReciptDealog() {
                   top: 2.v,
                 ),
                 child: Text(
-                  "msg_maize_seeds_2".tr,
-                  style: theme.textTheme.labelLarge,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                  left: 24.h,
-                  top: 3.v,
-                ),
-                child: Text(
-                  "lbl_2".tr,
+                  order.updatedFarmerOrganizations!
+                      .map((e) => e.itemName)
+                      .toList()
+                      .toString(),
                   style: theme.textTheme.labelLarge,
                 ),
               ),
@@ -158,6 +155,19 @@ void showReciptDealog() {
                 child: Text(
                   "msg_kiasi_katika_mfuko".tr,
                   style: CustomTextStyles.titleSmallBlack900,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                  left: 24.h,
+                  top: 3.v,
+                ),
+                child: Text(
+                  order.updatedFarmerOrganizations!
+                      .map((e) => e.deliveredCount)
+                      .toList()
+                      .toString(),
+                  style: theme.textTheme.labelLarge,
                 ),
               ),
               Padding(
@@ -266,7 +276,7 @@ void showReciptDealog() {
 }
 
 //Show recipt one dealog
-void showReciptOneDealog() {
+void showReciptOneDealog(MemberOrdersRequest order) {
   Get.dialog(
     Scaffold(
       backgroundColor: Colors.transparent,
@@ -284,7 +294,9 @@ void showReciptOneDealog() {
               Padding(
                 padding: EdgeInsets.only(left: 24.h),
                 child: Text(
-                  "msg_saidi_minda_saidi".tr.toUpperCase(),
+                  order.farmer != null
+                      ? order.farmer!.name!.toUpperCase()
+                      : order.phoneNumber.toString(),
                   style: theme.textTheme.titleMedium,
                 ),
               ),
@@ -306,7 +318,10 @@ void showReciptOneDealog() {
                   top: 2.v,
                 ),
                 child: Text(
-                  "msg_maize_seeds_2".tr,
+                  order.updatedFarmerOrganizations!
+                      .map((e) => e.itemName)
+                      .toList()
+                      .toString(),
                   style: theme.textTheme.labelLarge,
                 ),
               ),
@@ -326,7 +341,10 @@ void showReciptOneDealog() {
                   top: 1.v,
                 ),
                 child: Text(
-                  "lbl_2".tr,
+                  order.updatedFarmerOrganizations!
+                      .map((e) => e.deliveredCount)
+                      .toList()
+                      .toString(),
                   style: theme.textTheme.labelLarge,
                 ),
               ),
@@ -366,7 +384,9 @@ void showReciptOneDealog() {
                   top: 2.v,
                 ),
                 child: Text(
-                  "msg_zinduka_vijana_group".tr.toUpperCase(),
+                  order.farmer != null
+                      ? order.farmer!.farmerOrganisation!.toUpperCase()
+                      : order.memberId.toString(),
                   style: theme.textTheme.labelLarge,
                 ),
               ),
@@ -460,135 +480,135 @@ void loadingDialog() {
   );
 }
 
-// void showOtpDialog(onSubmit, farmerNumber) {
-//   Get.dialog(
-//       Center(
-//         child: Container(
-//           width: 300,
-//           // margin: const EdgeInsets.all(8.0),
-//           height: 250,
-//           decoration: BoxDecoration(
-//             color: const Color(0xffffffff),
-//             borderRadius: BorderRadius.circular(17.0),
-//             boxShadow: const [
-//               BoxShadow(
-//                 color: Color(0x28c1c1c1),
-//                 offset: Offset(0, 1),
-//                 blurRadius: 10,
-//               ),
-//             ],
-//           ),
-//           child: Scaffold(
-//             backgroundColor: Colors.transparent,
-//             resizeToAvoidBottomInset: false,
-//             body: Padding(
-//               padding: const EdgeInsets.all(16.0),
-//               child: Center(
-//                 child: Column(
-//                   children: [
-//                     Text(
-//                       '${"enterTheNumberSentToThePhoneNumberThatEnds".tr}$farmerNumber',
-//                       style: const TextStyle(
-//                         fontFamily: 'Montserrat',
-//                         fontSize: 16,
-//                         color: Color(0xff2d3c49),
-//                         fontWeight: FontWeight.w500,
-//                       ),
-//                       textAlign: TextAlign.center,
-//                     ),
-//                     const SizedBox(
-//                       height: 16,
-//                     ),
-//                     OtpTextField(
-//                       numberOfFields: 4,
-//                       inputFormatters: [
-//                         LengthLimitingTextInputFormatter(1),
-//                         FilteringTextInputFormatter.digitsOnly
-//                       ],
-//                       borderColor: const Color(0xff2bad4b),
-//                       focusedBorderColor: const Color(0xff2bad4b),
-//                       //set to true to show as box or false to show as dash
-//                       showFieldAsBox: true,
-//                       //runs when a code is typed in
-//                       onCodeChanged: (String code) {
-//                         //handle validation or checks here
-//                       },
-//                       //runs when every textfield is filled
-//                       onSubmit: onSubmit, // end onSubmit
-//                     ),
-//                     const SizedBox(
-//                       height: 16,
-//                     ),
-//                     const SizedBox(
-//                       width: 201.0,
-//                       height: 38.0,
-//                       child: Text.rich(
-//                         TextSpan(
-//                           style: TextStyle(
-//                             fontFamily: 'Montserrat',
-//                             fontSize: 16,
-//                             color: Color(0xff2d3c49),
-//                           ),
-//                           children: [
-//                             TextSpan(
-//                               text: 'Haujapokea nambari? \n',
-//                               style: TextStyle(
-//                                 fontWeight: FontWeight.w600,
-//                               ),
-//                             ),
-//                             TextSpan(
-//                               text: 'Tuma tena',
-//                               style: TextStyle(
-//                                 color: Color(0xff239ccf),
-//                                 fontWeight: FontWeight.w600,
-//                                 decoration: TextDecoration.underline,
-//                               ),
-//                             ),
-//                           ],
-//                         ),
-//                         textHeightBehavior:
-//                             TextHeightBehavior(applyHeightToFirstAscent: false),
-//                         textAlign: TextAlign.center,
-//                       ),
-//                     ),
-//                     const SizedBox(
-//                       height: 8,
-//                     ),
-//                     Row(
-//                       children: [
-//                         GestureDetector(
-//                           onTap: () => Get.back(),
-//                           child: Container(
-//                             width: 91.0,
-//                             height: 33.0,
-//                             color: Colors.red,
-//                             child: Center(
-//                               child: Text(
-//                                 'cancel'.tr,
-//                                 style: const TextStyle(
-//                                   fontFamily: 'Montserrat',
-//                                   fontSize: 13,
-//                                   color: Color(0xffffffff),
-//                                   height: 3,
-//                                 ),
-//                                 textHeightBehavior: const TextHeightBehavior(
-//                                     applyHeightToFirstAscent: false),
-//                                 textAlign: TextAlign.center,
-//                               ),
-//                             ),
-//                           ),
-//                         ),
-//                       ],
-//                     )
-//                   ],
-//                 ),
-//               ),
-//             ),
-//           ),
-//         ),
-//       ),
-//       barrierDismissible: false);
-// }
+void showOtpDialog(onSubmit, farmerNumber) {
+  Get.dialog(
+      Center(
+        child: Container(
+          width: 300,
+          // margin: const EdgeInsets.all(8.0),
+          height: 250,
+          decoration: BoxDecoration(
+            color: const Color(0xffffffff),
+            borderRadius: BorderRadius.circular(17.0),
+            boxShadow: const [
+              BoxShadow(
+                color: Color(0x28c1c1c1),
+                offset: Offset(0, 1),
+                blurRadius: 10,
+              ),
+            ],
+          ),
+          child: Scaffold(
+            backgroundColor: Colors.transparent,
+            resizeToAvoidBottomInset: false,
+            body: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Center(
+                child: Column(
+                  children: [
+                    Text(
+                      '${"enterTheNumberSentToThePhoneNumberThatEnds".tr}$farmerNumber',
+                      style: const TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 16,
+                        color: Color(0xff2d3c49),
+                        fontWeight: FontWeight.w500,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    OtpTextField(
+                      numberOfFields: 4,
+                      inputFormatters: [
+                        LengthLimitingTextInputFormatter(1),
+                        FilteringTextInputFormatter.digitsOnly
+                      ],
+                      borderColor: const Color(0xff2bad4b),
+                      focusedBorderColor: const Color(0xff2bad4b),
+                      //set to true to show as box or false to show as dash
+                      showFieldAsBox: true,
+                      //runs when a code is typed in
+                      onCodeChanged: (String code) {
+                        //handle validation or checks here
+                      },
+                      //runs when every textfield is filled
+                      onSubmit: onSubmit, // end onSubmit
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    const SizedBox(
+                      width: 201.0,
+                      height: 38.0,
+                      child: Text.rich(
+                        TextSpan(
+                          style: TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontSize: 16,
+                            color: Color(0xff2d3c49),
+                          ),
+                          children: [
+                            TextSpan(
+                              text: 'Haujapokea nambari? \n',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            TextSpan(
+                              text: 'Tuma tena',
+                              style: TextStyle(
+                                color: Color(0xff239ccf),
+                                fontWeight: FontWeight.w600,
+                                decoration: TextDecoration.underline,
+                              ),
+                            ),
+                          ],
+                        ),
+                        textHeightBehavior:
+                            TextHeightBehavior(applyHeightToFirstAscent: false),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () => Get.back(),
+                          child: Container(
+                            width: 91.0,
+                            height: 33.0,
+                            color: Colors.red,
+                            child: Center(
+                              child: Text(
+                                'cancel'.tr,
+                                style: const TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  fontSize: 13,
+                                  color: Color(0xffffffff),
+                                  height: 3,
+                                ),
+                                textHeightBehavior: const TextHeightBehavior(
+                                    applyHeightToFirstAscent: false),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+      barrierDismissible: false);
+}
 
 void showSucsesfullDealog() {
   Get.dialog(
