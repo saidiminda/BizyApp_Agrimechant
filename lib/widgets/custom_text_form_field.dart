@@ -10,6 +10,7 @@ class CustomTextFormField extends StatelessWidget {
     this.controller,
     this.focusNode,
     this.autofocus = true,
+    this.readOnly = false,
     this.textStyle,
     this.obscureText = false,
     this.textInputAction,
@@ -26,6 +27,8 @@ class CustomTextFormField extends StatelessWidget {
     this.fillColor,
     this.filled = true,
     this.validator,
+    this.onTap,
+    this.onChanged,
   }) : super(
           key: key,
         );
@@ -41,6 +44,8 @@ class CustomTextFormField extends StatelessWidget {
   final FocusNode? focusNode;
 
   final bool? autofocus;
+
+  final bool? readOnly;
 
   final TextStyle? textStyle;
 
@@ -74,6 +79,10 @@ class CustomTextFormField extends StatelessWidget {
 
   final FormFieldValidator<String>? validator;
 
+   final Function(String)? onChanged;
+
+  final Function()? onTap;
+
   @override
   Widget build(BuildContext context) {
     return alignment != null
@@ -93,11 +102,14 @@ class CustomTextFormField extends StatelessWidget {
           // autofocus: autofocus!,
           style: textStyle ?? CustomTextStyles.titleSmallGray800,
           obscureText: obscureText!,
+          readOnly: readOnly ?? false,
           textInputAction: textInputAction,
           keyboardType: textInputType,
           maxLines: maxLines ?? 1,
           decoration: decoration,
           validator: validator,
+          onTap: onTap,
+          onChanged: onChanged,
         ),
       );
   InputDecoration get decoration => InputDecoration(

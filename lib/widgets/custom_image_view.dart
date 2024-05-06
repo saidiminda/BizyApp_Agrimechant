@@ -7,17 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomImageView extends StatelessWidget {
-  ///[url] is required parameter for fetching network image
-  String? url;
-
-  ///[imagePath] is required parameter for showing png,jpg,etc image
+  ///[imagePath] is required parameter for showing image
   String? imagePath;
-
-  ///[svgPath] is required parameter for showing svg image
-  String? svgPath;
-
-  ///[file] is required parameter for fetching image file
-  File? file;
 
   double? height;
   double? width;
@@ -33,10 +24,7 @@ class CustomImageView extends StatelessWidget {
   ///a [CustomImageView] it can be used for showing any type of images
   /// it will shows the placeholder image if image is not found on network image
   CustomImageView({
-    this.url,
     this.imagePath,
-    this.svgPath,
-    this.file,
     this.height,
     this.width,
     this.color,
@@ -97,57 +85,78 @@ class CustomImageView extends StatelessWidget {
   }
 
   Widget _buildImageView() {
-    if (svgPath != null && svgPath!.isNotEmpty) {
-      return Container(
-        height: height,
-        width: width,
-        child: SvgPicture.asset(
-          svgPath!,
-          height: height,
-          width: width,
-          fit: fit ?? BoxFit.contain,
-          color: color,
-        ),
-      );
-    } else if (file != null && file!.path.isNotEmpty) {
-      return Image.file(
-        file!,
-        height: height,
-        width: width,
-        fit: fit ?? BoxFit.cover,
-        color: color,
-      );
-    } else if (url != null && url!.isNotEmpty) {
-      return CachedNetworkImage(
-        height: height,
-        width: width,
-        fit: fit,
-        imageUrl: url!,
-        color: color,
-        placeholder: (context, url) => Container(
-          height: 30,
-          width: 30,
-          child: LinearProgressIndicator(
-            color: Colors.grey.shade200,
-            backgroundColor: Colors.grey.shade100,
-          ),
-        ),
-        errorWidget: (context, url, error) => Image.asset(
-          placeHolder,
-          height: height,
-          width: width,
-          fit: fit ?? BoxFit.cover,
-        ),
-      );
-    } else if (imagePath != null && imagePath!.isNotEmpty) {
-      return Image.asset(
-        imagePath!,
-        height: height,
-        width: width,
-        fit: fit ?? BoxFit.cover,
-        color: color,
-      );
+    if (imagePath != null) {
+      switch (imagePath!.imageType) {
+        case ImageType.svg:
+          return Container(
+            height: height,
+            width: width,
+            child: SvgPicture.asset(
+              imagePath!,
+              height: height,
+              width: width,
+              fit: fit ?? BoxFit.contain,
+              // colorFilter: ColorFilter.mode(
+              //     color ?? Colors.transparent, BlendMode.srcIn),
+            ),
+          );
+        case ImageType.file:
+          return Image.file(
+            File(imagePath!),
+            height: height,
+            width: width,
+            fit: fit ?? BoxFit.cover,
+            color: color,
+          );
+        case ImageType.network:
+          return CachedNetworkImage(
+            height: height,
+            width: width,
+            fit: fit,
+            imageUrl: imagePath!,
+            color: color,
+            placeholder: (context, url) => Container(
+              height: 30,
+              width: 30,
+              child: LinearProgressIndicator(
+                color: Colors.grey.shade200,
+                backgroundColor: Colors.grey.shade100,
+              ),
+            ),
+            errorWidget: (context, url, error) => Image.asset(
+              placeHolder,
+              height: height,
+              width: width,
+              fit: fit ?? BoxFit.cover,
+            ),
+          );
+        case ImageType.png:
+        default:
+          return Image.asset(
+            imagePath!,
+            height: height,
+            width: width,
+            fit: fit ?? BoxFit.cover,
+            color: color,
+          );
+      }
     }
     return SizedBox();
   }
 }
+
+extension ImageTypeExtension on String {
+  ImageType get imageType {
+    if (this.startsWith('http') || this.startsWith('https')) {
+      return ImageType.network;
+    } else if (this.endsWith('.svg')) {
+      return ImageType.svg;
+    } else if (this.startsWith('file://')) {
+      return ImageType.file;
+    } else {
+      return ImageType.png;
+    }
+  }
+}
+
+enum ImageType { svg, png, network, file, unknown }

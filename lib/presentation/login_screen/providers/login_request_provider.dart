@@ -23,7 +23,7 @@ class LoginRequestProvider extends GetConnect {
     timeout = const Duration(minutes: 5);
     allowAutoSignedCert = true;
     final response = await post(
-        StringConstant.baseUrl + StringConstant.endLoginApi,
+        apiBaseUrl + endLoginApi,
         loginrequest.toJson());
     return response;
   }

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
 
-import '../../core/utils/global_fanctions.dart';
+import '../../core/utils/functions/global.dart';
 import 'controllers/input_collection_tab.controller.dart';
 import 'models/member_orders_request_model.dart';
 import 'models/stock_and_qr_v1_response_model.dart';

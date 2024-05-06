@@ -125,19 +125,21 @@ class TextThemes {
 class ColorSchemes {
   static final primaryColorScheme = ColorScheme.light(
     // Primary colors
-    primary: Color(0X3FC3C3C3),
-    primaryContainer: Color(0XFFE50303),
-    secondary: Color(0XFFE50303),
+    // primary: Color(0X3FC3C3C3),
+    // primaryContainer: Color(0XFFE50303),
+    primary: Color(0XFF006134),
+    primaryContainer: Color(0XFFF5F5F5),
+    // secondary: Color(0XFFE50303),
     secondaryContainer: Color(0XFFB3B3B3),
-    tertiary: Color(0XFFE50303),
+    // tertiary: Color(0XFFE50303),
     tertiaryContainer: Color(0XFFB3B3B3),
 
     // Background colors
-    background: Color(0XFFE50303),
+    // background: Color(0XFFE50303),
 
     // Surface colors
-    surface: Color(0XFFE50303),
-    surfaceTint: Color(0XFFE50303),
+    // surface: Color(0XFFE50303),
+    // surfaceTint: Color(0XFFE50303),
     surfaceVariant: Color(0XFFB3B3B3),
 
     // Error colors
@@ -149,26 +151,28 @@ class ColorSchemes {
     // On colors(text colors)
     onBackground: Color(0XFFFFFFFF),
     onInverseSurface: Color(0XFFFFFFFF),
-    onPrimary: Color(0XFFE50303),
+    // onPrimary: Color(0XFFE50303),
     onPrimaryContainer: Color(0XFFFFFFFF),
+    onPrimary: Color(0XFF0B0B0B),
+    // onPrimaryContainer: Color(0XC1053D22),
     onSecondary: Color(0XFFFFFFFF),
-    onSecondaryContainer: Color(0XFFE50303),
+    // onSecondaryContainer: Color(0XFFE50303),
     onTertiary: Color(0XFFFFFFFF),
-    onTertiaryContainer: Color(0XFFE50303),
+    // onTertiaryContainer: Color(0XFFE50303),
 
     // Other colors
-    outline: Color(0XFFE50303),
-    outlineVariant: Color(0XFFE50303),
-    scrim: Color(0XFFE50303),
-    shadow: Color(0XFFE50303),
+    // outline: Color(0XFFE50303),
+    // outlineVariant: Color(0XFFE50303),
+    // scrim: Color(0XFFE50303),
+    // shadow: Color(0XFFE50303),
 
     // Inverse colors
-    inversePrimary: Color(0XFFE50303),
-    inverseSurface: Color(0XFFE50303),
+    // inversePrimary: Color(0XFFE50303),
+    // inverseSurface: Color(0XFFE50303),
 
     // Pending colors
     onSurface: Color(0XFFFFFFFF),
-    onSurfaceVariant: Color(0XFFE50303),
+    // onSurfaceVariant: Color(0XFFE50303),
   );
 }
 
@@ -179,6 +183,8 @@ class PrimaryColors {
 
   // Blue
   Color get blue600 => Color(0XFF1191DA);
+  Color get blue700 => Color(0XFF1E71E7);
+  Color get blue800 => Color(0XFF1658B7);
 
   // BlueGray
   Color get blueGray100 => Color(0XFFD9D9D9);
@@ -202,12 +208,24 @@ class PrimaryColors {
   Color get gray600 => Color(0XFF717171);
   Color get gray60001 => Color(0XFF828282);
   Color get gray800 => Color(0XFF494949);
+  Color get gray40003 => Color(0XFFBEBEBE);
+  Color get gray40004 => Color(0XFFC8C8C8);
+  Color get gray50 => Color(0XFFFCFCFC);
+  Color get gray700 => Color(0XFF585858);
+  Color get gray70001 => Color(0XFF676767);
+  Color get gray900 => Color(0XFF1E1E1E);
+  Color get gray90001 => Color(0XFF1C1B1F);
 
   // Green
   Color get green800 => Color(0XFF158C33);
   Color get green900 => Color(0XFF055902);
   Color get green90001 => Color(0XFF008001);
   Color get indicatorColor => Colors.green[700]!;
+
+  // LightGreen
+  Color get lightGreen50 => Color(0XFFEEFFF1);
+  Color get lightGreen5001 => Color(0XFFEEFFF2);
+  Color get lightGreen5002 => Color(0XFFEEFFF0);
 
   // LightBlue
   Color get lightBlue400 => Color(0XFF1CB0F6);
@@ -219,6 +237,12 @@ class PrimaryColors {
   Color get teal100 => Color(0XFF9BE6DD);
   Color get teal300 => Color(0XFF49A096);
   Color get teal800 => Color(0XFF037248);
+  Color get teal400 => Color(0XFF2BB08E);
+  Color get teal900 => Color(0XFF00572E);
+  Color get tealA200 => Color(0XFF7FF4D6);
+
+  // Red
+  Color get redA700 => Color(0XFFFF0000);
 }
 
 PrimaryColors get appTheme => ThemeHelper().themeColor();

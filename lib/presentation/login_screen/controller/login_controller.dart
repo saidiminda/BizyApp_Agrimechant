@@ -6,12 +6,12 @@ import 'package:saidi_s_application3/core/app_export.dart';
 import 'package:saidi_s_application3/presentation/login_screen/models/login_model.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/utils/global_fanctions.dart';
-import '../../../core/utils/response_handeler.dart';
+import '../../../core/utils/functions/global.dart';
+import '../../../core/utils/functions/response_handeler.dart';
 import '../../../data/databases/shared_preferences_db.dart';
-import '../../../data/models/global_modal/profile_response_model.dart';
+import '../../../data/models/apiModels/login_response_model.dart';
+import '../../../data/models/apiModels/profile_response_model.dart';
 import '../models/login_request_model.dart';
-import '../models/login_response_model.dart';
 import '../providers/login_request_provider.dart';
 
 /// A controller class for the Iphone14PlusEightScreen.

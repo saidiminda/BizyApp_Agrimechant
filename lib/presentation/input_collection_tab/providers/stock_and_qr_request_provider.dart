@@ -19,7 +19,7 @@ class StockAndQrRequestProvider extends GetConnect {
     timeout = const Duration(minutes: 5);
     allowAutoSignedCert = true;
     final response = await get(
-        "${StringConstant.baseUrl}${StringConstant.endStockAndUsedQrCodesApi}?user_id=${stockAndQrRequest.userId}",
+        "${apiBaseUrl}${endStockAndUsedQrCodesApi}?user_id=${stockAndQrRequest.userId}",
         headers: {
           "Authorization": "Bearer $token",
         });

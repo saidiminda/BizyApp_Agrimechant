@@ -11,7 +11,7 @@ class SplashScreen extends GetWidget<SplashController> {
         backgroundColor: appTheme.green900,
         body: Center(
           child: CustomImageView(
-            svgPath: ImageConstant.imgGroup34,
+            imagePath: ImageConstant.imgGroup34,
             height: 52.v,
             width: 262.h,
           ),

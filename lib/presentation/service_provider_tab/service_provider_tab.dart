@@ -39,41 +39,45 @@ class ServiceProviderTab extends StatelessWidget {
                       Align(
                         alignment: Alignment.center,
                         child: Text(
-                          "msg_taarifa_za_biashara".tr.toUpperCase(),
+                          "SOCIOECONOMIC & GENERAL BUSINESS DETAILS"
+                              .tr
+                              .toUpperCase(),
+                          textAlign: TextAlign.center,
                           style: CustomTextStyles.titleMediumGreen900Bold,
                         ),
                       ),
-                      SizedBox(height: 33.v),
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 33.h,
-                          vertical: 12.v,
-                        ),
-                        decoration:
-                            AppDecoration.fillOnPrimaryContainer.copyWith(
-                          borderRadius: BorderRadiusStyle.roundedBorder7,
-                        ),
-                        child: Row(
-                          children: [
-                            CustomImageView(
-                              svgPath: ImageConstant.imgShield84433431,
-                              height: 40.adaptSize,
-                              width: 40.adaptSize,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(
-                                left: 16.h,
-                                top: 9.v,
-                                bottom: 10.v,
-                              ),
-                              child: Text(
-                                "lbl_kampuni".tr.toUpperCase(),
-                                style: CustomTextStyles.titleMediumGray500,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      // SizedBox(height: 33.v),
+                      // Container(
+                      //   padding: EdgeInsets.symmetric(
+                      //     horizontal: 33.h,
+                      //     vertical: 12.v,
+                      //   ),
+                      //   decoration:
+                      //       AppDecoration.fillOnPrimaryContainer.copyWith(
+                      //     borderRadius: BorderRadiusStyle.roundedBorder7,
+                      //   ),
+                      //   child: Row(
+                      //     children: [
+                      //       CustomImageView(
+                      //         imagePath: ImageConstant.imgShield84433431,
+                      //         height: 40.adaptSize,
+                      //         width: 40.adaptSize,
+                      //       ),
+                      //       Padding(
+                      //         padding: EdgeInsets.only(
+                      //           left: 16.h,
+                      //           top: 9.v,
+                      //           bottom: 10.v,
+                      //         ),
+                      //         child: Text(
+                      //           "lbl_kampuni".tr.toUpperCase(),
+                      //           style: CustomTextStyles.titleMediumGray500,
+                      //         ),
+                      //       ),
+                      //     ],
+                      //   ),
+                      // ),
+
                       SizedBox(height: 17.v),
                       CustomTextFormField(
                         controller: controller.jinaController,
@@ -155,7 +159,7 @@ class ServiceProviderTab extends StatelessWidget {
                             vertical: 10.v,
                           ),
                           child: CustomImageView(
-                            svgPath: ImageConstant.imgCalendar,
+                            imagePath: ImageConstant.imgCalendar,
                             height: 26.v,
                             width: 22.h,
                           ),
@@ -227,7 +231,7 @@ class ServiceProviderTab extends StatelessWidget {
                           alignment: Alignment.centerLeft,
                           children: [
                             CustomImageView(
-                              svgPath: ImageConstant.imgGroup11,
+                              imagePath: ImageConstant.imgGroup11,
                               height: 49.v,
                               width: 385.h,
                               radius: BorderRadius.circular(
@@ -266,7 +270,7 @@ class ServiceProviderTab extends StatelessWidget {
                           alignment: Alignment.centerLeft,
                           children: [
                             CustomImageView(
-                              svgPath: ImageConstant.imgGroup11,
+                              imagePath: ImageConstant.imgGroup11,
                               height: 49.v,
                               width: 385.h,
                               radius: BorderRadius.circular(
@@ -396,7 +400,7 @@ class ServiceProviderTab extends StatelessWidget {
                                 ),
                               ),
                               CustomImageView(
-                                svgPath: ImageConstant.imgGroup31,
+                                imagePath: ImageConstant.imgGroup31,
                                 height: 18.adaptSize,
                                 width: 18.adaptSize,
                                 alignment: Alignment.centerRight,

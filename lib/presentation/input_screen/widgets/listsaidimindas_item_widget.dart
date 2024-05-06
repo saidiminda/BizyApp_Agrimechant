@@ -135,7 +135,7 @@ class ListsaidimindasItemWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CustomImageView(
-                          svgPath: ImageConstant.imgTrash,
+                          imagePath: ImageConstant.imgTrash,
                           height: 20.adaptSize,
                           width: 20.adaptSize,
                         ),
@@ -168,7 +168,7 @@ class ListsaidimindasItemWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CustomImageView(
-                          svgPath: ImageConstant.imgEdit,
+                          imagePath: ImageConstant.imgEdit,
                           height: 20.adaptSize,
                           width: 20.adaptSize,
                         ),
@@ -194,7 +194,7 @@ class ListsaidimindasItemWidget extends StatelessWidget {
                     rightIcon: Container(
                       margin: EdgeInsets.only(left: 10.h),
                       child: CustomImageView(
-                        svgPath: ImageConstant.imgFile10919941,
+                        imagePath: ImageConstant.imgFile10919941,
                       ),
                     ),
                     onTap: () {

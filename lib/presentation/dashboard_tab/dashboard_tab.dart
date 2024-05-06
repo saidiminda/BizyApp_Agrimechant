@@ -1,3 +1,6 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/widgets.dart';
+
 import 'controller/dashboard_tab_controller.dart';
 import 'models/dashboard_tab_model.dart';
 import 'package:flutter/material.dart';
@@ -34,65 +37,83 @@ class DashboardTab extends StatelessWidget {
                             child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Container(
-                                      decoration: AppDecoration
-                                          .fillOnPrimaryContainer
-                                          .copyWith(
-                                              borderRadius: BorderRadiusStyle
-                                                  .roundedBorder10),
-                                      child: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            SizedBox(height: 21.v),
-                                            CustomImageView(
-                                                svgPath:
-                                                    ImageConstant.imgTrophy,
-                                                height: 69.v,
-                                                width: 70.h),
-                                            SizedBox(height: 14.v),
-                                            CustomElevatedButton(
-                                                height: 40.v,
-                                                width: 132.h,
-                                                text: "lbl_ongeza_mkulima"
-                                                    .tr
-                                                    .toUpperCase(),
-                                                buttonStyle: CustomButtonStyles
-                                                    .fillGreenBL10,
-                                                buttonTextStyle: theme
-                                                    .textTheme.labelMedium!)
-                                          ])),
-                                  Container(
-                                      margin: EdgeInsets.only(left: 26.h),
-                                      decoration: AppDecoration
-                                          .fillOnPrimaryContainer
-                                          .copyWith(
-                                              borderRadius: BorderRadiusStyle
-                                                  .roundedBorder10),
-                                      child: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            SizedBox(height: 21.v),
-                                            CustomImageView(
-                                                svgPath: ImageConstant
-                                                    .imgLayer1Lime700,
-                                                height: 69.v,
-                                                width: 70.h),
-                                            SizedBox(height: 14.v),
-                                            CustomElevatedButton(
-                                                height: 40.v,
-                                                width: 132.h,
-                                                text: "lbl_wakulima"
-                                                    .tr
-                                                    .toUpperCase(),
-                                                buttonStyle: CustomButtonStyles
-                                                    .fillGreenBL10,
-                                                buttonTextStyle: theme
-                                                    .textTheme.labelMedium!)
-                                          ]))
+                                  GestureDetector(
+                                    onTap: () {
+                                      Get.toNamed(
+                                          AppRoutes.farmerRegistrationScreen,
+                                          arguments: {
+                                            "type": "new",
+                                            "farmer": null
+                                          });
+                                    },
+                                    child: Container(
+                                        decoration: AppDecoration
+                                            .fillOnPrimaryContainer
+                                            .copyWith(
+                                                borderRadius: BorderRadiusStyle
+                                                    .roundedBorder10),
+                                        child: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
+                                            children: [
+                                              SizedBox(height: 21.v),
+                                              CustomImageView(
+                                                  imagePath:
+                                                      ImageConstant.imgTrophy,
+                                                  height: 69.v,
+                                                  width: 70.h),
+                                              SizedBox(height: 14.v),
+                                              CustomElevatedButton(
+                                                  height: 40.v,
+                                                  width: 132.h,
+                                                  text: "lbl_ongeza_mkulima"
+                                                      .tr
+                                                      .toUpperCase(),
+                                                  buttonStyle:
+                                                      CustomButtonStyles
+                                                          .fillGreenBL10,
+                                                  buttonTextStyle: theme
+                                                      .textTheme.labelMedium!)
+                                            ])),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Get.toNamed(
+                                          AppRoutes.farmerManagementScreen);
+                                    },
+                                    child: Container(
+                                        margin: EdgeInsets.only(left: 26.h),
+                                        decoration: AppDecoration
+                                            .fillOnPrimaryContainer
+                                            .copyWith(
+                                                borderRadius: BorderRadiusStyle
+                                                    .roundedBorder10),
+                                        child: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
+                                            children: [
+                                              SizedBox(height: 21.v),
+                                              CustomImageView(
+                                                  imagePath: ImageConstant
+                                                      .imgLayer1Lime700,
+                                                  height: 69.v,
+                                                  width: 70.h),
+                                              SizedBox(height: 14.v),
+                                              CustomElevatedButton(
+                                                  height: 40.v,
+                                                  width: 132.h,
+                                                  text: "lbl_wakulima"
+                                                      .tr
+                                                      .toUpperCase(),
+                                                  buttonStyle:
+                                                      CustomButtonStyles
+                                                          .fillGreenBL10,
+                                                  buttonTextStyle: theme
+                                                      .textTheme.labelMedium!)
+                                            ])),
+                                  )
                                 ])),
                         SizedBox(height: 60.v),
                         Text("msg_shughuli_za_mkulima".tr.toUpperCase(),
@@ -118,7 +139,7 @@ class DashboardTab extends StatelessWidget {
                                           children: [
                                             SizedBox(height: 23.v),
                                             CustomImageView(
-                                                svgPath: ImageConstant
+                                                imagePath: ImageConstant
                                                     .imgTrashGreen90001,
                                                 height: 60.v,
                                                 width: 55.h),
@@ -153,7 +174,7 @@ class DashboardTab extends StatelessWidget {
                                               children: [
                                                 SizedBox(height: 27.v),
                                                 CustomImageView(
-                                                    svgPath:
+                                                    imagePath:
                                                         ImageConstant.imgFile,
                                                     height: 60.adaptSize,
                                                     width: 55.adaptSize),
@@ -230,7 +251,7 @@ class DashboardTab extends StatelessWidget {
                                                           SizedBox(
                                                               height: 23.v),
                                                           CustomImageView(
-                                                              svgPath:
+                                                              imagePath:
                                                                   ImageConstant
                                                                       .imgBookmark,
                                                               height:
@@ -265,7 +286,7 @@ class DashboardTab extends StatelessWidget {
                                                           SizedBox(
                                                               height: 23.v),
                                                           CustomImageView(
-                                                              svgPath:
+                                                              imagePath:
                                                                   ImageConstant
                                                                       .imgUpload,
                                                               height:

@@ -1,6 +1,6 @@
 import 'package:saidi_s_application3/presentation/input_collection_tab/models/member_orders_request_model.dart';
 
-import '../../core/utils/show_dialogs.dart';
+import '../../core/utils/functions/show_dialogs.dart';
 import '../iphone_14_plus_two_page/widgets/listsaidimindas3_item_widget.dart';
 import 'controller/iphone_14_plus_two_controller.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +39,7 @@ class Iphone14PlusTwoPage extends StatelessWidget {
                                 style: theme.textTheme.labelSmall!
                                     .copyWith(height: 1.11))),
                         CustomImageView(
-                            svgPath: ImageConstant.imgCalendar2886665Black900,
+                           imagePath: ImageConstant.imgCalendar2886665Black900,
                             height: 27.adaptSize,
                             width: 27.adaptSize,
                             margin: EdgeInsets.only(left: 8.h))

@@ -1,35 +1,47 @@
-class StringConstant {
-  // constants strings used on APIs Url
-  // static String baseUrl = "https://ruzuku.tfra.go.tz/api/v1/";
-  static String baseUrl = "http://196.192.77.33/ruzuku/api/v1/";
-  // static String baseUrl = "https://vkb.kilimodatahub.com/api/";
+// constants strings used on APIs Url
+// String apiBaseUrl = "https://ruzuku.tfra.go.tz/api/v1/";
+String apiBaseUrl = "http://196.192.77.33/ruzuku/api/v1/";
+// String apiBaseUrl = "https://vkb.kilimodatahub.com/api/";
 
-  static String endLoginApi = "login";
-  static String endDashboardApi = "dashboard?userid=";
-  static String endSendFarmersApi = "sync/offline";
-  static String endSearchFarmerForEditApi =
-      "search/farmer-for-edit?farmer_number=";
-  static String endAutoScanQrcodeApi = "autoscan-qr-code";
-  static String endStorePodApi = "store-pod";
+String endLoginApi = "login";
+String endDashboardApi = "dashboard?userid=";
+String endSendFarmersApi = "sync/offline";
+String endSearchFarmerForEditApi = "search/farmer-for-edit?farmer_number=";
+String endAutoScanQrcodeApi = "autoscan-qr-code";
+String endStorePodApi = "store-pod";
 
-  static String endStockAndUsedQrCodesApi = "orders/stock-and-used-qr-codes-v1";
-  static String endGetFarmerApi = "single-farmer";
-  static String endRequestOtpCodeRequestApi = "request-member-otp";
-  static String endverifyOtpCodeRequestApi = "verify-member-otp";
-  static String endMemberOrdersDeliveredApi = "test-member-orders/delivered";
-  static String endEntityWarehouseOrderApi = "entity-warehouse-order/";
-  static String endEntityOrderReceptionApi = "receive-stock";
-  static String endEntitySalesReportApi = "entity-sales-report";
-  static String endDropdownsApi = "dropdowns";
-  static String endProfileApi = "profile";
-  static String endTransferStockApi = "transfer-stock";
-  static String endRequestStockApi = "request-stock";
-  static String endCreateOutlateApi = "create-outlet";
-  static String endVerfyQrCodeApi = "verfy-qr-code";
-  static String endQrCodesReportApi = "qr-codes-report";
-  static String endChangePasswordApi = "change-password/save";
-  static String endDownlodQrCodeApi = "downlod-qr-code";
-  static String endDuplicateQrCodesReportApi = "duplicate-qr-codes-report";
-  static String endResetPasswordApi = "reset-password";
-  static String endDeleteOutletApi = "delete-outlet/";
-}
+String endStockAndUsedQrCodesApi = "orders/stock-and-used-qr-codes-v1";
+String endGetFarmerApi = "single-farmer";
+String endRequestOtpCodeRequestApi = "request-member-otp";
+String endverifyOtpCodeRequestApi = "verify-member-otp";
+String endMemberOrdersDeliveredApi = "test-member-orders/delivered";
+String endEntityWarehouseOrderApi = "entity-warehouse-order/";
+String endEntityOrderReceptionApi = "receive-stock";
+String endEntitySalesReportApi = "entity-sales-report";
+String endDropdownsApi = "dropdowns";
+String endProfileApi = "profile";
+String endTransferStockApi = "transfer-stock";
+String endRequestStockApi = "request-stock";
+String endCreateOutlateApi = "create-outlet";
+String endVerfyQrCodeApi = "verfy-qr-code";
+String endQrCodesReportApi = "qr-codes-report";
+String endChangePasswordApi = "change-password/save";
+String endDownlodQrCodeApi = "downlod-qr-code";
+String endDuplicateQrCodesReportApi = "duplicate-qr-codes-report";
+String endResetPasswordApi = "reset-password";
+String endDeleteOutletApi = "delete-outlet/";
+
+
+const String openWeaterApiUrl = "https://api.openweathermap.org/data/2.5/weather";
+const String openWeaterApiKey = "8ef09db9ab5fb99b98eccbc493dd6fd6";
+const String endForgatePasswordApi = "reset";
+const String endForgatePasswordOTPApi = "confirm-otp";
+const String endFarmerListApi = "farmers/list?user_id=";
+const String endCreatePostApi = "posts/store";
+const String endPostAndEventListApi = "posts/list";
+const String endCommentPostAndEventApi = "posts/comments/store/";
+const String endGetCommentsListApi = "comments/list";
+const String endStoreCommentApi = "comments/store";
+const String endReplayCommentApi = "comments/reply";
+const String endGetAdvisoryListApi = "advisory/list";
+const String endStoryAdvisoryRequestApi = "advisory/store";

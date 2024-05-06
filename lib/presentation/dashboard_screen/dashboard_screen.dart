@@ -1,3 +1,5 @@
+import 'package:saidi_s_application3/presentation/warehouse_tab/warehouse_tab.dart';
+
 import '../../widgets/topNavBar.dart';
 import 'controller/dashboard_controller.dart';
 import 'package:flutter/material.dart';
@@ -138,7 +140,7 @@ class DashboardScreen extends GetWidget<DashboardController> {
                   children: [
                     DashboardTab(),
                     ServiceProviderTab(),
-                    ServiceProviderTab(),
+                    WarehouseTab(),
                   ],
                 ),
               ),

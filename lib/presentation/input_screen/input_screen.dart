@@ -1,6 +1,6 @@
 import 'package:saidi_s_application3/presentation/input_collection_tab/input_collection_tab.screen.dart';
 
-import '../../core/utils/show_dialogs.dart';
+import '../../core/utils/functions/show_dialogs.dart';
 import '../../widgets/topNavBar.dart';
 import '../input_collection_tab/models/member_orders_request_model.dart';
 import '../iphone_14_plus_two_page/iphone_14_plus_two_page.dart';
@@ -61,7 +61,7 @@ class InputScreen extends GetWidget<InputController> {
                       rightIcon: Container(
                           margin: EdgeInsets.only(left: 10.h),
                           child: CustomImageView(
-                              svgPath: ImageConstant.imgMinimize)),
+                              imagePath: ImageConstant.imgMinimize)),
                       buttonStyle: CustomButtonStyles.fillGreen,
                       alignment: Alignment.topRight)
                 ],
@@ -102,7 +102,7 @@ class InputScreen extends GetWidget<InputController> {
                                         decoration: BoxDecoration(
                                             color: appTheme.green900),
                                         child: CustomImageView(
-                                            svgPath: ImageConstant.imgClose))
+                                            imagePath: ImageConstant.imgClose))
                                     : null,
                                 buttonStyle: (controller.ussdOrder.value &&
                                         !controller.appOrder.value)
@@ -130,7 +130,7 @@ class InputScreen extends GetWidget<InputController> {
                                         decoration: BoxDecoration(
                                             color: appTheme.green900),
                                         child: CustomImageView(
-                                            svgPath: ImageConstant.imgClose))
+                                            imagePath: ImageConstant.imgClose))
                                     : null,
                                 buttonStyle: (!controller.ussdOrder.value &&
                                         controller.appOrder.value)
@@ -152,7 +152,7 @@ class InputScreen extends GetWidget<InputController> {
                                     style: theme.textTheme.labelSmall!
                                         .copyWith(height: 1.11))),
                             CustomImageView(
-                                svgPath: controller.filterByDate.value
+                                imagePath: controller.filterByDate.value
                                     ? ImageConstant.imgCalendar2886665Black900
                                     : ImageConstant.imgCalendar2886665,
                                 height: 27.adaptSize,

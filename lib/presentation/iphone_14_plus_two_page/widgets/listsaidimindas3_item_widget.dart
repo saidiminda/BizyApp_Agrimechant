@@ -134,7 +134,7 @@ class Listsaidimindas3ItemWidget extends StatelessWidget {
                     rightIcon: Container(
                       margin: EdgeInsets.only(left: 10.h),
                       child: CustomImageView(
-                        svgPath: ImageConstant.imgBill70940821,
+                        imagePath: ImageConstant.imgBill70940821,
                       ),
                     ),
                     onTap: () {

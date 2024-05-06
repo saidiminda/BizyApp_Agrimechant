@@ -25,7 +25,7 @@ class RequestOtpCodeRequestProvider extends GetConnect {
     timeout = const Duration(minutes: 5);
     allowAutoSignedCert = true;
     final response = await post(
-        StringConstant.baseUrl + StringConstant.endRequestOtpCodeRequestApi,
+        apiBaseUrl + endRequestOtpCodeRequestApi,
         requestotpcoderequest.toJson(),
         headers: {
           "Authorization": "Bearer $token",

@@ -19,7 +19,7 @@ class GetFarmerRequestProvider extends GetConnect {
     timeout = const Duration(minutes: 5);
     allowAutoSignedCert = true;
     final response = await get(
-        "${StringConstant.baseUrl}${StringConstant.endGetFarmerApi}?farmer_number=${getFarmerRequest.farmerNumber}",
+        "${apiBaseUrl}${endGetFarmerApi}?farmer_number=${getFarmerRequest.farmerNumber}",
         headers: {
           "Authorization": "Bearer $token",
         });

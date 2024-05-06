@@ -29,7 +29,7 @@ class LoginScreen extends GetWidget<LoginController> {
                                       left: 68.h, right: 68.h, bottom: 186.v),
                                   child: Column(children: [
                                     CustomImageView(
-                                        svgPath: ImageConstant.imgLayer1,
+                                        imagePath: ImageConstant.imgLayer1,
                                         height: 48.v,
                                         width: 239.h),
                                     SizedBox(height: 86.v),
@@ -76,7 +76,7 @@ class LoginScreen extends GetWidget<LoginController> {
                                           margin: EdgeInsets.fromLTRB(
                                               15.h, 16.v, 27.h, 17.v),
                                           child: CustomImageView(
-                                              svgPath: ImageConstant.imgUser)),
+                                              imagePath: ImageConstant.imgUser)),
                                       prefixConstraints:
                                           BoxConstraints(maxHeight: 49.v),
                                       contentPadding: EdgeInsets.only(
@@ -101,7 +101,7 @@ class LoginScreen extends GetWidget<LoginController> {
                                             margin: EdgeInsets.fromLTRB(
                                                 17.h, 17.v, 29.h, 17.v),
                                             child: CustomImageView(
-                                                svgPath:
+                                                imagePath:
                                                     ImageConstant.imgLock)),
                                         prefixConstraints:
                                             BoxConstraints(maxHeight: 49.v),

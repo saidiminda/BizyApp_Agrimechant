@@ -24,6 +24,9 @@ class AppDecoration {
   static BoxDecoration get fillOnSecondary => BoxDecoration(
         color: theme.colorScheme.onSecondary,
       );
+  static BoxDecoration get fillLightgreen5001 => BoxDecoration(
+        color: appTheme.lightGreen5001,
+      );
 
   // Outline decorations
   static BoxDecoration get outlineBlueGray => BoxDecoration(

@@ -9,7 +9,7 @@ class CustomDropDown extends StatelessWidget {
     this.margin,
     this.focusNode,
     this.icon,
-    this.autofocus = true,
+    this.autofocus = false,
     this.textStyle,
     this.items,
     this.hintText,
@@ -24,6 +24,7 @@ class CustomDropDown extends StatelessWidget {
     this.filled = true,
     this.validator,
     this.onChanged,
+    this.value,
   }) : super(
           key: key,
         );
@@ -64,6 +65,8 @@ class CustomDropDown extends StatelessWidget {
 
   final bool? filled;
 
+  final SelectionPopupModel? value;
+
   final FormFieldValidator<SelectionPopupModel>? validator;
 
   final Function(SelectionPopupModel)? onChanged;
@@ -82,6 +85,9 @@ class CustomDropDown extends StatelessWidget {
         width: width ?? double.maxFinite,
         margin: margin,
         child: DropdownButtonFormField<SelectionPopupModel>(
+           value: (value ?? SelectionPopupModel(title: "")).id != null
+              ? value
+              : null,
           focusNode: focusNode ?? FocusNode(),
           icon: icon,
           autofocus: autofocus!,

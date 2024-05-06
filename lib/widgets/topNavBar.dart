@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:saidi_s_application3/core/utils/size_utils.dart';
 
-import '../core/utils/global_fanctions.dart';
+import '../core/utils/functions/global.dart';
 import '../theme/custom_text_style.dart';
 import '../theme/theme_helper.dart';
 

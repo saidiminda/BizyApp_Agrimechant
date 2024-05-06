@@ -25,7 +25,7 @@ class MemberOrdersRequestProvider extends GetConnect {
     timeout = const Duration(minutes: 5);
     allowAutoSignedCert = true;
     final response = await post(
-        StringConstant.baseUrl + StringConstant.endStorePodApi, memberordersrequest.toJson(),
+        apiBaseUrl + endStorePodApi, memberordersrequest.toJson(),
         headers: {
           "Authorization": "Bearer $token",
         });
@@ -36,7 +36,7 @@ class MemberOrdersRequestProvider extends GetConnect {
       MemberOrdersRequest memberordersrequest, String token) async {
     timeout = const Duration(minutes: 5);
     allowAutoSignedCert = true;
-    final response = await post(StringConstant.baseUrl + StringConstant.endAutoScanQrcodeApi,
+    final response = await post(apiBaseUrl + endAutoScanQrcodeApi,
         memberordersrequest.toJson(),
         headers: {
           "Authorization": "Bearer $token",
