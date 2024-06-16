@@ -77,7 +77,7 @@ class LoginController extends GetxController with GetTickerProviderStateMixin {
             ProfileResponse userProfile =
                 ProfileResponse(profile: loginResponse.user!);
             setprofileData(userProfile);
-            Get.offAllNamed(AppRoutes.dashboardScreen);
+            Get.offAllNamed(AppRoutes.questionnaireDashboardScreen);
           } else {
             Fluttertoast.showToast(
                 msg: "usernameOrPasswordIsIncorrect".tr,

@@ -73,80 +73,13 @@ class DashboardScreen extends GetWidget<DashboardController> {
           preferredSize: Size.fromHeight(kToolbarHeight + 2),
         ),
       ),
-      body: SizedBox(
-        width: double.maxFinite,
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              // Container(
-              //   decoration: AppDecoration.fillOnPrimaryContainer,
-              //   child: Column(
-              //     children: [
-              //       // Container(
-              //       //   height: 23.v,
-              //       //   width: double.maxFinite,
-              //       //   decoration: BoxDecoration(
-              //       //     color: appTheme.green900,
-              //       //   ),
-              //       // ),
-              //       Container(
-              //         width: double.maxFinite,
-              //         padding: EdgeInsets.symmetric(
-              //           horizontal: 23.h,
-              //           vertical: 18.v,
-              //         ),
-              //         decoration: AppDecoration.fillGreen90001,
-              //         child: Row(
-              //           children: [
-              //             CustomImageView(
-              //               svgPath: ImageConstant.imgMenu,
-              //               height: 18.v,
-              //               width: 26.h,
-              //               margin: EdgeInsets.only(top: 2.v),
-              //             ),
-              //             Spacer(
-              //               flex: 45,
-              //             ),
-              //             Padding(
-              //               padding: EdgeInsets.only(top: 2.v),
-              //               child: Text(
-              //                 "msg_bizytech_profiling".tr.toUpperCase(),
-              //                 style:
-              //                     CustomTextStyles.titleSmallOnPrimaryContainer,
-              //               ),
-              //             ),
-              //             Spacer(
-              //               flex: 54,
-              //             ),
-              //             CustomImageView(
-              //               svgPath: ImageConstant.imgGroup9,
-              //               height: 18.v,
-              //               width: 1.h,
-              //               margin: EdgeInsets.only(
-              //                 top: 2.v,
-              //                 right: 9.h,
-              //               ),
-              //             ),
-              //           ],
-              //         ),
-              //       ),
-              //     ],
-              //   ),
-              // ),
-              SizedBox(
-                height: 787.v,
-                child: TabBarView(
-                  controller: controller.tabviewController,
-                  children: [
-                    DashboardTab(),
-                    ServiceProviderTab(),
-                    WarehouseTab(),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
+      body: TabBarView(
+        controller: controller.tabviewController,
+        children: [
+          DashboardTab(),
+          ServiceProviderTab(),
+          WarehouseTab(),
+        ],
       ),
     );
   }

@@ -1,4 +1,5 @@
-import '../../../core/app_export.dart';
+
+import 'package:get/get.dart';
 import 'package:saidi_s_application3/data/models/selectionPopupModel/selection_popup_model.dart';
 
 /// This class defines the variables used in the [iphone_14_plus_six_page],

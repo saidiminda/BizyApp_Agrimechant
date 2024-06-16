@@ -31,7 +31,7 @@ class FarmerManagementController extends GetxController {
   void onInit() {
     super.onInit();
     getLocalData();
-    getOnlineFarmers();
+    // getOnlineFarmers();
   }
 
   @override

@@ -15,11 +15,10 @@ class SplashController extends GetxController {
     token.value = await getAccessToken();
     Future.delayed(const Duration(milliseconds: 2000), () {
       if (token.value.isNotEmpty) {
-        Get.offAllNamed(AppRoutes.dashboardScreen);
+        Get.offAllNamed(AppRoutes.questionnaireDashboardScreen);
       } else {
         Get.offAllNamed(AppRoutes.loginScreen);
       }
     });
   }
 }
-
