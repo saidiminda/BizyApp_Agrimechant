@@ -1,11 +1,14 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:saidi_s_application3/core/utils/size_utils.dart';
+import 'package:saidi_s_application3/data/models/questionnaires_request_model.dart';
 
 import '../../../core/utils/functions/global.dart';
 import '../../../core/utils/functions/response_handeler.dart';
+import '../../../core/utils/functions/show_dialogs.dart';
 import '../../../data/apiClient/api_client.dart';
 import '../../../data/databases/shared_preferences_db.dart';
 import '../../../data/models/apiModels/initial_data_response_model.dart';
@@ -24,14 +27,14 @@ class ProducersManagementController extends GetxController {
   Rx<InitialDataResponse> dashboardResponse = InitialDataResponse().obs;
   Rx<ProducersManagementModel> farmerManagementModelObj =
       ProducersManagementModel().obs;
-  Rx<RegisterFarmerRequest> localRegisterFarmerRequest =
-      RegisterFarmerRequest(farmers: []).obs;
+  Rx<QuestionnairesRequest> localRegisterFarmerRequest =
+      QuestionnairesRequest(questionnaireResponse: []).obs;
   SampleItem? selectedMenu;
   @override
   void onInit() {
     super.onInit();
     getLocalData();
-    // getOnlineFarmers();
+    getOnlineFarmers();
   }
 
   @override
@@ -47,58 +50,63 @@ class ProducersManagementController extends GetxController {
     // loadingDialog();
     bool internetTest = await checkInternetConnection();
     String token = await getAccessToken();
-    localRegisterFarmerRequest.value = await getFarmerLocalData();
+    // localRegisterFarmerRequest.value = await getFarmerLocalData();
     if (internetTest) {
       try {
-        final response = await ApiClient().getListOfFarmerResponse(token);
+        final response = await ApiClient()
+            .getListOfQuestionnaireResponses(token, "PRODUCER");
         if (response.statusCode == 200) {
           // Get.back();
-          RegisterFarmerRequest onlineFarmersResponse =
-              RegisterFarmerRequest.fromJson(
+          QuestionnairesRequest onlineFarmersResponse =
+              QuestionnairesRequest.fromJson(
                   jsonDecode(jsonEncode(response.body)));
-          localRegisterFarmerRequest.value.farmers ??= [];
-          localRegisterFarmerRequest.value.lastFarmerIndex ??= 0;
-          (localRegisterFarmerRequest.value.farmers ?? [])
+          localRegisterFarmerRequest.value.questionnaireResponse ??= [];
+          localRegisterFarmerRequest.value.lastQuestionnaireIndex ??= 0;
+          (localRegisterFarmerRequest.value.questionnaireResponse ?? [])
               .removeWhere((p0) => ((p0.editingStatus == 0)));
 
-          List<Farmers> presentFarmer = [];
-          List<Farmers> onlineDuplicateFarmers = [];
-          for (Farmers farmer in (onlineFarmersResponse.farmers ?? [])) {
-            localRegisterFarmerRequest.value.lastFarmerIndex =
-                localRegisterFarmerRequest.value.lastFarmerIndex! + 1;
+          List<QuestionnaireResponse> presentFarmer = [];
+          List<QuestionnaireResponse> onlineDuplicateFarmers = [];
+          for (QuestionnaireResponse farmer
+              in (onlineFarmersResponse.questionnaireResponse ?? [])) {
+            localRegisterFarmerRequest.value.lastQuestionnaireIndex =
+                localRegisterFarmerRequest.value.lastQuestionnaireIndex! + 1;
             farmer.registrationStatus = "edit";
             farmer.editingStatus = 0;
-            farmer.id = localRegisterFarmerRequest.value.lastFarmerIndex;
+            farmer.id = localRegisterFarmerRequest.value.lastQuestionnaireIndex;
             presentFarmer.addAll(
-                (localRegisterFarmerRequest.value.farmers ?? [])
-                    .where((p0) => ((p0.data!.generalInfo!.id ==
-                            farmer.data!.generalInfo!.id) &&
+                (localRegisterFarmerRequest.value.questionnaireResponse ?? [])
+                    .where((p0) => ((p0.basicInformation!.id ==
+                            farmer.basicInformation!.id) &&
                         (p0.editingStatus == 0)))
                     .toList());
           }
 
-          for (Farmers farmer
-              in (localRegisterFarmerRequest.value.farmers ?? [])) {
-            onlineDuplicateFarmers.addAll((onlineFarmersResponse.farmers ?? [])
-                .where((p0) => ((p0.data!.generalInfo!.id ==
-                        farmer.data!.generalInfo!.id) &&
-                    (farmer.editingStatus == 1)))
-                .toList());
+          for (QuestionnaireResponse farmer
+              in (localRegisterFarmerRequest.value.questionnaireResponse ??
+                  [])) {
+            onlineDuplicateFarmers.addAll(
+                (onlineFarmersResponse.questionnaireResponse ?? [])
+                    .where((p0) => ((p0.basicInformation!.id ==
+                            farmer.basicInformation!.id) &&
+                        (farmer.editingStatus == 1)))
+                    .toList());
           }
 
           if (presentFarmer.isNotEmpty) {
             for (var element in presentFarmer) {
-              localRegisterFarmerRequest.value.farmers!.remove(element);
+              localRegisterFarmerRequest.value.questionnaireResponse!
+                  .remove(element);
             }
           }
           if (onlineDuplicateFarmers.isNotEmpty) {
             for (var element in onlineDuplicateFarmers) {
-              onlineFarmersResponse.farmers!.remove(element);
+              onlineFarmersResponse.questionnaireResponse!.remove(element);
             }
           }
-          localRegisterFarmerRequest.value.farmers!
-              .addAll(onlineFarmersResponse.farmers ?? []);
-          setFarmerLocalData(localRegisterFarmerRequest.value);
+          localRegisterFarmerRequest.value.questionnaireResponse!
+              .addAll(onlineFarmersResponse.questionnaireResponse ?? []);
+          // setFarmerLocalData(localRegisterFarmerRequest.value);
           localRegisterFarmerRequest.refresh();
         } else {
           // Get.back();
@@ -106,6 +114,7 @@ class ProducersManagementController extends GetxController {
         }
       } catch (e) {
         // Get.back();
+        log(e.toString());
         Get.defaultDialog(title: "Exception", middleText: e.toString());
       }
     } else {

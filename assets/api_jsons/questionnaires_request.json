@@ -1,0 +1,304 @@
+{
+    "imei_number": "",
+    "app_version_name": "",
+    "date": "",
+    "time": "",
+    "last_questionnaire_index": 0,
+    "questionnaire_response": [
+        {
+            "id": 37,
+            "editing_status": 1,
+            "registration_status": "",
+            "questionnaire_category_id": 1,
+            "basic_information": {
+                "id": 37,
+                "crop_id": 1,
+                "village_id": 1,
+                "type": "PRODUCER|AGGREGATOR|LOGISTICS|WAREHOUSING|SUPPLIER|PROVIDER",
+                "name_of_entity": "Name",
+                "contact_person": {
+                    "id": 37,
+                    "name": "Said",
+                    "phone_no": "090000",
+                    "designation": "ICTO",
+                    "gender": "Male|Female",
+                    "email_address": "said@gmail.com"
+                },
+                "age": "2023",
+                "education_level_id": 1
+            },
+            "socio_economic": {
+                "id": 37,
+                "business_registration_type_id": 1,
+                "value_chain_activities": [
+                    1,
+                    2,
+                    3,
+                    4
+                ],
+                "licensed_entity": "Licensed activity",
+                "other_value_chains": "other_value_chains",
+                "competitors": [
+                    "Said",
+                    "GSM",
+                    "AMCOS"
+                ],
+                "annual_sales": [
+                    {
+                        "year": 2023,
+                        "sales": 12000
+                    },
+                    {
+                        "year": 2024,
+                        "sales": 15000
+                    }
+                ],
+                "annual_cost": [
+                    {
+                        "general_expenses": 2023,
+                        "labor_cost": 12000,
+                        "operation_costs": 12000
+                    }
+                ],
+                "number_of_employees": [
+                    {
+                        "title":"",
+                        "type": "PERMANENT",
+                        "male": 20,
+                        "female": 100
+                    },
+                    {
+                        "title":"",
+                        "type": "TEMPORARY",
+                        "male": 20,
+                        "female": 100
+                    }
+                ],
+                "entity_promote": [
+                    "",
+                    ""
+                ],
+                "buyers": [
+                    {
+                        "id": 37,
+                        "name": "Minda",
+                        "region": "1",
+                        "measure": "MT",
+                        "volume": 230.0
+                    },
+                    {
+                        "id": 37,
+                        "name": "Minda 2",
+                        "region": "2",
+                        "measure": "Kg",
+                        "volume": 230.0
+                    }
+                ],
+                "difficulties": [
+                    1,
+                    2,
+                    3
+                ],
+                "other_difficulties": [
+                    "Mane",
+                    "Neno",
+                    "Sio"
+                ],
+                "market_informations": [
+                    2,
+                    4,
+                    5,
+                    3,
+                    5,
+                    3,
+                    5
+                ],
+                "value_chain_organization": {
+                    "isYes": "Yes",
+                    "value_chains": [
+                        "Traiing",
+                        "Inforamtion"
+                    ]
+                },
+                "finance_used": [
+                    {
+                        "title":"",
+                        "name": "Owner's Equity",
+                        "amount": 20
+                    }
+                ],
+                "formal_record": {
+                    "haveRecord": "Yes/No",
+                    "aPlatform": "Paper/Digital",
+                    "isSoftwared": "Yes/No",
+                    "aSoftware": "",
+                    "dataSaving": "Cloud/PC/Laptop"
+                },
+                "problems_related_policy": [
+                    "",
+                    "",
+                    ""
+                ],
+                "significant_challenges": [
+                    {
+                        "challenge": "mmmmm",
+                        "solution": "",
+                        "stakeholder_roles": [
+                            "DUCE",
+                            "DUCE"
+                        ]
+                    },
+                    {
+                        "challenge": "mmmmmnnn",
+                        "solution": "",
+                        "stakeholder_roles": [
+                            "DUCE",
+                            "DUCE"
+                        ]
+                    }
+                ],
+                "source_clients": "elaborated"
+            },
+            "core_businesses": {
+                "id": 37,
+                "equipment_value_chain": "equipment_value_chain",
+                "type_of_equipment": [
+                    1,
+                    2
+                ],
+                "source_of_inputs": [
+                    1,
+                    2
+                ],
+                "annual_trading_volumes": [
+                    {
+                        "year": 2023,
+                        "measure": "KG",
+                        "volumes": 230.0
+                    }
+                ],
+                "inputs_storage_facility": {
+                    "isYes": "Yes/No",
+                    "size": [
+                        "",
+                        ""
+                    ]
+                },
+                "technical_advice_to_producers": {
+                    "isYes": "Yes/No",
+                    "size": [
+                        "",
+                        ""
+                    ]
+                },
+                "training_regulation": {
+                    "isYes": "Yes/No",
+                    "details": ""
+                },
+                "training_you_need": "1",
+                "quality_of_inputs_suppliers": "",
+                "quality_of_inputs_clients": "",
+                "certifications": {
+                    "ISO-9000": "Yes",
+                    "ISO-1400": "Yes"
+                },
+                "plan_to_apply_certification": {
+                    "isYes": "Yes/No",
+                    "mention": [
+                        "ISO- 1",
+                        "ISO-2"
+                    ]
+                },
+                "sustainability": "",
+                "climate_change_affects": "",
+                "mitigate_business": "",
+                "warehouse_expenditure": "",
+                "warehouse_source_energy": "",
+                "production_aggregation": {
+                    "production": [
+                        {
+                            "year": 2023,
+                            "cultivation_area": "Mtwara",
+                            "measure": "KG",
+                            "volumes": 230.0
+                        },
+                        {
+                            "year": 2023,
+                            "cultivation_area": "Mtwara",
+                            "measure": "KG",
+                            "volumes": 230.0
+                        }
+                    ],
+                    "aggregation": [
+                        {
+                            "year": 2023,
+                            "cultivation_area": "Mtwara",
+                            "measure": "KG",
+                            "volumes": 230.0
+                        },
+                        {
+                            "year": 2023,
+                            "cultivation_area": "Mtwara",
+                            "measure": "KG",
+                            "volumes": 230.0
+                        }
+                    ]
+                },
+                "crop_production_aggregation": [
+                    {
+                        "year": 2023,
+                        "crops": [
+                            "Mtwara",
+                            "Mtwara - 01 "
+                        ],
+                        "production": 2300,
+                        "aggregation": 230.0
+                    }
+                ],
+                "source_production_inputs": [
+                    {
+                        "source": "Domestic",
+                        "volume": 100,
+                        "amount": 100
+                    }
+                ],
+                "logistics_activities": [
+                    {
+                        "title":"",
+                        "activity": "Transportaion",
+                        "capacity": 230.0,
+                        "volumes": 450.0
+                    }
+                ],
+                "logistics_crops": [
+                    {
+                        "name": "Mahindi",
+                        "transportation":  230.0,
+                        "warehousing":  230.0,
+                        "material_handling": 230.0,
+                        "others": 230.0
+                    },
+                    {
+                        "name": "Mahindi",
+                        "transportation":  230.0,
+                        "warehousing":  230.0,
+                        "material_handling": 230.0,
+                        "others": 230.0
+                    },
+                    {
+                        "name": "Mahindi",
+                        "transportation":  230.0,
+                        "warehousing":  230.0,
+                        "material_handling": 230.0,
+                        "others": 230.0
+                    }
+                ],
+                "monitor_logistic_activities": "",
+                "standards_certification_logistics": {
+                    "isYes": "Yes/No",
+                    "details": ""
+                }
+            }
+        }
+    ]
+}

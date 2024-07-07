@@ -10,22 +10,23 @@ import '../../../data/apiClient/api_client.dart';
 import '../../../data/databases/shared_preferences_db.dart';
 import '../../../data/models/apiModels/initial_data_response_model.dart';
 import '../../../data/models/apiModels/register_farmer_request_model.dart';
+import '../../../data/models/questionnaires_request_model.dart';
 import '../../../theme/custom_text_style.dart';
 import '../../../theme/theme_helper.dart';
 import '../../../widgets/custom_image_view.dart';
 import '../../../widgets/topNavBar.dart';
-import '../models/equipment_provider_management_model.dart';
+import '../../producers_management_screen/models/producers_management_model.dart';
 
 /// A controller class for the FarmerManagementScreen.
 ///
 /// This class manages the state of the FarmerManagementScreen, including the
 /// current farmerManagementModelObj
 class EquipmentProviderManagementController extends GetxController {
-  Rx<InitialDataResponse> dashboardResponse = InitialDataResponse().obs;
-  Rx<EquipmentProviderManagementModel> farmerManagementModelObj =
-      EquipmentProviderManagementModel().obs;
-  Rx<RegisterFarmerRequest> localRegisterFarmerRequest =
-      RegisterFarmerRequest(farmers: []).obs;
+      Rx<InitialDataResponse> dashboardResponse = InitialDataResponse().obs;
+  Rx<ProducersManagementModel> farmerManagementModelObj =
+      ProducersManagementModel().obs;
+  Rx<QuestionnairesRequest> localRegisterFarmerRequest =
+      QuestionnairesRequest(questionnaireResponse: []).obs;
   SampleItem? selectedMenu;
   @override
   void onInit() {
@@ -47,62 +48,67 @@ class EquipmentProviderManagementController extends GetxController {
     // loadingDialog();
     bool internetTest = await checkInternetConnection();
     String token = await getAccessToken();
-    localRegisterFarmerRequest.value = await getFarmerLocalData();
+    // localRegisterFarmerRequest.value = await getFarmerLocalData();
     if (internetTest) {
       try {
-        final response = await ApiClient().getListOfFarmerResponse(token);
+        final response = await ApiClient()
+            .getListOfQuestionnaireResponses(token, "PROVIDER");
         if (response.statusCode == 200) {
           // Get.back();
-          RegisterFarmerRequest onlineFarmersResponse =
-              RegisterFarmerRequest.fromJson(
+          QuestionnairesRequest onlineFarmersResponse =
+              QuestionnairesRequest.fromJson(
                   jsonDecode(jsonEncode(response.body)));
-          localRegisterFarmerRequest.value.farmers ??= [];
-          localRegisterFarmerRequest.value.lastFarmerIndex ??= 0;
-          (localRegisterFarmerRequest.value.farmers ?? [])
+          localRegisterFarmerRequest.value.questionnaireResponse ??= [];
+          localRegisterFarmerRequest.value.lastQuestionnaireIndex ??= 0;
+          (localRegisterFarmerRequest.value.questionnaireResponse ?? [])
               .removeWhere((p0) => ((p0.editingStatus == 0)));
 
-          List<Farmers> presentFarmer = [];
-          List<Farmers> onlineDuplicateFarmers = [];
-          for (Farmers farmer in (onlineFarmersResponse.farmers ?? [])) {
-            localRegisterFarmerRequest.value.lastFarmerIndex =
-                localRegisterFarmerRequest.value.lastFarmerIndex! + 1;
+          List<QuestionnaireResponse> presentFarmer = [];
+          List<QuestionnaireResponse> onlineDuplicateFarmers = [];
+          for (QuestionnaireResponse farmer
+              in (onlineFarmersResponse.questionnaireResponse ?? [])) {
+            localRegisterFarmerRequest.value.lastQuestionnaireIndex =
+                localRegisterFarmerRequest.value.lastQuestionnaireIndex! + 1;
             farmer.registrationStatus = "edit";
             farmer.editingStatus = 0;
-            farmer.id = localRegisterFarmerRequest.value.lastFarmerIndex;
+            farmer.id = localRegisterFarmerRequest.value.lastQuestionnaireIndex;
             presentFarmer.addAll(
-                (localRegisterFarmerRequest.value.farmers ?? [])
-                    .where((p0) => ((p0.data!.generalInfo!.id ==
-                            farmer.data!.generalInfo!.id) &&
+                (localRegisterFarmerRequest.value.questionnaireResponse ?? [])
+                    .where((p0) => ((p0.basicInformation!.id ==
+                            farmer.basicInformation!.id) &&
                         (p0.editingStatus == 0)))
                     .toList());
           }
 
-          for (Farmers farmer
-              in (localRegisterFarmerRequest.value.farmers ?? [])) {
-            onlineDuplicateFarmers.addAll((onlineFarmersResponse.farmers ?? [])
-                .where((p0) => ((p0.data!.generalInfo!.id ==
-                        farmer.data!.generalInfo!.id) &&
-                    (farmer.editingStatus == 1)))
-                .toList());
+          for (QuestionnaireResponse farmer
+              in (localRegisterFarmerRequest.value.questionnaireResponse ??
+                  [])) {
+            onlineDuplicateFarmers.addAll(
+                (onlineFarmersResponse.questionnaireResponse ?? [])
+                    .where((p0) => ((p0.basicInformation!.id ==
+                            farmer.basicInformation!.id) &&
+                        (farmer.editingStatus == 1)))
+                    .toList());
           }
 
           if (presentFarmer.isNotEmpty) {
             for (var element in presentFarmer) {
-              localRegisterFarmerRequest.value.farmers!.remove(element);
+              localRegisterFarmerRequest.value.questionnaireResponse!
+                  .remove(element);
             }
           }
           if (onlineDuplicateFarmers.isNotEmpty) {
             for (var element in onlineDuplicateFarmers) {
-              onlineFarmersResponse.farmers!.remove(element);
+              onlineFarmersResponse.questionnaireResponse!.remove(element);
             }
           }
-          localRegisterFarmerRequest.value.farmers!
-              .addAll(onlineFarmersResponse.farmers ?? []);
-          setFarmerLocalData(localRegisterFarmerRequest.value);
+          localRegisterFarmerRequest.value.questionnaireResponse!
+              .addAll(onlineFarmersResponse.questionnaireResponse ?? []);
+          // setFarmerLocalData(localRegisterFarmerRequest.value);
           localRegisterFarmerRequest.refresh();
         } else {
           // Get.back();
-          // ResponseHandler().responseHandlerOnSinglePage(response);
+          ResponseHandler().responseHandlerOnSinglePage(response);
         }
       } catch (e) {
         // Get.back();

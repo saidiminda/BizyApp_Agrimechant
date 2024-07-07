@@ -73,8 +73,8 @@ class FarmerRegistrationController extends GetxController {
     SelectionPopupModel(title: "Mtu binafsi", value: "INDIVIDUAL"),
     SelectionPopupModel(title: "Taasisi", value: "INSTITUTION")
   ];
-  RxList<MultiSelectItem<Villages>> areaOfOperationList =
-      <MultiSelectItem<Villages>>[].obs;
+  // RxList<MultiSelectItem<Villages>> areaOfOperationList =
+  //     <MultiSelectItem<Villages>>[].obs;
   List<SelectionPopupModel> ownershipList = [
     SelectionPopupModel(title: "owned".tr, value: "Owned"),
     SelectionPopupModel(title: "lease".tr, value: "Leased"),
@@ -96,8 +96,8 @@ class FarmerRegistrationController extends GetxController {
   RxList<SelectionPopupModel> groupsDropdownList = <SelectionPopupModel>[].obs;
   RxList<SelectionPopupModel> identitysDropdownList =
       <SelectionPopupModel>[].obs;
-  RxList<CommunitySeedBanks> selecetedCommunitySeedBanks =
-      <CommunitySeedBanks>[].obs;
+  // RxList<CommunitySeedBanks> selecetedCommunitySeedBanks =
+  //     <CommunitySeedBanks>[].obs;
   Rx<bool> ownSmartPhone = false.obs;
   RxString image = "".obs;
 
@@ -189,7 +189,7 @@ class FarmerRegistrationController extends GetxController {
     currentFarmer.value.data!.generalInfo!.ownsSmartPhone =
         ownSmartPhone.value ? 1 : 0;
     currentFarmer.value.data!.generalInfo!.communitySeedBankIds =
-        selecetedCommunitySeedBanks.map((element) => element.id!).toList();
+        // selecetedCommunitySeedBanks.map((element) => element.id!).toList();
     currentFarmer.value.data!.generalInfo!.farmerType =
         selectedRegistrationType.value.value;
     currentFarmer.value.data!.generalInfo!.phoneNumber =
@@ -236,7 +236,7 @@ class FarmerRegistrationController extends GetxController {
           selectedGroup.value = SelectionPopupModel(title: "");
           selectedVillage.value = SelectionPopupModel(title: "");
           selectedIdentity.value = SelectionPopupModel(title: "");
-          selecetedCommunitySeedBanks.value = [];
+          // selecetedCommunitySeedBanks.value = [];
           ownSmartPhone.value = false;
           farmerPhoneController.text = "";
           dateController.text = "";
@@ -646,10 +646,10 @@ class FarmerRegistrationController extends GetxController {
   }
 
   void setMultipleSelectionRequirementsList() {
-    areaOfOperationList.clear();
-    areaOfOperationList.value = (dashboardResponse.value.villages ?? [])
-        .map((order) => MultiSelectItem<Villages>(order, order.name.toString()))
-        .toList();
+    // areaOfOperationList.clear();
+    // areaOfOperationList.value = (dashboardResponse.value.villages ?? [])
+    //     .map((order) => MultiSelectItem<Villages>(order, order.name.toString()))
+    //     .toList();
   }
 
 
@@ -672,39 +672,39 @@ class FarmerRegistrationController extends GetxController {
 
   void setDropdownsLists() {
     selectedVillage.value = SelectionPopupModel(title: "");
-    villagesDropdownList.value = dashboardResponse.value.villages != null
-        ? dashboardResponse.value.villages!
-            .map<SelectionPopupModel>((Villages value) {
-            return SelectionPopupModel(
-              id: value.id,
-              value: value,
-              title: value.name.toString(),
-            );
-          }).toList()
-        : [];
+    // villagesDropdownList.value = dashboardResponse.value.villages != null
+    //     ? dashboardResponse.value.villages!
+    //         .map<SelectionPopupModel>((Villages value) {
+    //         return SelectionPopupModel(
+    //           id: value.id,
+    //           value: value,
+    //           title: value.name.toString(),
+    //         );
+    //       }).toList()
+    //     : [];
 
     selectedGroup.value = SelectionPopupModel(title: "");
     selectedIdentity.value = SelectionPopupModel(title: "");
-    groupsDropdownList.value = dashboardResponse.value.groups != null
-        ? dashboardResponse.value.groups!
-            .map<SelectionPopupModel>((Villages value) {
-            return SelectionPopupModel(
-              id: value.id,
-              value: value,
-              title: value.name.toString(),
-            );
-          }).toList()
-        : [];
-    identitysDropdownList.value = dashboardResponse.value.identity != null
-        ? dashboardResponse.value.identity!
-            .map<SelectionPopupModel>((Identity value) {
-            return SelectionPopupModel(
-              id: value.id,
-              value: value,
-              title: value.name.toString(),
-            );
-          }).toList()
-        : [];
+    // groupsDropdownList.value = dashboardResponse.value.groups != null
+    //     ? dashboardResponse.value.groups!
+    //         .map<SelectionPopupModel>((Villages value) {
+    //         return SelectionPopupModel(
+    //           id: value.id,
+    //           value: value,
+    //           title: value.name.toString(),
+    //         );
+    //       }).toList()
+    //     : [];
+    // identitysDropdownList.value = dashboardResponse.value.identity != null
+    //     ? dashboardResponse.value.identity!
+    //         .map<SelectionPopupModel>((Identity value) {
+    //         return SelectionPopupModel(
+    //           id: value.id,
+    //           value: value,
+    //           title: value.name.toString(),
+    //         );
+    //       }).toList()
+    //     : [];
   }
 }
 

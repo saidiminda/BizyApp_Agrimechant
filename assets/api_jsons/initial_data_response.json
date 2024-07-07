@@ -1,0 +1,240 @@
+{
+    "crops": [
+        {
+            "name": "Mahindi",
+            "id": 1
+        },
+        {
+            "name": "Maharage",
+            "id": 2
+        },
+        {
+            "name": "Korosho",
+            "id": 3
+        },
+        {
+            "name": "Kunde",
+            "id": 4
+        },
+        {
+            "name": "Mbaazi",
+            "id": 5
+        },
+        {
+            "name": "Ufuta",
+            "id": 6
+        },
+        {
+            "name": "Alizeti",
+            "id": 7
+        }
+    ],
+    "villages": [
+        {
+            "name": "MPETA",
+            "id": 1
+        },
+        {
+            "name": "Kijiji Kipya",
+            "id": 3
+        }
+    ],
+    "regions": [
+        {
+            "name": "MTWARA",
+            "id": 1
+        },
+        {
+            "name": "PWANI",
+            "id": 2
+        },
+        {
+            "name": "ARUSHA",
+            "id": 3
+        },
+        {
+            "name": "MOROGORO",
+            "id": 4
+        }
+    ],
+    "questionnaires": [
+        {
+            "name": "Input Supplier & Equipment Provider Questionnaire",
+            "id": 1
+        },
+        {
+            "name": "Producers & Aggregators Questionnaire",
+            "id": 2
+        },
+        {
+            "name": "Logistics & Warehousing Questionnaire",
+            "id": 3
+        }
+    ],
+    "educationLevels": [
+        {
+            "name": "No formal education",
+            "id": 1
+        },
+        {
+            "name": "Primary/JHS",
+            "id": 2
+        },
+        {
+            "name": "High Sch./Voc./Tech.",
+            "id": 3
+        },
+        {
+            "name": "Univ./Polyt./Training",
+            "id": 4
+        }
+    ],
+    "businessType": [
+        {
+            "name": "Limited Liability",
+            "id": 1
+        },
+        {
+            "name": "Public Enterprise",
+            "id": 2
+        },
+        {
+            "name": "Sole Proprietorship",
+            "id": 3
+        },
+        {
+            "name": "Association/Cooperative",
+            "id": 4
+        },
+        {
+            "name": "Partnership",
+            "id": 5
+        },
+        {
+            "name": "Not Registered",
+            "id": 6
+        },
+        {
+            "name": "Others",
+            "id": 7
+        }
+    ],
+    "valueChainActivities": [
+        {
+            "name": "Producer",
+            "id": 1
+        },
+        {
+            "name": "Aggregation",
+            "id": 2
+        },
+        {
+            "name": "Warehousing",
+            "id": 3
+        },
+        {
+            "name": "Processor",
+            "id": 4
+        },
+        {
+            "name": "Logistics",
+            "id": 5
+        },
+        {
+            "name": "Export",
+            "id": 6
+        }
+    ],
+    "difficulties": [
+        {
+            "name": "Price competition",
+            "id": 1
+        },
+        {
+            "name": "Logistics and warehousing challenges",
+            "id": 2
+        },
+        {
+            "name": "Limited domestic demand",
+            "id": 3
+        },
+        {
+            "name": "Limited international demand",
+            "id": 4
+        }
+    ],
+    "marketInformation": [
+        {
+            "name": "Farmer Based Organisations",
+            "id": 1
+        },
+        {
+            "name": "Exporter associations",
+            "id": 2
+        },
+        {
+            "name": "Trade Organisations",
+            "id": 3
+        },
+        {
+            "name": "Trade fairs",
+            "id": 4
+        },
+        {
+            "name": "Distributors",
+            "id": 5
+        }
+    ],
+    "typeOfEquipment": [
+        {
+            "name": "Agric. Chemicals",
+            "id": 1
+        },
+        {
+            "name": "Fertilizers",
+            "id": 2
+        },
+        {
+            "name": "Planting Materials",
+            "id": 3
+        },
+        {
+            "name": "Light Agric. Equip.",
+            "id": 4
+        },
+        {
+            "name": "Heavy Agric. Equip.",
+            "id": 5
+        },
+        {
+            "name": "Others",
+            "id": 6
+        }
+    ],
+    "sourceInputs": [
+        {
+            "name": "From West Africa (name)",
+            "id": 1
+        },
+        {
+            "name": "Local",
+            "id": 2
+        },
+        {
+            "name": "EU",
+            "id": 3
+        },
+        {
+            "name": "China",
+            "id": 4
+        },
+        {
+            "name": "e.Eastern Block",
+            "id": 5
+        },
+        {
+            "name": "Others",
+            "id": 6
+        }
+    ]
+}

@@ -20,17 +20,6 @@ class MemberOrdersRequestProvider extends GetConnect {
     return response.body;
   }
 
-  Future<Response> postMemberOrdersRequest(
-      MemberOrdersRequest memberordersrequest, String token) async {
-    timeout = const Duration(minutes: 5);
-    allowAutoSignedCert = true;
-    final response = await post(
-        apiBaseUrl + endStorePodApi, memberordersrequest.toJson(),
-        headers: {
-          "Authorization": "Bearer $token",
-        });
-    return response;
-  }
 
   Future<Response> postAutoQRCodesScanRequest(
       MemberOrdersRequest memberordersrequest, String token) async {

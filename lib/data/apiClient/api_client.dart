@@ -1,4 +1,5 @@
 import 'package:saidi_s_application3/core/app_export.dart';
+import 'package:saidi_s_application3/data/models/questionnaires_request_model.dart';
 
 import '../../core/utils/string_constant.dart';
 import '../models/apiModels/advisory_request_model.dart';
@@ -14,11 +15,10 @@ import '../models/apiModels/register_farmer_request_model.dart';
 import '../models/apiModels/store_comment_request_model.dart';
 
 class ApiClient extends GetConnect {
-   Future<Response> getDashboardResponse(int? id, String token) async {
+  Future<Response> getDashboardResponse(int? id, String token) async {
     timeout = const Duration(minutes: 5);
     allowAutoSignedCert = true;
-    final response =
-        await get(apiBaseUrl + endDashboardApi + id.toString(), headers: {
+    final response = await get(apiBaseUrl + endInitialDataApi, headers: {
       "Authorization": "Bearer $token",
     });
     return response;
@@ -35,12 +35,15 @@ class ApiClient extends GetConnect {
     return response;
   }
 
-  Future<Response> getListOfFarmerResponse(String token) async {
+  Future<Response> getListOfQuestionnaireResponses(
+      String token, String type) async {
     timeout = const Duration(minutes: 5);
     allowAutoSignedCert = true;
-    final response = await get("$apiBaseUrl$endFarmerListApi", headers: {
-      "Authorization": "Bearer $token",
-    });
+    final response = await get(
+        "$apiBaseUrl$endQuestionnaireResponsesListApi$type",
+        headers: {
+          "Authorization": "Bearer $token",
+        });
     return response;
   }
 
@@ -50,6 +53,18 @@ class ApiClient extends GetConnect {
     allowAutoSignedCert = true;
     final response = await post(
         "$apiBaseUrl$endSendFarmersApi", registerfarmerrequest.toJson(),
+        headers: {
+          "Authorization": "Bearer $token",
+        });
+    return response;
+  }
+
+  Future<Response> postSendQuestionnaireResponsesRequest(
+      QuestionnairesRequest registerfarmerrequest, String token) async {
+    timeout = const Duration(minutes: 5);
+    allowAutoSignedCert = true;
+    final response = await post("$apiBaseUrl$endSendQuestionnaireResponsesApi",
+        registerfarmerrequest.toJson(),
         headers: {
           "Authorization": "Bearer $token",
         });

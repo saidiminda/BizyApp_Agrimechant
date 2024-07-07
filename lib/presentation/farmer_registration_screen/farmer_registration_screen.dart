@@ -352,49 +352,49 @@ class FarmerRegistrationScreen extends GetWidget<FarmerRegistrationController> {
                             const SizedBox(
                               height: 16,
                             ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 28.h, right: 38.h),
-                              child: MultiSelectDialogField<CommunitySeedBanks>(
-                                initialValue:
-                                    controller.selecetedCommunitySeedBanks,
-                                searchable: true,
-                                items: controller.dashboardResponse.value
-                                            .communitySeedBanks !=
-                                        null
-                                    ? controller.dashboardResponse.value
-                                        .communitySeedBanks!
-                                        .map(
-                                          (e) => MultiSelectItem<
-                                                  CommunitySeedBanks>(
-                                              e, e.name.toString()),
-                                        )
-                                        .toList()
-                                    : [],
-                                cancelText: Text('cancel'.tr.toUpperCase()),
-                                confirmText: Text("save".tr.toUpperCase()),
-                                title: Text("selectCommunitySeedBank".tr,
-                                    style: theme.textTheme.titleSmall),
-                                selectedColor: const Color(0xff2bad4b),
-                                decoration: const BoxDecoration(
-                                  color: Colors.white,
-                                ),
-                                buttonIcon: const Icon(
-                                  Icons.add,
-                                  color: Color(0xff2bad4b),
-                                ),
-                                buttonText: Text(
-                                  'selectCommunitySeedBank'.tr,
-                                  style: theme.textTheme.titleSmall,
-                                  textHeightBehavior: TextHeightBehavior(
-                                      applyHeightToFirstAscent: false),
-                                  // softWrap: false,
-                                ),
-                                onConfirm: (results) {
-                                  controller.selecetedCommunitySeedBanks.value =
-                                      results;
-                                },
-                              ),
-                            ),
+                            // Padding(
+                            //   padding: EdgeInsets.only(left: 28.h, right: 38.h),
+                            //   child: MultiSelectDialogField<CommunitySeedBanks>(
+                            //     initialValue:
+                            //         controller.selecetedCommunitySeedBanks,
+                            //     searchable: true,
+                            //     items: controller.dashboardResponse.value
+                            //                 .communitySeedBanks !=
+                            //             null
+                            //         ? controller.dashboardResponse.value
+                            //             .communitySeedBanks!
+                            //             .map(
+                            //               (e) => MultiSelectItem<
+                            //                       CommunitySeedBanks>(
+                            //                   e, e.name.toString()),
+                            //             )
+                            //             .toList()
+                            //         : [],
+                            //     cancelText: Text('cancel'.tr.toUpperCase()),
+                            //     confirmText: Text("save".tr.toUpperCase()),
+                            //     title: Text("selectCommunitySeedBank".tr,
+                            //         style: theme.textTheme.titleSmall),
+                            //     selectedColor: const Color(0xff2bad4b),
+                            //     decoration: const BoxDecoration(
+                            //       color: Colors.white,
+                            //     ),
+                            //     buttonIcon: const Icon(
+                            //       Icons.add,
+                            //       color: Color(0xff2bad4b),
+                            //     ),
+                            //     buttonText: Text(
+                            //       'selectCommunitySeedBank'.tr,
+                            //       style: theme.textTheme.titleSmall,
+                            //       textHeightBehavior: TextHeightBehavior(
+                            //           applyHeightToFirstAscent: false),
+                            //       // softWrap: false,
+                            //     ),
+                            //     onConfirm: (results) {
+                            //       controller.selecetedCommunitySeedBanks.value =
+                            //           results;
+                            //     },
+                            //   ),
+                            // ),
                             const SizedBox(
                               height: 16,
                             ),
@@ -481,25 +481,25 @@ class FarmerRegistrationScreen extends GetWidget<FarmerRegistrationController> {
                           children: controller.farmInfos.map((farm) {
                             TextEditingController farmSizeController =
                                 TextEditingController();
-                            Rx<SelectionPopupModel> farmOwnership =
-                                SelectionPopupModel(title: "").obs;
-                            Rx<Villages> village = Villages().obs;
+                            // Rx<SelectionPopupModel> farmOwnership =
+                            //     SelectionPopupModel(title: "").obs;
+                            // Rx<Villages> village = Villages().obs;
 
-                            farmOwnership.value = controller.ownershipList
-                                .firstWhere(
-                                    (element) =>
-                                        element.value!.toLowerCase() ==
-                                        farm.ownership.toString().toLowerCase(),
-                                    orElse: () =>
-                                        SelectionPopupModel(title: ""));
-                            village.value =
-                                (controller.dashboardResponse.value.villages ??
-                                        [])
-                                    .firstWhere(
-                              (element) => element.id == farm.villageId,
-                              orElse: () => Villages(),
-                            );
-                            farmSizeController.text = farm.farmSize ?? "";
+                            // farmOwnership.value = controller.ownershipList
+                            //     .firstWhere(
+                            //         (element) =>
+                            //             element.value!.toLowerCase() ==
+                            //             farm.ownership.toString().toLowerCase(),
+                            //         orElse: () =>
+                            //             SelectionPopupModel(title: ""));
+                            // village.value =
+                            //     (controller.dashboardResponse.value.villages ??
+                            //             [])
+                            //         .firstWhere(
+                            //   (element) => element.id == farm.villageId,
+                            //   orElse: () => Villages(),
+                            // );
+                            // farmSizeController.text = farm.farmSize ?? "";
 
                             return ExpansionPanelRadio(
                                 value: farm,
@@ -592,55 +592,56 @@ class FarmerRegistrationScreen extends GetWidget<FarmerRegistrationController> {
                                       const SizedBox(
                                         height: 16,
                                       ),
-                                      MultiSelectDialogField<Villages>(
-                                        // chipDisplay:
-                                        //     MultiSelectChipDisplay.none(),
-                                        searchable: true,
-                                        items: controller.dashboardResponse
-                                                    .value.crops !=
-                                                null
-                                            ? controller
-                                                .dashboardResponse.value.crops!
-                                                .map(
-                                                  (e) =>
-                                                      MultiSelectItem<Villages>(
-                                                          e, e.name.toString()),
-                                                )
-                                                .toList()
-                                            : [],
-                                        cancelText:
-                                            Text('cancel'.tr.toUpperCase()),
-                                        confirmText:
-                                            Text("save".tr.toUpperCase()),
-                                        title: Text("Chagua Mazao"),
-                                        selectedColor: const Color(0xff2bad4b),
-                                        decoration: const BoxDecoration(
-                                          color: Colors.white,
-                                        ),
-                                        buttonIcon: const Icon(
-                                          Icons.add,
-                                          color: Color(0xff2bad4b),
-                                        ),
-                                        buttonText: const Text(
-                                          'Chagua Mazao',
-                                          style: TextStyle(
-                                            fontFamily: 'Montserrat',
-                                            fontSize: 16,
-                                            color: Color(0xff2d3c49),
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                          textHeightBehavior:
-                                              TextHeightBehavior(
-                                                  applyHeightToFirstAscent:
-                                                      false),
-                                          // softWrap: false,
-                                        ),
-                                        onConfirm: (results) {
-                                          farm.cropIds = results
-                                              .map((e) => e.id!)
-                                              .toList();
-                                        },
-                                      ),
+                                      // MultiSelectDialogField<Villages>(
+                                      //   // chipDisplay:
+                                      //   //     MultiSelectChipDisplay.none(),
+                                      //   searchable: true,
+                                      //   items: controller.dashboardResponse
+                                      //               .value.crops !=
+                                      //           null
+                                      //       ? controller
+                                      //           .dashboardResponse.value.crops!
+                                      //           .map(
+                                      //             (e) =>
+                                      //                 MultiSelectItem<Villages>(
+                                      //                     e, e.name.toString()),
+                                      //           )
+                                      //           .toList()
+                                      //       : [],
+                                      //   cancelText:
+                                      //       Text('cancel'.tr.toUpperCase()),
+                                      //   confirmText:
+                                      //       Text("save".tr.toUpperCase()),
+                                      //   title: Text("Chagua Mazao"),
+                                      //   selectedColor: const Color(0xff2bad4b),
+                                      //   decoration: const BoxDecoration(
+                                      //     color: Colors.white,
+                                      //   ),
+                                      //   buttonIcon: const Icon(
+                                      //     Icons.add,
+                                      //     color: Color(0xff2bad4b),
+                                      //   ),
+                                      //   buttonText: const Text(
+                                      //     'Chagua Mazao',
+                                      //     style: TextStyle(
+                                      //       fontFamily: 'Montserrat',
+                                      //       fontSize: 16,
+                                      //       color: Color(0xff2d3c49),
+                                      //       fontWeight: FontWeight.w500,
+                                      //     ),
+                                      //     textHeightBehavior:
+                                      //         TextHeightBehavior(
+                                      //             applyHeightToFirstAscent:
+                                      //                 false),
+                                      //     // softWrap: false,
+                                      //   ),
+                                      //   onConfirm: (results) {
+                                      //     farm.cropIds = results
+                                      //         .map((e) => e.id!)
+                                      //         .toList();
+                                      //   },
+                                      // ),
+                                     
                                       const SizedBox(
                                         height: 16,
                                       ),
@@ -655,21 +656,22 @@ class FarmerRegistrationScreen extends GetWidget<FarmerRegistrationController> {
                                         textHeightBehavior: TextHeightBehavior(
                                             applyHeightToFirstAscent: false),
                                       ),
-                                      CustomDropDown(
-                                        value: farmOwnership.value.value != null
-                                            ? farmOwnership.value
-                                            : null,
-                                        onChanged:
-                                            (SelectionPopupModel? value) {
-                                          if (value != null) {
-                                            controller.farmInfos
-                                                .elementAt(controller.farmInfos
-                                                    .indexOf(farm))
-                                                .ownership = value.value;
-                                          }
-                                        },
-                                        items: controller.ownershipList,
-                                      ),
+                                      // CustomDropDown(
+                                      //   value: farmOwnership.value.value != null
+                                      //       ? farmOwnership.value
+                                      //       : null,
+                                      //   onChanged:
+                                      //       (SelectionPopupModel? value) {
+                                      //     if (value != null) {
+                                      //       controller.farmInfos
+                                      //           .elementAt(controller.farmInfos
+                                      //               .indexOf(farm))
+                                      //           .ownership = value.value;
+                                      //     }
+                                      //   },
+                                      //   items: controller.ownershipList,
+                                      // ),
+                                     
                                       const SizedBox(
                                         height: 16,
                                       ),

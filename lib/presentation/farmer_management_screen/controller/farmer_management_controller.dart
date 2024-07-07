@@ -50,7 +50,8 @@ class FarmerManagementController extends GetxController {
     localRegisterFarmerRequest.value = await getFarmerLocalData();
     if (internetTest) {
       try {
-        final response = await ApiClient().getListOfFarmerResponse(token);
+        final response =
+            await ApiClient().getListOfQuestionnaireResponses(token,"");
         if (response.statusCode == 200) {
           // Get.back();
           RegisterFarmerRequest onlineFarmersResponse =

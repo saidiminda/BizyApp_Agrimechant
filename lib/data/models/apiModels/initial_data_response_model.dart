@@ -1,90 +1,148 @@
 class InitialDataResponse {
-  List<Villages>? villages;
-  List<Villages>? crops;
-  List<Villages>? groups;
-  List<CommunitySeedBanks>? communitySeedBanks;
-  List<Categories>? categories;
-  List<Identity>? identity;
+  List<Crops>? crops;
+  List<Crops>? villages;
+  List<Crops>? regions;
+  List<Crops>? questionnaires;
+  List<Crops>? educationLevels;
+  List<Crops>? businessType;
+  List<Crops>? valueChainActivities;
+  List<Crops>? difficulties;
+  List<Crops>? marketInformation;
+  List<Crops>? typeOfEquipment;
+  List<Crops>? sourceInputs;
 
   InitialDataResponse(
-      {this.villages,
-      this.crops,
-      this.groups,
-      this.communitySeedBanks,
-      this.categories,
-      this.identity});
+      {this.crops,
+      this.villages,
+      this.regions,
+      this.questionnaires,
+      this.educationLevels,
+      this.businessType,
+      this.valueChainActivities,
+      this.difficulties,
+      this.marketInformation,
+      this.typeOfEquipment,
+      this.sourceInputs});
 
   InitialDataResponse.fromJson(Map<String, dynamic> json) {
-    if (json['villages'] != null) {
-      villages = <Villages>[];
-      json['villages'].forEach((v) {
-        villages?.add(Villages.fromJson(v));
-      });
-    }
     if (json['crops'] != null) {
-      crops = <Villages>[];
+      crops = <Crops>[];
       json['crops'].forEach((v) {
-        crops?.add(Villages.fromJson(v));
+        crops?.add(Crops.fromJson(v));
       });
     }
-    if (json['groups'] != null) {
-      groups = <Villages>[];
-      json['groups'].forEach((v) {
-        groups?.add(Villages.fromJson(v));
+    if (json['villages'] != null) {
+      villages = <Crops>[];
+      json['villages'].forEach((v) {
+        villages?.add(Crops.fromJson(v));
       });
     }
-    if (json['community_seed_banks'] != null) {
-      communitySeedBanks = <CommunitySeedBanks>[];
-      json['community_seed_banks'].forEach((v) {
-        communitySeedBanks?.add(CommunitySeedBanks.fromJson(v));
+    if (json['regions'] != null) {
+      regions = <Crops>[];
+      json['regions'].forEach((v) {
+        regions?.add(Crops.fromJson(v));
       });
     }
-    if (json['categories'] != null) {
-      categories = <Categories>[];
-      json['categories'].forEach((v) {
-        categories?.add(Categories.fromJson(v));
+    if (json['questionnaires'] != null) {
+      questionnaires = <Crops>[];
+      json['questionnaires'].forEach((v) {
+        questionnaires?.add(Crops.fromJson(v));
       });
     }
-    if (json['identity'] != null) {
-      identity = <Identity>[];
-      json['identity'].forEach((v) {
-        identity?.add(Identity.fromJson(v));
+    if (json['educationLevels'] != null) {
+      educationLevels = <Crops>[];
+      json['educationLevels'].forEach((v) {
+        educationLevels?.add(Crops.fromJson(v));
+      });
+    }
+    if (json['businessType'] != null) {
+      businessType = <Crops>[];
+      json['businessType'].forEach((v) {
+        businessType?.add(Crops.fromJson(v));
+      });
+    }
+    if (json['valueChainActivities'] != null) {
+      valueChainActivities = <Crops>[];
+      json['valueChainActivities'].forEach((v) {
+        valueChainActivities?.add(Crops.fromJson(v));
+      });
+    }
+    if (json['difficulties'] != null) {
+      difficulties = <Crops>[];
+      json['difficulties'].forEach((v) {
+        difficulties?.add(Crops.fromJson(v));
+      });
+    }
+    if (json['marketInformation'] != null) {
+      marketInformation = <Crops>[];
+      json['marketInformation'].forEach((v) {
+        marketInformation?.add(Crops.fromJson(v));
+      });
+    }
+    if (json['typeOfEquipment'] != null) {
+      typeOfEquipment = <Crops>[];
+      json['typeOfEquipment'].forEach((v) {
+        typeOfEquipment?.add(Crops.fromJson(v));
+      });
+    }
+    if (json['sourceInputs'] != null) {
+      sourceInputs = <Crops>[];
+      json['sourceInputs'].forEach((v) {
+        sourceInputs?.add(Crops.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
-    if (villages != null) {
-      data['villages'] = villages?.map((v) => v.toJson()).toList();
-    }
     if (crops != null) {
       data['crops'] = crops?.map((v) => v.toJson()).toList();
     }
-    if (groups != null) {
-      data['groups'] = groups?.map((v) => v.toJson()).toList();
+    if (villages != null) {
+      data['villages'] = villages?.map((v) => v.toJson()).toList();
     }
-    if (communitySeedBanks != null) {
-      data['community_seed_banks'] =
-          communitySeedBanks?.map((v) => v.toJson()).toList();
+    if (regions != null) {
+      data['regions'] = regions?.map((v) => v.toJson()).toList();
     }
-    if (categories != null) {
-      data['categories'] = categories?.map((v) => v.toJson()).toList();
+    if (questionnaires != null) {
+      data['questionnaires'] = questionnaires?.map((v) => v.toJson()).toList();
     }
-    if (identity != null) {
-      data['identity'] = identity?.map((v) => v.toJson()).toList();
+    if (educationLevels != null) {
+      data['educationLevels'] =
+          educationLevels?.map((v) => v.toJson()).toList();
+    }
+    if (businessType != null) {
+      data['businessType'] = businessType?.map((v) => v.toJson()).toList();
+    }
+    if (valueChainActivities != null) {
+      data['valueChainActivities'] =
+          valueChainActivities?.map((v) => v.toJson()).toList();
+    }
+    if (difficulties != null) {
+      data['difficulties'] = difficulties?.map((v) => v.toJson()).toList();
+    }
+    if (marketInformation != null) {
+      data['marketInformation'] =
+          marketInformation?.map((v) => v.toJson()).toList();
+    }
+    if (typeOfEquipment != null) {
+      data['typeOfEquipment'] =
+          typeOfEquipment?.map((v) => v.toJson()).toList();
+    }
+    if (sourceInputs != null) {
+      data['sourceInputs'] = sourceInputs?.map((v) => v.toJson()).toList();
     }
     return data;
   }
 }
 
-class Villages {
+class Crops {
   String? name;
   int? id;
 
-  Villages({this.name, this.id});
+  Crops({this.name, this.id});
 
-  Villages.fromJson(Map<String, dynamic> json) {
+  Crops.fromJson(Map<String, dynamic> json) {
     name = json['name'];
     id = json['id'];
   }
@@ -93,131 +151,6 @@ class Villages {
     final data = <String, dynamic>{};
     data['name'] = name;
     data['id'] = id;
-    return data;
-  }
-}
-
-class CommunitySeedBanks {
-  int? id;
-  String? name;
-  int? villageId;
-  String? createdAt;
-  String? updatedAt;
-  dynamic deletedAt;
-
-  CommunitySeedBanks(
-      {this.id,
-      this.name,
-      this.villageId,
-      this.createdAt,
-      this.updatedAt,
-      this.deletedAt});
-
-  CommunitySeedBanks.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    name = json['name'];
-    villageId = json['village_id'];
-    createdAt = json['created_at'];
-    updatedAt = json['updated_at'];
-    deletedAt = json['deleted_at'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final data = <String, dynamic>{};
-    data['id'] = id;
-    data['name'] = name;
-    data['village_id'] = villageId;
-    data['created_at'] = createdAt;
-    data['updated_at'] = updatedAt;
-    data['deleted_at'] = deletedAt;
-    return data;
-  }
-}
-
-class Categories {
-  String? name;
-  int? id;
-  List<Tags>? tags;
-
-  Categories({this.name, this.id, this.tags});
-
-  Categories.fromJson(Map<String, dynamic> json) {
-    name = json['name'];
-    id = json['id'];
-    if (json['tags'] != null) {
-      tags = <Tags>[];
-      json['tags'].forEach((v) {
-        tags?.add(Tags.fromJson(v));
-      });
-    }
-  }
-
-  Map<String, dynamic> toJson() {
-    final data = <String, dynamic>{};
-    data['name'] = name;
-    data['id'] = id;
-    if (tags != null) {
-      data['tags'] = tags?.map((v) => v.toJson()).toList();
-    }
-    return data;
-  }
-}
-
-class Tags {
-  int? id;
-  String? name;
-  int? categoryId;
-  String? createdAt;
-  String? updatedAt;
-  dynamic deletedAt;
-
-  Tags(
-      {this.id,
-      this.name,
-      this.categoryId,
-      this.createdAt,
-      this.updatedAt,
-      this.deletedAt});
-
-  Tags.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    name = json['name'];
-    categoryId = json['category_id'];
-    createdAt = json['created_at'];
-    updatedAt = json['updated_at'];
-    deletedAt = json['deleted_at'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final data = <String, dynamic>{};
-    data['id'] = id;
-    data['name'] = name;
-    data['category_id'] = categoryId;
-    data['created_at'] = createdAt;
-    data['updated_at'] = updatedAt;
-    data['deleted_at'] = deletedAt;
-    return data;
-  }
-}
-
-class Identity {
-  int? id;
-  String? name;
-  String? validation;
-
-  Identity({this.id, this.name, this.validation});
-
-  Identity.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    name = json['name'];
-    validation = json['validation'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final data = <String, dynamic>{};
-    data['id'] = id;
-    data['name'] = name;
-    data['validation'] = validation;
     return data;
   }
 }

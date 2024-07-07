@@ -4,6 +4,7 @@ import 'package:saidi_s_application3/core/utils/size_utils.dart';
 import '../../core/utils/functions/global.dart';
 import '../../data/databases/shared_preferences_db.dart';
 import '../../data/models/apiModels/register_farmer_request_model.dart';
+import '../../data/models/questionnaires_request_model.dart';
 import '../../routes/app_routes.dart';
 import '../../theme/custom_button_style.dart';
 import '../../theme/custom_text_style.dart';
@@ -45,7 +46,7 @@ class ProducersManagementScreen
                           child: Column(children: [
                             Visibility(
                               visible: (controller.localRegisterFarmerRequest
-                                          .value.farmers ??
+                                          .value.questionnaireResponse ??
                                       [])
                                   .isNotEmpty,
                               child: Column(
@@ -78,7 +79,7 @@ class ProducersManagementScreen
                                           Padding(
                                             padding: EdgeInsets.all(4.0),
                                             child: Text(
-                                              'farmerName'.tr,
+                                              'name'.tr,
                                               style: TextStyle(
                                                 fontFamily: 'Montserrat',
                                                 fontSize: 10,
@@ -132,27 +133,27 @@ class ProducersManagementScreen
                                       defaultVerticalAlignment:
                                           TableCellVerticalAlignment.middle,
                                       children: <TableRow>[
-                                        for (Farmers item in controller
-                                                .localRegisterFarmerRequest
-                                                .value
-                                                .farmers ??
-                                            [])
+                                        for (QuestionnaireResponse item
+                                            in controller
+                                                    .localRegisterFarmerRequest
+                                                    .value
+                                                    .questionnaireResponse ??
+                                                [])
                                           TableRow(
                                             decoration: BoxDecoration(
                                               color: (controller.localRegisterFarmerRequest.value
-                                                                      .farmers ??
+                                                                      .questionnaireResponse ??
                                                                   [])
                                                               .indexOf(item) %
                                                           2 <
                                                       1
-                                                  ? theme.colorScheme
-                                                      .onErrorContainer
+                                                  ? Color(0xffe7fff9)
                                                   : Colors.transparent,
                                             ),
                                             children: <Widget>[
                                               Center(
                                                 child: Text(
-                                                  "${(controller.localRegisterFarmerRequest.value.farmers ?? []).indexOf(item) + 1}",
+                                                  "${(controller.localRegisterFarmerRequest.value.questionnaireResponse ?? []).indexOf(item) + 1}",
                                                   style: theme
                                                       .textTheme.titleSmall!
                                                       .copyWith(
@@ -161,10 +162,9 @@ class ProducersManagementScreen
                                                 ),
                                               ),
                                               Text(
-                                                ((item.data ?? Data())
-                                                            .generalInfo ??
-                                                        GeneralInfo())
-                                                    .name
+                                                (item.basicInformation ??
+                                                        BasicInformation())
+                                                    .nameOfEntity
                                                     .toString()
                                                     .toUpperCase(),
                                                 style: CustomTextStyles
@@ -178,7 +178,7 @@ class ProducersManagementScreen
                                                   padding:
                                                       const EdgeInsets.all(5.0),
                                                   child: Text(
-                                                    "${((item.data ?? Data()).generalInfo ?? GeneralInfo()).phoneNumber}",
+                                                    "${((item.basicInformation ?? BasicInformation()).contactPerson ?? ContactPerson()).phoneNo}",
                                                     style: CustomTextStyles
                                                         .titleMediumGray90016
                                                         .copyWith(
@@ -200,18 +200,19 @@ class ProducersManagementScreen
                                                           item1;
                                                       if (item1 ==
                                                           SampleItem.itemZero) {
-                                                        controller
-                                                            .showFamerBottomSheet(
-                                                                item);
+                                                        // controller
+                                                        //     .showFamerBottomSheet(
+                                                        //         item);
                                                       } else if (item1 ==
                                                           SampleItem.itemOne) {
                                                         Get.toNamed(
                                                                 AppRoutes
-                                                                    .farmerRegistrationScreen,
+                                                                    .producersRegistrationScreen,
                                                                 arguments: {
                                                               "type": item
                                                                   .registrationStatus,
-                                                              "farmer": item
+                                                              "questionnair":
+                                                                  item
                                                             })!
                                                             .then((value) {
                                                           controller
@@ -224,7 +225,7 @@ class ProducersManagementScreen
                                                           Get.defaultDialog(
                                                             title: "Thibitisha",
                                                             middleText:
-                                                                "Unahuakika unataka kufuta taarifa za ${item.data!.generalInfo!.name} mwenye namba ${item.data!.generalInfo!.wallet}",
+                                                                "Unahuakika unataka kufuta taarifa za ${item.basicInformation!.nameOfEntity}",
                                                             middleTextStyle:
                                                                 const TextStyle(
                                                                     color: Colors
@@ -242,15 +243,15 @@ class ProducersManagementScreen
                                                               controller
                                                                   .localRegisterFarmerRequest
                                                                   .value
-                                                                  .farmers!
+                                                                  .questionnaireResponse!
                                                                   .remove(item);
                                                               controller
                                                                   .localRegisterFarmerRequest
                                                                   .refresh();
-                                                              setFarmerLocalData(
-                                                                  controller
-                                                                      .localRegisterFarmerRequest
-                                                                      .value);
+                                                              // setFarmerLocalData(
+                                                              //     controller
+                                                              //         .localRegisterFarmerRequest
+                                                              //         .value);
                                                               Get.back();
                                                             },
                                                           );
