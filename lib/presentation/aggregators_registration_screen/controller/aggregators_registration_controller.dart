@@ -11,14 +11,13 @@ import '../../../data/models/apiModels/initial_data_response_model.dart';
 import '../../../data/models/apiModels/profile_response_model.dart';
 import '../../../data/models/questionnaires_request_model.dart';
 import '../../../data/models/selectionPopupModel/selection_popup_model.dart';
-import '../../service_provider_tab/models/service_provider_tab_model.dart';
 
 /// A controller class for the FarmerRegistrationScreen.
 ///
 /// This class manages the state of the FarmerRegistrationScreen, including the
 /// current farmerRegistrationModelObj
 class AggregatorsRegistrationController extends GetxController {
-    String regType = Get.arguments["type"];
+  String regType = Get.arguments["type"];
   QuestionnaireResponse? offlineFarmer = Get.arguments["questionnair"];
   RxBool edit = false.obs;
   TextEditingController jinaController = TextEditingController();
@@ -34,17 +33,6 @@ class AggregatorsRegistrationController extends GetxController {
   TextEditingController majinakamiliController = TextEditingController();
 
   TextEditingController anwaniController = TextEditingController();
-
-  Rx<ServiceProviderTabModel> iphone14PlusSixModelObj =
-      ServiceProviderTabModel().obs;
-
-  SelectionPopupModel? selectedDropDownValue;
-
-  SelectionPopupModel? selectedDropDownValue1;
-
-  SelectionPopupModel? selectedDropDownValue2;
-
-  SelectionPopupModel? selectedDropDownValue3;
 
   TextEditingController otherValueChainsDoYouOperateInController =
       TextEditingController();
@@ -123,6 +111,14 @@ class AggregatorsRegistrationController extends GetxController {
   RxList<SelectionPopupModel> otherValueChainsDropdownList =
       <SelectionPopupModel>[].obs;
 
+  Rx<SelectionPopupModel> selectedDifficulties =
+      SelectionPopupModel(title: "").obs;
+  RxList<SelectionPopupModel> difficultiesDropdownList =
+      <SelectionPopupModel>[].obs;
+  Rx<SelectionPopupModel> selectedMarketInformation =
+      SelectionPopupModel(title: "").obs;
+  RxList<SelectionPopupModel> marketInformationDropdownList =
+      <SelectionPopupModel>[].obs;
   List<SelectionPopupModel> areYouCurrentlyAMemberOfAnyValueChainList = [
     SelectionPopupModel(title: "yes".tr, value: "YES"),
     SelectionPopupModel(title: "no".tr, value: "NO")
@@ -184,7 +180,7 @@ class AggregatorsRegistrationController extends GetxController {
   void onInit() {
     super.onInit();
     getDashoardDataOnline();
-     getFarmerOffline(offlineFarmer);
+    getFarmerOffline(offlineFarmer);
   }
 
   @override
@@ -197,46 +193,6 @@ class AggregatorsRegistrationController extends GetxController {
     nambariyatinController.dispose();
     majinakamiliController.dispose();
     anwaniController.dispose();
-  }
-
-  onSelected(dynamic value) {
-    for (var element in iphone14PlusSixModelObj.value.dropdownItemList.value) {
-      element.isSelected = false;
-      if (element.id == value.id) {
-        element.isSelected = true;
-      }
-    }
-    iphone14PlusSixModelObj.value.dropdownItemList.refresh();
-  }
-
-  onSelected1(dynamic value) {
-    for (var element in iphone14PlusSixModelObj.value.dropdownItemList1.value) {
-      element.isSelected = false;
-      if (element.id == value.id) {
-        element.isSelected = true;
-      }
-    }
-    iphone14PlusSixModelObj.value.dropdownItemList1.refresh();
-  }
-
-  onSelected2(dynamic value) {
-    for (var element in iphone14PlusSixModelObj.value.dropdownItemList2.value) {
-      element.isSelected = false;
-      if (element.id == value.id) {
-        element.isSelected = true;
-      }
-    }
-    iphone14PlusSixModelObj.value.dropdownItemList2.refresh();
-  }
-
-  onSelected3(dynamic value) {
-    for (var element in iphone14PlusSixModelObj.value.dropdownItemList3.value) {
-      element.isSelected = false;
-      if (element.id == value.id) {
-        element.isSelected = true;
-      }
-    }
-    iphone14PlusSixModelObj.value.dropdownItemList3.refresh();
   }
 
   void getDashoardDataOnline() async {
@@ -334,6 +290,31 @@ class AggregatorsRegistrationController extends GetxController {
             );
           }).toList()
         : [];
+
+    selectedDifficulties.value = SelectionPopupModel(title: "");
+    difficultiesDropdownList.value =
+        dashboardResponse.value.difficulties != null
+            ? dashboardResponse.value.difficulties!
+                .map<SelectionPopupModel>((Crops value) {
+                return SelectionPopupModel(
+                  id: value.id,
+                  value: value,
+                  title: value.name.toString(),
+                );
+              }).toList()
+            : [];
+    selectedMarketInformation.value = SelectionPopupModel(title: "");
+    marketInformationDropdownList.value =
+        dashboardResponse.value.marketInformation != null
+            ? dashboardResponse.value.marketInformation!
+                .map<SelectionPopupModel>((Crops value) {
+                return SelectionPopupModel(
+                  id: value.id,
+                  value: value,
+                  title: value.name.toString(),
+                );
+              }).toList()
+            : [];
   }
 
   void registerQuestionnaireResponse() async {
@@ -368,8 +349,13 @@ class AggregatorsRegistrationController extends GetxController {
           valueChainActivities: [selectedOtherValueChain.value.id ?? 0],
           entityPromote: [selectedHowDoesYourEntityPromoter.value.title],
           competitors: currentCompetitors,
-          difficulties: [],
-          marketInformations: [],
+          difficulties: selectedDifficulties.value.id != null
+              ? [selectedDifficulties.value.id!]
+              : [],
+          otherDifficulties: [],
+          marketInformations: selectedMarketInformation.value.id != null
+              ? [selectedMarketInformation.value.id!]
+              : null,
           annualCost: [annualCost.value],
           annualSales: annualSalesList,
           problemsRelatedPolicy: [],
@@ -506,7 +492,7 @@ class AggregatorsRegistrationController extends GetxController {
     }
   }
 
-    void getFarmerOffline(QuestionnaireResponse? farmer) async {
+  void getFarmerOffline(QuestionnaireResponse? farmer) async {
     if (farmer != null) {
       edit.value = true;
       currentQuestionnaireResponse.value = farmer;
@@ -584,11 +570,4 @@ class AggregatorsRegistrationController extends GetxController {
               : "";
     }
   }
-
 }
-
-// class DropDown {
-//   String? name;
-//   String? value;
-//   DropDown({this.name, this.value});
-// }

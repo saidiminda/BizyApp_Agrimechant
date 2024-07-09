@@ -1146,7 +1146,7 @@ class LogisticsRegistrationScreen
                         ),
                         SizedBox(height: 9.v),
                         for (String competitor
-                            in controller.currentDifficulties)
+                            in controller.currentCompetitors)
                           CustomTextFormField(
                             // controller: controller.nambariyatinController,
                             hintText: "competitor".tr,

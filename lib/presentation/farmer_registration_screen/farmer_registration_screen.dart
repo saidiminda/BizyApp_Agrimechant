@@ -2,12 +2,10 @@ import 'dart:convert';
 
 import 'package:flutter_holo_date_picker/flutter_holo_date_picker.dart';
 import 'package:get/get.dart';
-import 'package:multi_select_flutter/multi_select_flutter.dart';
 import 'package:saidi_s_application3/core/utils/size_utils.dart';
 
 import '../../core/utils/functions/global.dart';
 import '../../core/utils/image_constant.dart';
-import '../../data/models/apiModels/initial_data_response_model.dart';
 import '../../data/models/apiModels/register_farmer_request_model.dart';
 import '../../data/models/selectionPopupModel/selection_popup_model.dart';
 import '../../routes/app_routes.dart';

@@ -12,7 +12,6 @@ import '../../../data/databases/shared_preferences_db.dart';
 import '../../../data/models/apiModels/initial_data_response_model.dart';
 import '../../../data/models/apiModels/profile_response_model.dart';
 import '../../../data/models/selectionPopupModel/selection_popup_model.dart';
-import '../../service_provider_tab/models/service_provider_tab_model.dart';
 
 /// A controller class for the FarmerRegistrationScreen.
 ///
@@ -38,9 +37,6 @@ class ProducersRegistrationController extends GetxController {
 
   TextEditingController otherValueChainsDoYouOperateInController =
       TextEditingController();
-
-  Rx<ServiceProviderTabModel> iphone14PlusSixModelObj =
-      ServiceProviderTabModel().obs;
 
   SelectionPopupModel? selectedDropDownValue;
 
@@ -181,7 +177,14 @@ class ProducersRegistrationController extends GetxController {
     CropProductionAggregation(year: DateTime.now().year - 2),
     CropProductionAggregation(year: DateTime.now().year - 1)
   ].obs;
-
+  Rx<SelectionPopupModel> selectedDifficulties =
+      SelectionPopupModel(title: "").obs;
+  RxList<SelectionPopupModel> difficultiesDropdownList =
+      <SelectionPopupModel>[].obs;
+  Rx<SelectionPopupModel> selectedMarketInformation =
+      SelectionPopupModel(title: "").obs;
+  RxList<SelectionPopupModel> marketInformationDropdownList =
+      <SelectionPopupModel>[].obs;
   @override
   void onInit() {
     super.onInit();
@@ -199,46 +202,6 @@ class ProducersRegistrationController extends GetxController {
     nambariyatinController.dispose();
     majinakamiliController.dispose();
     anwaniController.dispose();
-  }
-
-  // onSelected(dynamic value) {
-  //   for (var element in iphone14PlusSixModelObj.value.dropdownItemList.value) {
-  //     element.isSelected = false;
-  //     if (element.id == value.id) {
-  //       element.isSelected = true;
-  //     }
-  //   }
-  //   iphone14PlusSixModelObj.value.dropdownItemList.refresh();
-  // }
-
-  onSelected1(dynamic value) {
-    for (var element in iphone14PlusSixModelObj.value.dropdownItemList1.value) {
-      element.isSelected = false;
-      if (element.id == value.id) {
-        element.isSelected = true;
-      }
-    }
-    iphone14PlusSixModelObj.value.dropdownItemList1.refresh();
-  }
-
-  onSelected2(dynamic value) {
-    for (var element in iphone14PlusSixModelObj.value.dropdownItemList2.value) {
-      element.isSelected = false;
-      if (element.id == value.id) {
-        element.isSelected = true;
-      }
-    }
-    iphone14PlusSixModelObj.value.dropdownItemList2.refresh();
-  }
-
-  onSelected3(dynamic value) {
-    for (var element in iphone14PlusSixModelObj.value.dropdownItemList3.value) {
-      element.isSelected = false;
-      if (element.id == value.id) {
-        element.isSelected = true;
-      }
-    }
-    iphone14PlusSixModelObj.value.dropdownItemList3.refresh();
   }
 
   void getDashoardDataOnline() async {
@@ -336,6 +299,30 @@ class ProducersRegistrationController extends GetxController {
             );
           }).toList()
         : [];
+    selectedDifficulties.value = SelectionPopupModel(title: "");
+    difficultiesDropdownList.value =
+        dashboardResponse.value.difficulties != null
+            ? dashboardResponse.value.difficulties!
+                .map<SelectionPopupModel>((Crops value) {
+                return SelectionPopupModel(
+                  id: value.id,
+                  value: value,
+                  title: value.name.toString(),
+                );
+              }).toList()
+            : [];
+            selectedMarketInformation.value = SelectionPopupModel(title: "");
+    marketInformationDropdownList.value =
+        dashboardResponse.value.marketInformation != null
+            ? dashboardResponse.value.marketInformation!
+                .map<SelectionPopupModel>((Crops value) {
+                return SelectionPopupModel(
+                  id: value.id,
+                  value: value,
+                  title: value.name.toString(),
+                );
+              }).toList()
+            : [];
   }
 
   void registerQuestionnaireResponse() async {
@@ -370,8 +357,13 @@ class ProducersRegistrationController extends GetxController {
           valueChainActivities: [selectedOtherValueChain.value.id ?? 0],
           entityPromote: [selectedHowDoesYourEntityPromoter.value.title],
           competitors: currentCompetitors,
-          difficulties: [],
-          marketInformations: [],
+          difficulties: selectedDifficulties.value.id != null
+              ? [selectedDifficulties.value.id!]
+              : [],
+          otherDifficulties: [],
+          marketInformations: selectedMarketInformation.value.id != null
+              ? [selectedMarketInformation.value.id!]
+              : null,
           annualCost: [annualCost.value],
           annualSales: annualSalesList,
           problemsRelatedPolicy: [],

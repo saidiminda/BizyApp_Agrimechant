@@ -933,8 +933,6 @@ class AggregatorsRegistrationScreen
                         ExpansionPanelList.radio(
                             elevation: 0,
                             children: controller.currentBuyers.map((buyer) {
-                              TextEditingController farmSizeController =
-                                  TextEditingController();
                               Rx<SelectionPopupModel> farmOwnership =
                                   SelectionPopupModel(title: "").obs;
 
@@ -1017,8 +1015,7 @@ class AggregatorsRegistrationScreen
                                           onChanged:
                                               (SelectionPopupModel? value) {
                                             if (value != null) {
-                                              buyer.region =
-                                                  value.id;
+                                              buyer.region = value.id;
                                             }
                                           },
                                           items: controller.regionList,
@@ -1096,18 +1093,31 @@ class AggregatorsRegistrationScreen
                             top: 22.v,
                           ),
                           child: Text(
-                            "whatDifficultiesDoYouFaceInAccessingMarketsWhatAreTheTop3DifficultiesYouFaceInAccessingClients"
-                                .tr,
+                            "whatDifficultiesDoYouFaceInAccessingMarkets".tr,
                             style: CustomTextStyles.titleSmallBluegray400,
                           ),
                         ),
                         SizedBox(height: 9.v),
-                        CustomTextFormField(
-                          // controller: controller.nambariyaController,
+                        CustomDropDown(
+                          icon: Icon(
+                            Icons.keyboard_arrow_down,
+                            color: appTheme.blueGray10002,
+                          ),
                           hintText:
-                              "whatDifficultiesDoYouFaceInAccessingMarketsWhatAreTheTop3DifficultiesYouFaceInAccessingClients"
-                                  .tr,
-                          hintStyle: theme.textTheme.titleSmall!,
+                              "whatDifficultiesDoYouFaceInAccessingMarkets".tr,
+                          value: controller.selectedDifficulties.value,
+                          items: controller.difficultiesDropdownList,
+                          onChanged: (value) {
+                            for (var element
+                                in controller.difficultiesDropdownList) {
+                              element.isSelected = false;
+                              if (element.id == value.id) {
+                                element.isSelected = true;
+                                controller.selectedDifficulties.value = value;
+                              }
+                            }
+                            controller.difficultiesDropdownList.refresh();
+                          },
                         ),
                         Padding(
                           padding: EdgeInsets.only(
@@ -1121,12 +1131,28 @@ class AggregatorsRegistrationScreen
                           ),
                         ),
                         SizedBox(height: 9.v),
-                        CustomTextFormField(
-                          // controller: controller.nambariyaController,
+                        CustomDropDown(
+                          icon: Icon(
+                            Icons.keyboard_arrow_down,
+                            color: appTheme.blueGray10002,
+                          ),
                           hintText:
                               "whatAreYourSourcesOfMarketInformationPleaseSelectAtLeastOne"
                                   .tr,
-                          hintStyle: theme.textTheme.titleSmall!,
+                          value: controller.selectedMarketInformation.value,
+                          items: controller.marketInformationDropdownList,
+                          onChanged: (value) {
+                            for (var element
+                                in controller.marketInformationDropdownList) {
+                              element.isSelected = false;
+                              if (element.id == value.id) {
+                                element.isSelected = true;
+                                controller.selectedMarketInformation.value =
+                                    value;
+                              }
+                            }
+                            controller.marketInformationDropdownList.refresh();
+                          },
                         ),
                         Padding(
                           padding: EdgeInsets.only(
@@ -1695,7 +1721,9 @@ class AggregatorsRegistrationScreen
                                 },
                                 defaultVerticalAlignment:
                                     TableCellVerticalAlignment.middle,
-                                children:controller.cropProductionAggregationList.map((order) {
+                                children: controller
+                                    .cropProductionAggregationList
+                                    .map((order) {
                                   return TableRow(
                                     children: <Widget>[
                                       Padding(
@@ -1705,7 +1733,9 @@ class AggregatorsRegistrationScreen
                                           color: const Color(0xffe7fff9),
                                           child: Center(
                                             child: Text(
-                                              order.year.toString().toUpperCase(),
+                                              order.year
+                                                  .toString()
+                                                  .toUpperCase(),
                                               style: const TextStyle(
                                                 fontFamily: 'Montserrat',
                                                 fontSize: 11,
@@ -1763,7 +1793,8 @@ class AggregatorsRegistrationScreen
                                             // controller: quantityController,
                                             keyboardType: TextInputType.number,
                                             onChanged: (value) {
-                                              order.production = int.tryParse(value);
+                                              order.production =
+                                                  int.tryParse(value);
                                             },
                                             validator: (value) {
                                               return;
@@ -1798,7 +1829,8 @@ class AggregatorsRegistrationScreen
                                             // controller: quantityController,
                                             keyboardType: TextInputType.number,
                                             onChanged: (value) {
-                                              order.aggregation = double.tryParse(value);
+                                              order.aggregation =
+                                                  double.tryParse(value);
                                             },
                                             validator: (value) {
                                               return;

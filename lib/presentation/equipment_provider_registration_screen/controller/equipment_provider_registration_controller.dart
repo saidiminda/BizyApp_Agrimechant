@@ -39,6 +39,14 @@ class EquipmentProviderRegistrationController extends GetxController {
       TextEditingController();
     Rx<QuestionnaireResponse> currentQuestionnaireResponse =
       QuestionnaireResponse().obs;
+        Rx<SelectionPopupModel> selectedDifficulties =
+      SelectionPopupModel(title: "").obs;
+  RxList<SelectionPopupModel> difficultiesDropdownList =
+      <SelectionPopupModel>[].obs;
+  Rx<SelectionPopupModel> selectedMarketInformation =
+      SelectionPopupModel(title: "").obs;
+  RxList<SelectionPopupModel> marketInformationDropdownList =
+      <SelectionPopupModel>[].obs;
   Rx<ProfileResponse> userProfile = ProfileResponse().obs;
   Rx<InitialDataResponse> dashboardResponse = InitialDataResponse().obs;
   List<SelectionPopupModel> genderList = [
@@ -283,6 +291,30 @@ class EquipmentProviderRegistrationController extends GetxController {
             );
           }).toList()
         : [];
+         selectedDifficulties.value = SelectionPopupModel(title: "");
+    difficultiesDropdownList.value =
+        dashboardResponse.value.difficulties != null
+            ? dashboardResponse.value.difficulties!
+                .map<SelectionPopupModel>((Crops value) {
+                return SelectionPopupModel(
+                  id: value.id,
+                  value: value,
+                  title: value.name.toString(),
+                );
+              }).toList()
+            : [];
+            selectedMarketInformation.value = SelectionPopupModel(title: "");
+    marketInformationDropdownList.value =
+        dashboardResponse.value.marketInformation != null
+            ? dashboardResponse.value.marketInformation!
+                .map<SelectionPopupModel>((Crops value) {
+                return SelectionPopupModel(
+                  id: value.id,
+                  value: value,
+                  title: value.name.toString(),
+                );
+              }).toList()
+            : [];
   }
 
   void registerQuestionnaireResponse() async {
@@ -317,8 +349,13 @@ class EquipmentProviderRegistrationController extends GetxController {
           valueChainActivities: [selectedOtherValueChain.value.id ?? 0],
           entityPromote: [selectedHowDoesYourEntityPromoter.value.title],
           competitors: currentCompetitors,
-          difficulties: [],
-          marketInformations: [],
+          difficulties: selectedDifficulties.value.id != null
+              ? [selectedDifficulties.value.id!]
+              : [],
+          otherDifficulties:[],
+          marketInformations: selectedMarketInformation.value.id != null
+              ? [selectedMarketInformation.value.id!]
+              : null,
           annualCost: [annualCost.value],
           annualSales: annualSalesList,
           problemsRelatedPolicy: [],

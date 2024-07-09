@@ -43,7 +43,7 @@ class InputSupplierManagementScreen
                           margin: EdgeInsets.only(bottom: 5.v),
                           padding: EdgeInsets.symmetric(horizontal: 3.h),
                           child: Column(children: [
-                              Visibility(
+                            Visibility(
                               visible: (controller.localRegisterFarmerRequest
                                           .value.questionnaireResponse ??
                                       [])
@@ -210,7 +210,8 @@ class InputSupplierManagementScreen
                                                                 arguments: {
                                                               "type": item
                                                                   .registrationStatus,
-                                                              "questionnair": item
+                                                              "questionnair":
+                                                                  item
                                                             })!
                                                             .then((value) {
                                                           controller
@@ -312,8 +313,8 @@ class InputSupplierManagementScreen
                                                                         'Informative',
                                                                     fontSize:
                                                                         18,
-                                                                    // color: Colors
-                                                                    //     .red,
+                                                                    color: Color(
+                                                                        0xff2d3c49),
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,

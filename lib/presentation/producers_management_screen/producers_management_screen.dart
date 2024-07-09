@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 import 'package:saidi_s_application3/core/utils/size_utils.dart';
 
 import '../../core/utils/functions/global.dart';
-import '../../data/databases/shared_preferences_db.dart';
 import '../../data/models/apiModels/register_farmer_request_model.dart';
 import '../../data/models/questionnaires_request_model.dart';
 import '../../routes/app_routes.dart';
@@ -314,8 +313,8 @@ class ProducersManagementScreen
                                                                         'Informative',
                                                                     fontSize:
                                                                         18,
-                                                                    // color: Colors
-                                                                    //     .red,
+                                                                    color: Color(
+                                                                        0xff2d3c49),
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,

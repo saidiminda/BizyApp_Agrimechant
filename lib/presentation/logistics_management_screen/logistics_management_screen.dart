@@ -13,7 +13,8 @@ import '../../widgets/topNavBar.dart';
 import 'controller/logistics_management_controller.dart';
 import 'package:flutter/material.dart';
 
-class LogisticsManagementScreen extends GetWidget<LogisticsManagementController> {
+class LogisticsManagementScreen
+    extends GetWidget<LogisticsManagementController> {
   const LogisticsManagementScreen({Key? key}) : super(key: key);
 
   @override
@@ -42,7 +43,7 @@ class LogisticsManagementScreen extends GetWidget<LogisticsManagementController>
                           margin: EdgeInsets.only(bottom: 5.v),
                           padding: EdgeInsets.symmetric(horizontal: 3.h),
                           child: Column(children: [
-                           Visibility(
+                            Visibility(
                               visible: (controller.localRegisterFarmerRequest
                                           .value.questionnaireResponse ??
                                       [])
@@ -209,7 +210,8 @@ class LogisticsManagementScreen extends GetWidget<LogisticsManagementController>
                                                                 arguments: {
                                                               "type": item
                                                                   .registrationStatus,
-                                                              "questionnair": item
+                                                              "questionnair":
+                                                                  item
                                                             })!
                                                             .then((value) {
                                                           controller
@@ -311,8 +313,8 @@ class LogisticsManagementScreen extends GetWidget<LogisticsManagementController>
                                                                         'Informative',
                                                                     fontSize:
                                                                         18,
-                                                                    // color: Colors
-                                                                    //     .red,
+                                                                    color: Color(
+                                                                        0xff2d3c49),
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,

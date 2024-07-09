@@ -1095,19 +1095,33 @@ class ProducersRegistrationScreen
                             top: 22.v,
                           ),
                           child: Text(
-                            "whatDifficultiesDoYouFaceInAccessingMarketsWhatAreTheTop3DifficultiesYouFaceInAccessingClients"
+                            "whatDifficultiesDoYouFaceInAccessingMarkets"
                                 .tr,
                             style: CustomTextStyles.titleSmallBluegray400,
                           ),
                         ),
                         SizedBox(height: 9.v),
-                        CustomTextFormField(
-                          // controller: controller.nambariyaController,
-                          hintText:
-                              "whatDifficultiesDoYouFaceInAccessingMarketsWhatAreTheTop3DifficultiesYouFaceInAccessingClients"
-                                  .tr,
-                          hintStyle: theme.textTheme.titleSmall!,
+                          CustomDropDown(
+                          icon: Icon(
+                            Icons.keyboard_arrow_down,
+                            color: appTheme.blueGray10002,
+                          ),
+                          hintText: "whatDifficultiesDoYouFaceInAccessingMarkets".tr,
+                          value: controller.selectedDifficulties.value,
+                          items: controller.difficultiesDropdownList,
+                          onChanged: (value) {
+                            for (var element
+                                in controller.difficultiesDropdownList) {
+                              element.isSelected = false;
+                              if (element.id == value.id) {
+                                element.isSelected = true;
+                                controller.selectedDifficulties.value = value;
+                              }
+                            }
+                            controller.difficultiesDropdownList.refresh();
+                          },
                         ),
+                       
                         Padding(
                           padding: EdgeInsets.only(
                             left: 5.h,
@@ -1120,12 +1134,28 @@ class ProducersRegistrationScreen
                           ),
                         ),
                         SizedBox(height: 9.v),
-                        CustomTextFormField(
-                          // controller: controller.nambariyaController,
+                        CustomDropDown(
+                          icon: Icon(
+                            Icons.keyboard_arrow_down,
+                            color: appTheme.blueGray10002,
+                          ),
                           hintText:
                               "whatAreYourSourcesOfMarketInformationPleaseSelectAtLeastOne"
                                   .tr,
-                          hintStyle: theme.textTheme.titleSmall!,
+                          value: controller.selectedMarketInformation.value,
+                          items: controller.marketInformationDropdownList,
+                          onChanged: (value) {
+                            for (var element
+                                in controller.marketInformationDropdownList) {
+                              element.isSelected = false;
+                              if (element.id == value.id) {
+                                element.isSelected = true;
+                                controller.selectedMarketInformation.value =
+                                    value;
+                              }
+                            }
+                            controller.marketInformationDropdownList.refresh();
+                          },
                         ),
                         Padding(
                           padding: EdgeInsets.only(

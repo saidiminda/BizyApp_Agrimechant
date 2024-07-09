@@ -935,8 +935,8 @@ class WarehouseRegistrationScreen
                             elevation: 0,
                             children:
                                 controller.currentCustomer.map((customer) {
-                              TextEditingController farmSizeController =
-                                  TextEditingController();
+                              // TextEditingController farmSizeController =
+                              //     TextEditingController();
                               Rx<SelectionPopupModel> farmOwnership =
                                   SelectionPopupModel(title: "").obs;
 
@@ -1146,7 +1146,7 @@ class WarehouseRegistrationScreen
                         ),
                         SizedBox(height: 9.v),
                         for (String competitor
-                            in controller.currentDifficulties)
+                            in controller.currentCompetitors)
                           CustomTextFormField(
                             // controller: controller.nambariyatinController,
                             hintText: "competitor".tr,

@@ -488,7 +488,8 @@ class EquipmentProviderRegistrationScreen
                                 },
                                 defaultVerticalAlignment:
                                     TableCellVerticalAlignment.middle,
-                                children:        controller.annualSalesList.map((sales) {
+                                children:
+                                    controller.annualSalesList.map((sales) {
                                   return TableRow(
                                     children: <Widget>[
                                       Padding(
@@ -553,7 +554,7 @@ class EquipmentProviderRegistrationScreen
                                     ],
                                   );
                                 }).toList(),
-                             ),
+                              ),
                             ),
                           ],
                         ),
@@ -627,7 +628,7 @@ class EquipmentProviderRegistrationScreen
                                   "laborCost".tr,
                                   "otherOperationalCost".tr
                                 ].map((order) {
-                                   return TableRow(
+                                  return TableRow(
                                     children: <Widget>[
                                       Padding(
                                         padding: const EdgeInsets.all(4.0),
@@ -886,7 +887,6 @@ class EquipmentProviderRegistrationScreen
                                     ],
                                   );
                                 }).toList(),
-                              
                               ),
                             ),
                           ],
@@ -915,7 +915,7 @@ class EquipmentProviderRegistrationScreen
                           onChanged: (value) {
                             controller.selectedHowDoesYourEntityPromoter.value =
                                 value;
-                          }, 
+                          },
                         ),
                         Padding(
                           padding: EdgeInsets.only(
@@ -1016,8 +1016,7 @@ class EquipmentProviderRegistrationScreen
                                           onChanged:
                                               (SelectionPopupModel? value) {
                                             if (value != null) {
-                                              buyer.region =
-                                                  value.id;
+                                              buyer.region = value.id;
                                             }
                                           },
                                           items: controller.regionList,
@@ -1095,19 +1094,33 @@ class EquipmentProviderRegistrationScreen
                             top: 22.v,
                           ),
                           child: Text(
-                            "whatDifficultiesDoYouFaceInAccessingMarketsWhatAreTheTop3DifficultiesYouFaceInAccessingClients"
-                                .tr,
+                            "whatDifficultiesDoYouFaceInAccessingMarkets".tr,
                             style: CustomTextStyles.titleSmallBluegray400,
                           ),
                         ),
                         SizedBox(height: 9.v),
-                        CustomTextFormField(
-                          // controller: controller.nambariyaController,
+                        CustomDropDown(
+                          icon: Icon(
+                            Icons.keyboard_arrow_down,
+                            color: appTheme.blueGray10002,
+                          ),
                           hintText:
-                              "whatDifficultiesDoYouFaceInAccessingMarketsWhatAreTheTop3DifficultiesYouFaceInAccessingClients"
-                                  .tr,
-                          hintStyle: theme.textTheme.titleSmall!,
+                              "whatDifficultiesDoYouFaceInAccessingMarkets".tr,
+                          value: controller.selectedDifficulties.value,
+                          items: controller.difficultiesDropdownList,
+                          onChanged: (value) {
+                            for (var element
+                                in controller.difficultiesDropdownList) {
+                              element.isSelected = false;
+                              if (element.id == value.id) {
+                                element.isSelected = true;
+                                controller.selectedDifficulties.value = value;
+                              }
+                            }
+                            controller.difficultiesDropdownList.refresh();
+                          },
                         ),
+
                         Padding(
                           padding: EdgeInsets.only(
                             left: 5.h,
@@ -1120,12 +1133,28 @@ class EquipmentProviderRegistrationScreen
                           ),
                         ),
                         SizedBox(height: 9.v),
-                        CustomTextFormField(
-                          // controller: controller.nambariyaController,
+                        CustomDropDown(
+                          icon: Icon(
+                            Icons.keyboard_arrow_down,
+                            color: appTheme.blueGray10002,
+                          ),
                           hintText:
                               "whatAreYourSourcesOfMarketInformationPleaseSelectAtLeastOne"
                                   .tr,
-                          hintStyle: theme.textTheme.titleSmall!,
+                          value: controller.selectedMarketInformation.value,
+                          items: controller.marketInformationDropdownList,
+                          onChanged: (value) {
+                            for (var element
+                                in controller.marketInformationDropdownList) {
+                              element.isSelected = false;
+                              if (element.id == value.id) {
+                                element.isSelected = true;
+                                controller.selectedMarketInformation.value =
+                                    value;
+                              }
+                            }
+                            controller.marketInformationDropdownList.refresh();
+                          },
                         ),
                         Padding(
                           padding: EdgeInsets.only(
@@ -1150,7 +1179,8 @@ class EquipmentProviderRegistrationScreen
                             validator: (value) {
                               return null;
                             },
-                          ),Padding(
+                          ),
+                        Padding(
                           padding: EdgeInsets.only(
                             left: 5.h,
                             top: 22.v,
@@ -1259,7 +1289,8 @@ class EquipmentProviderRegistrationScreen
                                 },
                                 defaultVerticalAlignment:
                                     TableCellVerticalAlignment.middle,
-                                children:  controller.financeUsedList.map((order) {
+                                children:
+                                    controller.financeUsedList.map((order) {
                                   return TableRow(
                                     children: <Widget>[
                                       Padding(
@@ -1325,7 +1356,6 @@ class EquipmentProviderRegistrationScreen
                                     ],
                                   );
                                 }).toList(),
-                              
                               ),
                             ),
                           ],
@@ -1350,7 +1380,7 @@ class EquipmentProviderRegistrationScreen
                           hintText:
                               "whatAreTheMajorProblemsRelatedToExistingPoliciesAndRegulationsAroundTheValueChainInWhichYouOperate"
                                   .tr,
-                           items: controller.majorProblemsList,
+                          items: controller.majorProblemsList,
                           onChanged: (value) {
                             controller.selectedMajorProblem.value = value;
                           },
@@ -1450,152 +1480,158 @@ class EquipmentProviderRegistrationScreen
                             Form(
                               // key: controller.sellingFormKey,
                               child: Table(
-                                columnWidths: const <int, TableColumnWidth>{
-                                  0: FixedColumnWidth(64),
-                                  1: FlexColumnWidth(),
-                                  2: FlexColumnWidth(),
-                                  3: FlexColumnWidth(),
-                                },
-                                defaultVerticalAlignment:
-                                    TableCellVerticalAlignment.middle,
-                                children: controller.annualProductionList
-                                    .map((order) {
-                                  return TableRow(
-                                    children: <Widget>[
-                                      Padding(
-                                        padding: const EdgeInsets.all(4.0),
-                                        child: Container(
-                                          height: 36.0,
-                                          color: const Color(0xffe7fff9),
-                                          child: Center(
-                                            child: Text(
-                                              order.year
-                                                  .toString()
-                                                  .toUpperCase(),
+                                  columnWidths: const <int, TableColumnWidth>{
+                                    0: FixedColumnWidth(64),
+                                    1: FlexColumnWidth(),
+                                    2: FlexColumnWidth(),
+                                    3: FlexColumnWidth(),
+                                  },
+                                  defaultVerticalAlignment:
+                                      TableCellVerticalAlignment.middle,
+                                  children: controller.annualProductionList
+                                      .map((order) {
+                                    return TableRow(
+                                      children: <Widget>[
+                                        Padding(
+                                          padding: const EdgeInsets.all(4.0),
+                                          child: Container(
+                                            height: 36.0,
+                                            color: const Color(0xffe7fff9),
+                                            child: Center(
+                                              child: Text(
+                                                order.year
+                                                    .toString()
+                                                    .toUpperCase(),
+                                                style: const TextStyle(
+                                                  fontFamily: 'Montserrat',
+                                                  fontSize: 11,
+                                                  color: Color(0xff4a4a4a),
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                                textHeightBehavior:
+                                                    const TextHeightBehavior(
+                                                        applyHeightToFirstAscent:
+                                                            false),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(4.0),
+                                          child: SizedBox(
+                                            height: 36,
+                                            child: TextFormField(
+                                              // controller: quantityController,
+                                              // keyboardType: TextInputType.number,
+                                              onChanged: (value) {
+                                                order.cultivationArea = value;
+                                              },
+                                              validator: (value) {
+                                                return;
+                                              },
+                                              cursorColor:
+                                                  const Color(0xff2bad4b),
                                               style: const TextStyle(
-                                                fontFamily: 'Montserrat',
-                                                fontSize: 11,
-                                                color: Color(0xff4a4a4a),
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                              textHeightBehavior:
-                                                  const TextHeightBehavior(
-                                                      applyHeightToFirstAscent:
-                                                          false),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(4.0),
-                                        child: SizedBox(
-                                          height: 36,
-                                          child: TextFormField(
-                                            // controller: quantityController,
-                                            // keyboardType: TextInputType.number,
-                                            onChanged: (value) {
-                                              order.cultivationArea = value;
-                                            },
-                                            validator: (value) {
-                                              return;
-                                            },
-                                            cursorColor:
-                                                const Color(0xff2bad4b),
-                                            style: const TextStyle(
-                                                letterSpacing: 0.1,
-                                                color: Color(0xff4a4a4a)),
-                                            decoration: const InputDecoration(
-                                              filled: true,
-                                              fillColor: Color(0xffe7fff9),
-                                              enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    width: 1,
-                                                    color: Color(0xff2bad4b)),
-                                              ),
-                                              focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    width: 1,
-                                                    color: Color(0xff2bad4b)),
+                                                  letterSpacing: 0.1,
+                                                  color: Color(0xff4a4a4a)),
+                                              decoration: const InputDecoration(
+                                                filled: true,
+                                                fillColor: Color(0xffe7fff9),
+                                                enabledBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                      width: 1,
+                                                      color: Color(0xff2bad4b)),
+                                                ),
+                                                focusedBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                      width: 1,
+                                                      color: Color(0xff2bad4b)),
+                                                ),
                                               ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(4.0),
-                                        child: SizedBox(
-                                          height: 36,
-                                          child: TextFormField(
-                                            // controller: quantityController,
-                                            // keyboardType: TextInputType.number,
-                                            onChanged: (value) {
-                                              order.measure = value;
-                                            },
-                                            validator: (value) {
-                                              return;
-                                            },
-                                            cursorColor:
-                                                const Color(0xff2bad4b),
-                                            style: const TextStyle(
-                                                letterSpacing: 0.1,
-                                                color: Color(0xff4a4a4a)),
-                                            decoration: const InputDecoration(
-                                              filled: true,
-                                              fillColor: Color(0xffe7fff9),
-                                              enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    width: 1,
-                                                    color: Color(0xff2bad4b)),
-                                              ),
-                                              focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    width: 1,
-                                                    color: Color(0xff2bad4b)),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(4.0),
-                                        child: SizedBox(
-                                          height: 36,
-                                          child: TextFormField(
-                                            // controller: quantityController,
-                                            keyboardType: TextInputType.number,
-                                            onChanged: (value) {
-                                              order.volumes =
-                                                  double.tryParse(value);
-                                            },
-                                            validator: (value) {
-                                              return;
-                                            },
-                                            cursorColor:
-                                                const Color(0xff2bad4b),
-                                            style: const TextStyle(
-                                                letterSpacing: 0.1,
-                                                color: Color(0xff4a4a4a)),
-                                            decoration: const InputDecoration(
-                                              filled: true,
-                                              fillColor: Color(0xffe7fff9),
-                                              enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    width: 1,
-                                                    color: Color(0xff2bad4b)),
-                                              ),
-                                              focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    width: 1,
-                                                    color: Color(0xff2bad4b)),
+                                        Padding(
+                                          padding: const EdgeInsets.all(4.0),
+                                          child: SizedBox(
+                                            height: 36,
+                                            child: TextFormField(
+                                              // controller: quantityController,
+                                              // keyboardType: TextInputType.number,
+                                              onChanged: (value) {
+                                                order.measure = value;
+                                              },
+                                              validator: (value) {
+                                                return;
+                                              },
+                                              cursorColor:
+                                                  const Color(0xff2bad4b),
+                                              style: const TextStyle(
+                                                  letterSpacing: 0.1,
+                                                  color: Color(0xff4a4a4a)),
+                                              decoration: const InputDecoration(
+                                                filled: true,
+                                                fillColor: Color(0xffe7fff9),
+                                                enabledBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                      width: 1,
+                                                      color: Color(0xff2bad4b)),
+                                                ),
+                                                focusedBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                      width: 1,
+                                                      color: Color(0xff2bad4b)),
+                                                ),
                                               ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    ],
-                                  );
-                                }).toList()
-                              ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(4.0),
+                                          child: SizedBox(
+                                            height: 36,
+                                            child: TextFormField(
+                                              // controller: quantityController,
+                                              keyboardType:
+                                                  TextInputType.number,
+                                              onChanged: (value) {
+                                                order.volumes =
+                                                    double.tryParse(value);
+                                              },
+                                              validator: (value) {
+                                                return;
+                                              },
+                                              cursorColor:
+                                                  const Color(0xff2bad4b),
+                                              style: const TextStyle(
+                                                  letterSpacing: 0.1,
+                                                  color: Color(0xff4a4a4a)),
+                                              decoration: const InputDecoration(
+                                                filled: true,
+                                                fillColor: Color(0xffe7fff9),
+                                                enabledBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                      width: 1,
+                                                      color: Color(0xff2bad4b)),
+                                                ),
+                                                focusedBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                      width: 1,
+                                                      color: Color(0xff2bad4b)),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    );
+                                  }).toList()),
                             ),
                           ],
                         ),
@@ -1831,7 +1867,8 @@ class EquipmentProviderRegistrationScreen
                                       ),
                                     ],
                                   );
-                                }).toList(),),
+                                }).toList(),
+                              ),
                             ),
                           ],
                         ),

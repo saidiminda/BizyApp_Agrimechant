@@ -878,7 +878,7 @@ final Map<String, String> enUs = {
   'measurement':'Measurement',
   'litres':'Litres',
   'volumesBought':'Volumes Bought',
-  'whatDifficultiesDoYouFaceInAccessingMarketsWhatAreTheTop3DifficultiesYouFaceInAccessingClients':'What difficulties do you face in accessing markets?What are the top 3 difficulties you face in accessing clients?',
+  'whatDifficultiesDoYouFaceInAccessingMarkets':'What difficulties do you face in accessing markets?',
   'whatAreYourSourcesOfMarketInformationPleaseSelectAtLeastOne':'What are your sources of market information? Please select at least one',
   'fromYourExperienceWwhoAreYourTop3Competitors':'From your experience, who are your top 3 competitors',
   'competitor':'Competitor',

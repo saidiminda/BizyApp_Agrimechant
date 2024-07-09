@@ -150,6 +150,7 @@ class LogisticsRegistrationController extends GetxController {
     LogisticsCrops()
   ].obs;
   RxList<String> currentDifficulties = <String>["", "", ""].obs;
+  RxList<String> currentCompetitors = <String>["", "", ""].obs;
   List<SelectionPopupModel> mensurementList = [
     SelectionPopupModel(title: "litres".tr, value: "LITRES"),
     SelectionPopupModel(title: "MT".tr, value: "MT"),
@@ -218,7 +219,14 @@ class LogisticsRegistrationController extends GetxController {
       activity: "OTHERS",
     )
   ].obs;
-
+  Rx<SelectionPopupModel> selectedDifficulties =
+      SelectionPopupModel(title: "").obs;
+  RxList<SelectionPopupModel> difficultiesDropdownList =
+      <SelectionPopupModel>[].obs;
+  Rx<SelectionPopupModel> selectedMarketInformation =
+      SelectionPopupModel(title: "").obs;
+  RxList<SelectionPopupModel> marketInformationDropdownList =
+      <SelectionPopupModel>[].obs;
   @override
   void onInit() {
     super.onInit();
@@ -333,6 +341,30 @@ class LogisticsRegistrationController extends GetxController {
             );
           }).toList()
         : [];
+         selectedDifficulties.value = SelectionPopupModel(title: "");
+    difficultiesDropdownList.value =
+        dashboardResponse.value.difficulties != null
+            ? dashboardResponse.value.difficulties!
+                .map<SelectionPopupModel>((Crops value) {
+                return SelectionPopupModel(
+                  id: value.id,
+                  value: value,
+                  title: value.name.toString(),
+                );
+              }).toList()
+            : [];
+            selectedMarketInformation.value = SelectionPopupModel(title: "");
+    marketInformationDropdownList.value =
+        dashboardResponse.value.marketInformation != null
+            ? dashboardResponse.value.marketInformation!
+                .map<SelectionPopupModel>((Crops value) {
+                return SelectionPopupModel(
+                  id: value.id,
+                  value: value,
+                  title: value.name.toString(),
+                );
+              }).toList()
+            : [];
   }
 
   void registerQuestionnaireResponse() async {
@@ -366,7 +398,7 @@ class LogisticsRegistrationController extends GetxController {
           businessRegistrationTypeId: selectedBusinessType.value.id,
           valueChainActivities: [selectedOtherValueChain.value.id ?? 0],
           entityPromote: [selectedHowDoesYourEntityPromoter.value.title],
-          competitors: [],
+          competitors: currentCompetitors,
           difficulties: [],
           otherDifficulties: currentDifficulties,
           marketInformations: [],
@@ -586,9 +618,3 @@ class LogisticsRegistrationController extends GetxController {
   }
 
 }
-
-// class DropDown {
-//   String? name;
-//   String? value;
-//   DropDown({this.name, this.value});
-// }

@@ -18,7 +18,7 @@ import '../../../data/models/selectionPopupModel/selection_popup_model.dart';
 /// This class manages the state of the FarmerRegistrationScreen, including the
 /// current farmerRegistrationModelObj
 class InputSupplierRegistrationController extends GetxController {
-    String regType = Get.arguments["type"];
+  String regType = Get.arguments["type"];
   QuestionnaireResponse? offlineFarmer = Get.arguments["questionnair"];
   RxBool edit = false.obs;
   TextEditingController jinaController = TextEditingController();
@@ -111,7 +111,14 @@ class InputSupplierRegistrationController extends GetxController {
       <SelectionPopupModel>[].obs;
   RxList<SelectionPopupModel> otherValueChainsDropdownList =
       <SelectionPopupModel>[].obs;
-
+  Rx<SelectionPopupModel> selectedDifficulties =
+      SelectionPopupModel(title: "").obs;
+  RxList<SelectionPopupModel> difficultiesDropdownList =
+      <SelectionPopupModel>[].obs;
+  Rx<SelectionPopupModel> selectedMarketInformation =
+      SelectionPopupModel(title: "").obs;
+  RxList<SelectionPopupModel> marketInformationDropdownList =
+      <SelectionPopupModel>[].obs;
   List<SelectionPopupModel> areYouCurrentlyAMemberOfAnyValueChainList = [
     SelectionPopupModel(title: "yes".tr, value: "YES"),
     SelectionPopupModel(title: "no".tr, value: "NO")
@@ -173,7 +180,7 @@ class InputSupplierRegistrationController extends GetxController {
   void onInit() {
     super.onInit();
     getDashoardDataOnline();
-     getFarmerOffline(offlineFarmer);
+    getFarmerOffline(offlineFarmer);
   }
 
   @override
@@ -283,6 +290,30 @@ class InputSupplierRegistrationController extends GetxController {
             );
           }).toList()
         : [];
+    selectedDifficulties.value = SelectionPopupModel(title: "");
+    difficultiesDropdownList.value =
+        dashboardResponse.value.difficulties != null
+            ? dashboardResponse.value.difficulties!
+                .map<SelectionPopupModel>((Crops value) {
+                return SelectionPopupModel(
+                  id: value.id,
+                  value: value,
+                  title: value.name.toString(),
+                );
+              }).toList()
+            : [];
+    selectedMarketInformation.value = SelectionPopupModel(title: "");
+    marketInformationDropdownList.value =
+        dashboardResponse.value.marketInformation != null
+            ? dashboardResponse.value.marketInformation!
+                .map<SelectionPopupModel>((Crops value) {
+                return SelectionPopupModel(
+                  id: value.id,
+                  value: value,
+                  title: value.name.toString(),
+                );
+              }).toList()
+            : [];
   }
 
   void registerQuestionnaireResponse() async {
@@ -317,8 +348,13 @@ class InputSupplierRegistrationController extends GetxController {
           valueChainActivities: [selectedOtherValueChain.value.id ?? 0],
           entityPromote: [selectedHowDoesYourEntityPromoter.value.title],
           competitors: currentCompetitors,
-          difficulties: [],
-          marketInformations: [],
+          difficulties: selectedDifficulties.value.id != null
+              ? [selectedDifficulties.value.id!]
+              : [],
+          otherDifficulties: [],
+          marketInformations: selectedMarketInformation.value.id != null
+              ? [selectedMarketInformation.value.id!]
+              : null,
           annualCost: [annualCost.value],
           annualSales: annualSalesList,
           problemsRelatedPolicy: [],
@@ -454,7 +490,8 @@ class InputSupplierRegistrationController extends GetxController {
           "Taarifa zimehifadhiwa kwenye simu, Nje ya mtandao", Colors.green);
     }
   }
-    void getFarmerOffline(QuestionnaireResponse? farmer) async {
+
+  void getFarmerOffline(QuestionnaireResponse? farmer) async {
     if (farmer != null) {
       edit.value = true;
       currentQuestionnaireResponse.value = farmer;
@@ -532,5 +569,4 @@ class InputSupplierRegistrationController extends GetxController {
               : "";
     }
   }
-
 }

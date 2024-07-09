@@ -313,8 +313,8 @@ class EquipmentProviderManagementScreen
                                                                         'Informative',
                                                                     fontSize:
                                                                         18,
-                                                                    // color: Colors
-                                                                    //     .red,
+                                                                    color: Color(
+                                                                        0xff2d3c49),
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,
