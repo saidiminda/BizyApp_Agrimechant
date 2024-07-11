@@ -34,6 +34,8 @@ class ProducersRegistrationController extends GetxController {
   TextEditingController majinakamiliController = TextEditingController();
 
   TextEditingController anwaniController = TextEditingController();
+  TextEditingController howDoYouEnsureThatTheRightQualityController =
+      TextEditingController();
 
   TextEditingController otherValueChainsDoYouOperateInController =
       TextEditingController();
@@ -188,8 +190,13 @@ class ProducersRegistrationController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    getDashoardDataOnline();
     getFarmerOffline(offlineFarmer);
+  }
+
+   @override
+  void onReady() {
+    super.onReady();
+    getDashoardDataOnline();
   }
 
   @override
@@ -205,6 +212,7 @@ class ProducersRegistrationController extends GetxController {
   }
 
   void getDashoardDataOnline() async {
+    loadingDialog();
     bool internetTest = await checkInternetConnection();
     String token = await getAccessToken();
     userProfile.value = await getprofileData();
@@ -212,6 +220,7 @@ class ProducersRegistrationController extends GetxController {
       final response = await ApiClient()
           .getDashboardResponse(userProfile.value.profile!.id, token);
       if (response.statusCode == 200) {
+        Get.back();
         if (response.body != null) {
           dashboardResponse.value = InitialDataResponse.fromJson(
               jsonDecode(jsonEncode(response.body)));
@@ -221,8 +230,13 @@ class ProducersRegistrationController extends GetxController {
       } else if (response.statusCode == 401) {
         logOut();
       } else {
+        Get.back();
         ResponseHandler().responseHandlerOnSinglePage(response);
       }
+    }else{
+      Get.back();
+      showErrorToast("noInternet".tr);
+    
     }
   }
 
@@ -383,6 +397,8 @@ class ProducersRegistrationController extends GetxController {
           sourceProductionInputs: [],
           logisticsActivities: [],
           logisticsCrops: [],
+          qualityOfInputsSuppliers:
+              howDoYouEnsureThatTheRightQualityController.text,
           productionAggregation: ProductionAggregation(
               production: annualProductionList, aggregation: []),
           annualTradingVolumes: []),

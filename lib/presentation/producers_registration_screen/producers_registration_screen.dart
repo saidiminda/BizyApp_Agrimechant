@@ -1095,18 +1095,18 @@ class ProducersRegistrationScreen
                             top: 22.v,
                           ),
                           child: Text(
-                            "whatDifficultiesDoYouFaceInAccessingMarkets"
-                                .tr,
+                            "whatDifficultiesDoYouFaceInAccessingMarkets".tr,
                             style: CustomTextStyles.titleSmallBluegray400,
                           ),
                         ),
                         SizedBox(height: 9.v),
-                          CustomDropDown(
+                        CustomDropDown(
                           icon: Icon(
                             Icons.keyboard_arrow_down,
                             color: appTheme.blueGray10002,
                           ),
-                          hintText: "whatDifficultiesDoYouFaceInAccessingMarkets".tr,
+                          hintText:
+                              "whatDifficultiesDoYouFaceInAccessingMarkets".tr,
                           value: controller.selectedDifficulties.value,
                           items: controller.difficultiesDropdownList,
                           onChanged: (value) {
@@ -1121,7 +1121,7 @@ class ProducersRegistrationScreen
                             controller.difficultiesDropdownList.refresh();
                           },
                         ),
-                       
+
                         Padding(
                           padding: EdgeInsets.only(
                             left: 5.h,
@@ -1909,6 +1909,7 @@ class ProducersRegistrationScreen
                           hintText:
                               "whatTrainingWillYouNeedForYourWorkAsAProducerAndAggregator"
                                   .tr,
+                          width: Get.width - 10,
                           items: controller.trainingList,
                           onChanged: (value) {
                             controller.selecetTraining.value = value;
@@ -1930,8 +1931,8 @@ class ProducersRegistrationScreen
                           height: 49.v,
                           width: 385.h,
                           child: TextFormField(
-                            // controller: quantityController,
-                            // keyboardType: TextInputType.number,
+                            controller: controller
+                                .howDoYouEnsureThatTheRightQualityController,
                             validator: (value) {
                               return;
                             },

@@ -18,7 +18,7 @@ import '../../../data/models/selectionPopupModel/selection_popup_model.dart';
 /// This class manages the state of the FarmerRegistrationScreen, including the
 /// current farmerRegistrationModelObj
 class EquipmentProviderRegistrationController extends GetxController {
-    String regType = Get.arguments["type"];
+  String regType = Get.arguments["type"];
   QuestionnaireResponse? offlineFarmer = Get.arguments["questionnair"];
   RxBool edit = false.obs;
   TextEditingController jinaController = TextEditingController();
@@ -35,11 +35,13 @@ class EquipmentProviderRegistrationController extends GetxController {
 
   TextEditingController anwaniController = TextEditingController();
 
-   TextEditingController otherValueChainsDoYouOperateInController =
+  TextEditingController otherValueChainsDoYouOperateInController =
       TextEditingController();
-    Rx<QuestionnaireResponse> currentQuestionnaireResponse =
+      TextEditingController howDoYouEnsureThatTheRightQualityController =
+      TextEditingController();
+  Rx<QuestionnaireResponse> currentQuestionnaireResponse =
       QuestionnaireResponse().obs;
-        Rx<SelectionPopupModel> selectedDifficulties =
+  Rx<SelectionPopupModel> selectedDifficulties =
       SelectionPopupModel(title: "").obs;
   RxList<SelectionPopupModel> difficultiesDropdownList =
       <SelectionPopupModel>[].obs;
@@ -120,7 +122,7 @@ class EquipmentProviderRegistrationController extends GetxController {
   RxList<SelectionPopupModel> otherValueChainsDropdownList =
       <SelectionPopupModel>[].obs;
 
-       List<SelectionPopupModel> areYouCurrentlyAMemberOfAnyValueChainList = [
+  List<SelectionPopupModel> areYouCurrentlyAMemberOfAnyValueChainList = [
     SelectionPopupModel(title: "yes".tr, value: "YES"),
     SelectionPopupModel(title: "no".tr, value: "NO")
   ];
@@ -165,23 +167,28 @@ class EquipmentProviderRegistrationController extends GetxController {
     FinanceUsed(title: "familyAndRelations".tr, name: "Family and Relations"),
     FinanceUsed(title: "grants".tr, name: "Grants")
   ].obs;
-   RxList<Production> annualProductionList = <Production>[
+  RxList<Production> annualProductionList = <Production>[
     Production(year: DateTime.now().year - 3),
     Production(year: DateTime.now().year - 2),
     Production(year: DateTime.now().year - 1)
   ].obs;
-   RxList<CropProductionAggregation> cropProductionAggregationList = <CropProductionAggregation>[
+  RxList<CropProductionAggregation> cropProductionAggregationList =
+      <CropProductionAggregation>[
     CropProductionAggregation(year: DateTime.now().year - 3),
     CropProductionAggregation(year: DateTime.now().year - 2),
     CropProductionAggregation(year: DateTime.now().year - 1)
   ].obs;
 
-
   @override
   void onInit() {
     super.onInit();
+    getFarmerOffline(offlineFarmer);
+  }
+
+  @override
+  void onReady() {
+    super.onReady();
     getDashoardDataOnline();
-     getFarmerOffline(offlineFarmer);
   }
 
   @override
@@ -196,7 +203,8 @@ class EquipmentProviderRegistrationController extends GetxController {
     anwaniController.dispose();
   }
 
-    void getDashoardDataOnline() async {
+  void getDashoardDataOnline() async {
+    loadingDialog();
     bool internetTest = await checkInternetConnection();
     String token = await getAccessToken();
     userProfile.value = await getprofileData();
@@ -204,6 +212,7 @@ class EquipmentProviderRegistrationController extends GetxController {
       final response = await ApiClient()
           .getDashboardResponse(userProfile.value.profile!.id, token);
       if (response.statusCode == 200) {
+        Get.back();
         if (response.body != null) {
           dashboardResponse.value = InitialDataResponse.fromJson(
               jsonDecode(jsonEncode(response.body)));
@@ -213,12 +222,17 @@ class EquipmentProviderRegistrationController extends GetxController {
       } else if (response.statusCode == 401) {
         logOut();
       } else {
+        Get.back();
         ResponseHandler().responseHandlerOnSinglePage(response);
       }
+    }else{
+      Get.back();
+      showErrorToast("noInternet".tr);
+    
     }
   }
 
-   void setDropdownsLists() {
+  void setDropdownsLists() {
     selectedVillage.value = SelectionPopupModel(title: "");
     villagesDropdownList.value = dashboardResponse.value.villages != null
         ? dashboardResponse.value.villages!
@@ -291,7 +305,7 @@ class EquipmentProviderRegistrationController extends GetxController {
             );
           }).toList()
         : [];
-         selectedDifficulties.value = SelectionPopupModel(title: "");
+    selectedDifficulties.value = SelectionPopupModel(title: "");
     difficultiesDropdownList.value =
         dashboardResponse.value.difficulties != null
             ? dashboardResponse.value.difficulties!
@@ -303,7 +317,7 @@ class EquipmentProviderRegistrationController extends GetxController {
                 );
               }).toList()
             : [];
-            selectedMarketInformation.value = SelectionPopupModel(title: "");
+    selectedMarketInformation.value = SelectionPopupModel(title: "");
     marketInformationDropdownList.value =
         dashboardResponse.value.marketInformation != null
             ? dashboardResponse.value.marketInformation!
@@ -344,7 +358,7 @@ class EquipmentProviderRegistrationController extends GetxController {
               gender: "",
               emailAddress: baruapepeyaController.text,
               phoneNo: nambariyaController.text)),
-       socioEconomic: SocioEconomic(
+      socioEconomic: SocioEconomic(
           businessRegistrationTypeId: selectedBusinessType.value.id,
           valueChainActivities: [selectedOtherValueChain.value.id ?? 0],
           entityPromote: [selectedHowDoesYourEntityPromoter.value.title],
@@ -352,7 +366,7 @@ class EquipmentProviderRegistrationController extends GetxController {
           difficulties: selectedDifficulties.value.id != null
               ? [selectedDifficulties.value.id!]
               : [],
-          otherDifficulties:[],
+          otherDifficulties: [],
           marketInformations: selectedMarketInformation.value.id != null
               ? [selectedMarketInformation.value.id!]
               : null,
@@ -375,8 +389,10 @@ class EquipmentProviderRegistrationController extends GetxController {
           sourceProductionInputs: [],
           logisticsActivities: [],
           logisticsCrops: [],
-          productionAggregation:
-              ProductionAggregation(production: annualProductionList, aggregation: []),
+          qualityOfInputsSuppliers:
+              howDoYouEnsureThatTheRightQualityController.text,
+          productionAggregation: ProductionAggregation(
+              production: annualProductionList, aggregation: []),
           annualTradingVolumes: []),
     ).obs;
     QuestionnairesRequest registerfarmerrequest = QuestionnairesRequest(
@@ -491,6 +507,7 @@ class EquipmentProviderRegistrationController extends GetxController {
           "Taarifa zimehifadhiwa kwenye simu, Nje ya mtandao", Colors.green);
     }
   }
+
   void getFarmerOffline(QuestionnaireResponse? farmer) async {
     if (farmer != null) {
       edit.value = true;
@@ -569,5 +586,4 @@ class EquipmentProviderRegistrationController extends GetxController {
               : "";
     }
   }
-
 }

@@ -1935,8 +1935,7 @@ class InputSupplierRegistrationScreen
                           height: 49.v,
                           width: 385.h,
                           child: TextFormField(
-                            // controller: quantityController,
-                            // keyboardType: TextInputType.number,
+                            controller:controller.howDoYouEnsureThatTheRightQualityController,
                             validator: (value) {
                               return;
                             },

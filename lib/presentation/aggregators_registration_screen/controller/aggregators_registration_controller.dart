@@ -33,6 +33,8 @@ class AggregatorsRegistrationController extends GetxController {
   TextEditingController majinakamiliController = TextEditingController();
 
   TextEditingController anwaniController = TextEditingController();
+  TextEditingController howDoYouEnsureThatTheRightQualityController =
+      TextEditingController();
 
   TextEditingController otherValueChainsDoYouOperateInController =
       TextEditingController();
@@ -179,8 +181,13 @@ class AggregatorsRegistrationController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    getDashoardDataOnline();
     getFarmerOffline(offlineFarmer);
+  }
+
+  @override
+  void onReady() {
+    super.onReady();
+    getDashoardDataOnline();
   }
 
   @override
@@ -196,6 +203,7 @@ class AggregatorsRegistrationController extends GetxController {
   }
 
   void getDashoardDataOnline() async {
+    loadingDialog();
     bool internetTest = await checkInternetConnection();
     String token = await getAccessToken();
     userProfile.value = await getprofileData();
@@ -203,6 +211,7 @@ class AggregatorsRegistrationController extends GetxController {
       final response = await ApiClient()
           .getDashboardResponse(userProfile.value.profile!.id, token);
       if (response.statusCode == 200) {
+        Get.back();
         if (response.body != null) {
           dashboardResponse.value = InitialDataResponse.fromJson(
               jsonDecode(jsonEncode(response.body)));
@@ -212,8 +221,12 @@ class AggregatorsRegistrationController extends GetxController {
       } else if (response.statusCode == 401) {
         logOut();
       } else {
+        Get.back();
         ResponseHandler().responseHandlerOnSinglePage(response);
       }
+    } else {
+      Get.back();
+      showErrorToast("noInternet".tr);
     }
   }
 
@@ -375,6 +388,8 @@ class AggregatorsRegistrationController extends GetxController {
           sourceProductionInputs: [],
           logisticsActivities: [],
           logisticsCrops: [],
+          qualityOfInputsSuppliers:
+              howDoYouEnsureThatTheRightQualityController.text,
           productionAggregation: ProductionAggregation(
               production: [], aggregation: annualProductionList),
           annualTradingVolumes: []),
