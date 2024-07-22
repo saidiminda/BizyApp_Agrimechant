@@ -82,37 +82,6 @@ class EquipmentProviderRegistrationScreen
                             controller.relevantCropsDropdownList.refresh();
                           },
                         ),
-                        SizedBox(height: 18.v),
-                        // Container(
-                        //   padding: EdgeInsets.symmetric(
-                        //     horizontal: 33.h,
-                        //     vertical: 12.v,
-                        //   ),
-                        //   decoration:
-                        //       AppDecoration.fillOnPrimaryContainer.copyWith(
-                        //     borderRadius: BorderRadiusStyle.roundedBorder7,
-                        //   ),
-                        //   child: Row(
-                        //     children: [
-                        //       CustomImageView(
-                        //         imagePath: ImageConstant.imgShield84433431,
-                        //         height: 40.adaptSize,
-                        //         width: 40.adaptSize,
-                        //       ),
-                        //       Padding(
-                        //         padding: EdgeInsets.only(
-                        //           left: 16.h,
-                        //           top: 9.v,
-                        //           bottom: 10.v,
-                        //         ),
-                        //         child: Text(
-                        //           "lbl_kampuni".tr.toUpperCase(),
-                        //           style: CustomTextStyles.titleMediumGray500,
-                        //         ),
-                        //       ),
-                        //     ],
-                        //   ),
-                        // ),
                         SizedBox(height: 20.v),
                         Align(
                           alignment: Alignment.center,
@@ -271,6 +240,51 @@ class EquipmentProviderRegistrationScreen
                             }
                           },
                         ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 5.h,
+                            top: 22.v,
+                          ),
+                          child: Text(
+                            "designation".tr,
+                            style: CustomTextStyles.titleSmallBluegray400,
+                          ),
+                        ),
+                        SizedBox(height: 9.v),
+                        CustomTextFormField(
+                          controller: controller.designationController,
+                          hintText: "designation".tr,
+                          hintStyle: theme.textTheme.titleSmall!,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 5.h,
+                            top: 22.v,
+                          ),
+                          child: Text(
+                            "selectGender".tr,
+                            style: CustomTextStyles.titleSmallBluegray400,
+                          ),
+                        ),
+                        SizedBox(height: 9.v),
+                        CustomDropDown(
+                          icon: Icon(
+                            Icons.keyboard_arrow_down,
+                            color: appTheme.blueGray10002,
+                          ),
+                          hintText: "selectGender".tr,
+                          items: controller.genderList,
+                          onChanged: (value) {
+                            for (var element in controller.genderList) {
+                              element.isSelected = false;
+                              if (element.id == value.id) {
+                                element.isSelected = true;
+                                controller.selectedGender.value = value;
+                              }
+                            }
+                          },
+                        ),
+
                         Padding(
                           padding: EdgeInsets.only(
                             left: 5.h,
@@ -624,7 +638,7 @@ class EquipmentProviderRegistrationScreen
                                 defaultVerticalAlignment:
                                     TableCellVerticalAlignment.middle,
                                 children: [
-                                  "inputCostIncludingFertilizer".tr,
+                                  "generalExpenses".tr,
                                   "laborCost".tr,
                                   "otherOperationalCost".tr
                                 ].map((order) {
@@ -658,8 +672,7 @@ class EquipmentProviderRegistrationScreen
                                             // controller: quantityController,
                                             keyboardType: TextInputType.number,
                                             onChanged: (value) {
-                                              if ("inputCostIncludingFertilizer"
-                                                      .tr ==
+                                              if ("generalExpenses".tr ==
                                                   order) {
                                                 controller.annualCost.value
                                                         .generalExpenses =
@@ -1395,11 +1408,94 @@ class EquipmentProviderRegistrationScreen
                         ),
                         Padding(
                           padding: EdgeInsets.only(
+                            left: 4.h,
+                            top: 21.v,
+                          ),
+                          child: Text(
+                            "whatInputsEquipmentDoYouDealInSpecificToTheValueChainPleaseConfirmNameAndBrand"
+                                .tr,
+                            style: CustomTextStyles.titleSmallBluegray400,
+                          ),
+                        ),
+                        SizedBox(height: 10.v),
+                        SizedBox(
+                          height: 49.v,
+                          width: 385.h,
+                          child: TextFormField(
+                            controller: controller
+                                .whatInputsEquipmentDoYouDealInSpecificToTheValueChainPleaseConfirmNameAndBrandController,
+                            validator: (value) {
+                              return;
+                            },
+                            cursorColor: const Color(0xff2bad4b),
+                            style: const TextStyle(
+                                letterSpacing: 0.1, color: Color(0xff4a4a4a)),
+                            decoration: const InputDecoration(
+                              filled: true,
+                              fillColor: Color(0xffe7fff9),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 1, color: Color(0xff2bad4b)),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 1, color: Color(0xff2bad4b)),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 10.v),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 4.h,
+                            top: 21.v,
+                          ),
+                          child: Text(
+                            "typeOfInputsAndOrEquipmentTheEntityDealsIn".tr,
+                            style: CustomTextStyles.titleSmallBluegray400,
+                          ),
+                        ),
+                        SizedBox(height: 10.v),
+                        CustomDropDown(
+                          icon: Icon(
+                            Icons.keyboard_arrow_down,
+                            color: appTheme.blueGray10002,
+                          ),
+                          items: controller.typeOfEquipmentList,
+                          onChanged: (value) {
+                            controller.selectedTypeOfEquipment.value = value;
+                          },
+                        ),
+                        SizedBox(height: 10.v),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 4.h,
+                            top: 21.v,
+                          ),
+                          child: Text(
+                            "whereIsTheSourceOfYourInputs".tr,
+                            style: CustomTextStyles.titleSmallBluegray400,
+                          ),
+                        ),
+                        SizedBox(height: 10.v),
+                        CustomDropDown(
+                          icon: Icon(
+                            Icons.keyboard_arrow_down,
+                            color: appTheme.blueGray10002,
+                          ),
+                          items: controller.sourceOfInputsList,
+                          onChanged: (value) {
+                            controller.selectedSourceOfInputs.value = value;
+                          },
+                        ),
+                        SizedBox(height: 10.v),
+                        Padding(
+                          padding: EdgeInsets.only(
                             left: 5.h,
                             top: 22.v,
                           ),
                           child: Text(
-                            "pleaseSpecifyTheTotalProductionAndOrAggregationCapacityVolumesOfYourEntityPerYearOverThePastThreeYears"
+                            "provideTheAnnualTradingVolumesOfYourEntityForThePastThree3Years"
                                 .tr,
                             style: CustomTextStyles.titleSmallBluegray400,
                           ),
@@ -1412,7 +1508,6 @@ class EquipmentProviderRegistrationScreen
                                 0: FixedColumnWidth(64),
                                 1: FlexColumnWidth(),
                                 2: FlexColumnWidth(),
-                                3: FlexColumnWidth(),
                               },
                               defaultVerticalAlignment:
                                   TableCellVerticalAlignment.middle,
@@ -1433,24 +1528,6 @@ class EquipmentProviderRegistrationScreen
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.all(4.0),
-                                      child: SizedBox(
-                                        width: 20.0,
-                                        height: 15.0,
-                                        child: Text(
-                                          'areaUnderCultivation'
-                                              .tr
-                                              .toUpperCase(),
-                                          style: const TextStyle(
-                                            fontFamily: 'Montserrat',
-                                            fontSize: 12,
-                                            color: Color(0xff2bad4b),
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(4.0),
                                       child: Text(
                                         'measurement'.tr.toUpperCase(),
                                         style: const TextStyle(
@@ -1464,7 +1541,7 @@ class EquipmentProviderRegistrationScreen
                                     Padding(
                                       padding: const EdgeInsets.all(4.0),
                                       child: Text(
-                                        'volumeCultivated'.tr.toUpperCase(),
+                                        'volume'.tr.toUpperCase(),
                                         style: const TextStyle(
                                           fontFamily: 'Montserrat',
                                           fontSize: 12,
@@ -1484,11 +1561,10 @@ class EquipmentProviderRegistrationScreen
                                     0: FixedColumnWidth(64),
                                     1: FlexColumnWidth(),
                                     2: FlexColumnWidth(),
-                                    3: FlexColumnWidth(),
                                   },
                                   defaultVerticalAlignment:
                                       TableCellVerticalAlignment.middle,
-                                  children: controller.annualProductionList
+                                  children: controller.annualTradingVolumesList
                                       .map((order) {
                                     return TableRow(
                                       children: <Widget>[
@@ -1520,73 +1596,15 @@ class EquipmentProviderRegistrationScreen
                                           padding: const EdgeInsets.all(4.0),
                                           child: SizedBox(
                                             height: 36,
-                                            child: TextFormField(
-                                              // controller: quantityController,
-                                              // keyboardType: TextInputType.number,
-                                              onChanged: (value) {
-                                                order.cultivationArea = value;
+                                            child: CustomDropDown(
+                                              contentPadding: EdgeInsets.all(5),
+                                              onChanged:
+                                                  (SelectionPopupModel? value) {
+                                                if (value != null) {
+                                                  order.measure = value.value;
+                                                }
                                               },
-                                              validator: (value) {
-                                                return;
-                                              },
-                                              cursorColor:
-                                                  const Color(0xff2bad4b),
-                                              style: const TextStyle(
-                                                  letterSpacing: 0.1,
-                                                  color: Color(0xff4a4a4a)),
-                                              decoration: const InputDecoration(
-                                                filled: true,
-                                                fillColor: Color(0xffe7fff9),
-                                                enabledBorder:
-                                                    OutlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                      width: 1,
-                                                      color: Color(0xff2bad4b)),
-                                                ),
-                                                focusedBorder:
-                                                    OutlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                      width: 1,
-                                                      color: Color(0xff2bad4b)),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(4.0),
-                                          child: SizedBox(
-                                            height: 36,
-                                            child: TextFormField(
-                                              // controller: quantityController,
-                                              // keyboardType: TextInputType.number,
-                                              onChanged: (value) {
-                                                order.measure = value;
-                                              },
-                                              validator: (value) {
-                                                return;
-                                              },
-                                              cursorColor:
-                                                  const Color(0xff2bad4b),
-                                              style: const TextStyle(
-                                                  letterSpacing: 0.1,
-                                                  color: Color(0xff4a4a4a)),
-                                              decoration: const InputDecoration(
-                                                filled: true,
-                                                fillColor: Color(0xffe7fff9),
-                                                enabledBorder:
-                                                    OutlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                      width: 1,
-                                                      color: Color(0xff2bad4b)),
-                                                ),
-                                                focusedBorder:
-                                                    OutlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                      width: 1,
-                                                      color: Color(0xff2bad4b)),
-                                                ),
-                                              ),
+                                              items: controller.mensurementList,
                                             ),
                                           ),
                                         ),
@@ -1635,243 +1653,6 @@ class EquipmentProviderRegistrationScreen
                             ),
                           ],
                         ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                            left: 5.h,
-                            top: 22.v,
-                          ),
-                          child: Text(
-                            "pleaseSelectAnyOtherCropYourEntityOperatesInAndSpecifyTheTotalProductionAndOrAggregationVolumeOverThePast3Years"
-                                .tr,
-                            style: CustomTextStyles.titleSmallBluegray400,
-                          ),
-                        ),
-                        SizedBox(height: 9.v),
-                        Column(
-                          children: [
-                            Table(
-                              columnWidths: const <int, TableColumnWidth>{
-                                0: FixedColumnWidth(64),
-                                1: FlexColumnWidth(),
-                                2: FlexColumnWidth(),
-                                3: FlexColumnWidth(),
-                              },
-                              defaultVerticalAlignment:
-                                  TableCellVerticalAlignment.middle,
-                              children: <TableRow>[
-                                TableRow(
-                                  children: <Widget>[
-                                    Padding(
-                                      padding: const EdgeInsets.all(4.0),
-                                      child: Text(
-                                        'year'.tr.toUpperCase(),
-                                        style: const TextStyle(
-                                          fontFamily: 'Montserrat',
-                                          fontSize: 12,
-                                          color: Color(0xff2bad4b),
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(4.0),
-                                      child: SizedBox(
-                                        width: 20.0,
-                                        height: 15.0,
-                                        child: Text(
-                                          'crops'.tr.toUpperCase(),
-                                          style: const TextStyle(
-                                            fontFamily: 'Montserrat',
-                                            fontSize: 12,
-                                            color: Color(0xff2bad4b),
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(4.0),
-                                      child: Text(
-                                        '${"production".tr} (MT)'.toUpperCase(),
-                                        style: const TextStyle(
-                                          fontFamily: 'Montserrat',
-                                          fontSize: 12,
-                                          color: Color(0xff2bad4b),
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(4.0),
-                                      child: Text(
-                                        '${"aggregation".tr} (MT)'
-                                            .toUpperCase(),
-                                        style: const TextStyle(
-                                          fontFamily: 'Montserrat',
-                                          fontSize: 12,
-                                          color: Color(0xff2bad4b),
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            Form(
-                              // key: controller.sellingFormKey,
-                              child: Table(
-                                columnWidths: const <int, TableColumnWidth>{
-                                  0: FixedColumnWidth(64),
-                                  1: FlexColumnWidth(),
-                                  2: FlexColumnWidth(),
-                                  3: FlexColumnWidth(),
-                                },
-                                defaultVerticalAlignment:
-                                    TableCellVerticalAlignment.middle,
-                                children: controller
-                                    .cropProductionAggregationList
-                                    .map((order) {
-                                  return TableRow(
-                                    children: <Widget>[
-                                      Padding(
-                                        padding: const EdgeInsets.all(4.0),
-                                        child: Container(
-                                          height: 36.0,
-                                          color: const Color(0xffe7fff9),
-                                          child: Center(
-                                            child: Text(
-                                              order.year
-                                                  .toString()
-                                                  .toUpperCase(),
-                                              style: const TextStyle(
-                                                fontFamily: 'Montserrat',
-                                                fontSize: 11,
-                                                color: Color(0xff4a4a4a),
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                              textHeightBehavior:
-                                                  const TextHeightBehavior(
-                                                      applyHeightToFirstAscent:
-                                                          false),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(4.0),
-                                        child: SizedBox(
-                                          height: 36,
-                                          child: TextFormField(
-                                            // controller: quantityController,
-                                            // keyboardType: TextInputType.number,
-                                            onChanged: (value) {
-                                              order.crops = [value];
-                                            },
-                                            validator: (value) {
-                                              return;
-                                            },
-                                            cursorColor:
-                                                const Color(0xff2bad4b),
-                                            style: const TextStyle(
-                                                letterSpacing: 0.1,
-                                                color: Color(0xff4a4a4a)),
-                                            decoration: const InputDecoration(
-                                              filled: true,
-                                              fillColor: Color(0xffe7fff9),
-                                              enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    width: 1,
-                                                    color: Color(0xff2bad4b)),
-                                              ),
-                                              focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    width: 1,
-                                                    color: Color(0xff2bad4b)),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(4.0),
-                                        child: SizedBox(
-                                          height: 36,
-                                          child: TextFormField(
-                                            // controller: quantityController,
-                                            keyboardType: TextInputType.number,
-                                            onChanged: (value) {
-                                              order.production =
-                                                  int.tryParse(value);
-                                            },
-                                            validator: (value) {
-                                              return;
-                                            },
-                                            cursorColor:
-                                                const Color(0xff2bad4b),
-                                            style: const TextStyle(
-                                                letterSpacing: 0.1,
-                                                color: Color(0xff4a4a4a)),
-                                            decoration: const InputDecoration(
-                                              filled: true,
-                                              fillColor: Color(0xffe7fff9),
-                                              enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    width: 1,
-                                                    color: Color(0xff2bad4b)),
-                                              ),
-                                              focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    width: 1,
-                                                    color: Color(0xff2bad4b)),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(4.0),
-                                        child: SizedBox(
-                                          height: 36,
-                                          child: TextFormField(
-                                            // controller: quantityController,
-                                            keyboardType: TextInputType.number,
-                                            onChanged: (value) {
-                                              order.aggregation =
-                                                  double.tryParse(value);
-                                            },
-                                            validator: (value) {
-                                              return;
-                                            },
-                                            cursorColor:
-                                                const Color(0xff2bad4b),
-                                            style: const TextStyle(
-                                                letterSpacing: 0.1,
-                                                color: Color(0xff4a4a4a)),
-                                            decoration: const InputDecoration(
-                                              filled: true,
-                                              fillColor: Color(0xffe7fff9),
-                                              enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    width: 1,
-                                                    color: Color(0xff2bad4b)),
-                                              ),
-                                              focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    width: 1,
-                                                    color: Color(0xff2bad4b)),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  );
-                                }).toList(),
-                              ),
-                            ),
-                          ],
-                        ),
 
                         Padding(
                           padding: EdgeInsets.only(
@@ -1879,7 +1660,8 @@ class EquipmentProviderRegistrationScreen
                             top: 22.v,
                           ),
                           child: Text(
-                            "whatIsTheSourceOfEnergyForTheWarehouse".tr,
+                            "doYouHaveStorageFacilityForYourInputsAndOrEquipment"
+                                .tr,
                             style: CustomTextStyles.titleSmallBluegray400,
                           ),
                         ),
@@ -1889,9 +1671,10 @@ class EquipmentProviderRegistrationScreen
                             Icons.keyboard_arrow_down,
                             color: appTheme.blueGray10002,
                           ),
-                          items: controller.sourceOfEnergyList,
+                          items: controller.yesNoList,
                           onChanged: (value) {
-                            controller.selectedSourceOfEnergy.value = value;
+                            controller.inputsStorageFacility.value.isYes =
+                                value.value;
                           },
                         ),
                         Padding(
@@ -1900,7 +1683,28 @@ class EquipmentProviderRegistrationScreen
                             top: 22.v,
                           ),
                           child: Text(
-                            "whatTrainingWillYouNeedForYourWorkAsAProducerAndAggregator"
+                            "sourceOfInputsAndOrEquipment".tr,
+                            style: CustomTextStyles.titleSmallBluegray400,
+                          ),
+                        ),
+                        SizedBox(height: 9.v),
+                        CustomDropDown(
+                          icon: Icon(
+                            Icons.keyboard_arrow_down,
+                            color: appTheme.blueGray10002,
+                          ),
+                          items: controller.sourceOfInputsList,
+                          onChanged: (value) {
+                            controller.selectedSourceOfInputs.value = value;
+                          },
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 5.h,
+                            top: 22.v,
+                          ),
+                          child: Text(
+                            "doYouOfferTechnicalAdviceToProducersOnWhatInputsAndOrEquipmentToUse"
                                 .tr,
                             style: CustomTextStyles.titleSmallBluegray400,
                           ),
@@ -1912,20 +1716,48 @@ class EquipmentProviderRegistrationScreen
                             color: appTheme.blueGray10002,
                           ),
                           hintText:
-                              "whatTrainingWillYouNeedForYourWorkAsAProducerAndAggregator"
+                              "doYouOfferTechnicalAdviceToProducersOnWhatInputsAndOrEquipmentToUse"
                                   .tr,
-                          items: controller.trainingList,
+                          items: controller.yesNoList,
                           onChanged: (value) {
-                            controller.selecetTraining.value = value;
+                            controller.technicalAdviceToProducers.value.isYes =
+                                value.value;
                           },
                         ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 5.h,
+                            top: 22.v,
+                          ),
+                          child: Text(
+                            "isThereASpecificTrainingAndOrRegulationNeededToEnhanceYourWorkAsAnInputEquipmentProvider"
+                                .tr,
+                            style: CustomTextStyles.titleSmallBluegray400,
+                          ),
+                        ),
+                        SizedBox(height: 9.v),
+                        CustomDropDown(
+                          icon: Icon(
+                            Icons.keyboard_arrow_down,
+                            color: appTheme.blueGray10002,
+                          ),
+                          hintText:
+                              "isThereASpecificTrainingAndOrRegulationNeededToEnhanceYourWorkAsAnInputEquipmentProvider"
+                                  .tr,
+                          items: controller.yesNoList,
+                          onChanged: (value) {
+                            controller.trainingRegulation.value.isYes =
+                                value.value;
+                          },
+                        ),
+
                         Padding(
                           padding: EdgeInsets.only(
                             left: 4.h,
                             top: 21.v,
                           ),
                           child: Text(
-                            "howDoYouEnsureThatTheRightQualityOfInputsAndOrRawMaterialsAreProvidedByYourSuppliers"
+                            "howDoYouEnsureThatTheRightQualityOfInputsAndOrEquipmentAreProvidedByYourSuppliers"
                                 .tr,
                             style: CustomTextStyles.titleSmallBluegray400,
                           ),
@@ -1935,7 +1767,8 @@ class EquipmentProviderRegistrationScreen
                           height: 49.v,
                           width: 385.h,
                           child: TextFormField(
-                            controller:controller.howDoYouEnsureThatTheRightQualityController,
+                            controller: controller
+                                .howDoYouEnsureThatTheRightQualityOfInputsAndOrEquipmentAreProvidedByYourSuppliersController,
                             validator: (value) {
                               return;
                             },
@@ -1956,6 +1789,180 @@ class EquipmentProviderRegistrationScreen
                             ),
                           ),
                         ),
+
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 4.h,
+                            top: 21.v,
+                          ),
+                          child: Text(
+                            "howDoYouEnsureThatTheQualityOfInputsAndOrEquipmentSuppliedToYourClientsAreOfTheRightTypeAndQuality"
+                                .tr,
+                            style: CustomTextStyles.titleSmallBluegray400,
+                          ),
+                        ),
+                        SizedBox(height: 10.v),
+                        SizedBox(
+                          height: 49.v,
+                          width: 385.h,
+                          child: TextFormField(
+                            controller: controller
+                                .howDoYouEnsureThatTheQualityOfInputsAndOrEquipmentSuppliedToYourClientsAreOfTheRightTypeAndQualityController,
+                            validator: (value) {
+                              return;
+                            },
+                            cursorColor: const Color(0xff2bad4b),
+                            style: const TextStyle(
+                                letterSpacing: 0.1, color: Color(0xff4a4a4a)),
+                            decoration: const InputDecoration(
+                              filled: true,
+                              fillColor: Color(0xffe7fff9),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 1, color: Color(0xff2bad4b)),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 1, color: Color(0xff2bad4b)),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 4.h,
+                            top: 21.v,
+                          ),
+                          child: Text(
+                            "doYouHaveAnyOfTheFollowingCertifications".tr,
+                            style: CustomTextStyles.titleSmallBluegray400,
+                          ),
+                        ),
+                        SizedBox(height: 10.v),
+                        CustomDropDown(
+                          icon: Icon(
+                            Icons.keyboard_arrow_down,
+                            color: appTheme.blueGray10002,
+                          ),
+                          items: controller.certificationsList,
+                          onChanged: (value) {
+                            // controller.selectedSourceOfEnergy.value = value;
+                          },
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 4.h,
+                            top: 21.v,
+                          ),
+                          child: Text(
+                            "howDoYouUnderstandBySustainability".tr,
+                            style: CustomTextStyles.titleSmallBluegray400,
+                          ),
+                        ),
+                        SizedBox(height: 10.v),
+                        SizedBox(
+                          height: 49.v,
+                          width: 385.h,
+                          child: TextFormField(
+                            controller: controller
+                                .howDoYouUnderstandBySustainabilityController,
+                            validator: (value) {
+                              return;
+                            },
+                            cursorColor: const Color(0xff2bad4b),
+                            style: const TextStyle(
+                                letterSpacing: 0.1, color: Color(0xff4a4a4a)),
+                            decoration: const InputDecoration(
+                              filled: true,
+                              fillColor: Color(0xffe7fff9),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 1, color: Color(0xff2bad4b)),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 1, color: Color(0xff2bad4b)),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 4.h,
+                            top: 21.v,
+                          ),
+                          child: Text(
+                            "hasClimateChangeAffectedYourBusinessIfYesExplainHow"
+                                .tr,
+                            style: CustomTextStyles.titleSmallBluegray400,
+                          ),
+                        ),
+                        SizedBox(height: 10.v),
+                        SizedBox(
+                          height: 49.v,
+                          width: 385.h,
+                          child: TextFormField(
+                            controller: controller
+                                .hasClimateChangeAffectedYourBusinessIfYesExplainHowController,
+                            validator: (value) {
+                              return;
+                            },
+                            cursorColor: const Color(0xff2bad4b),
+                            style: const TextStyle(
+                                letterSpacing: 0.1, color: Color(0xff4a4a4a)),
+                            decoration: const InputDecoration(
+                              filled: true,
+                              fillColor: Color(0xffe7fff9),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 1, color: Color(0xff2bad4b)),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 1, color: Color(0xff2bad4b)),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 4.h,
+                            top: 21.v,
+                          ),
+                          child: Text(
+                            "whatAreYouDoingToAdaptOrMitigateYourBusinessFormSuchClimateChangeEffects"
+                                .tr,
+                            style: CustomTextStyles.titleSmallBluegray400,
+                          ),
+                        ),
+                        SizedBox(height: 10.v),
+                        SizedBox(
+                          height: 49.v,
+                          width: 385.h,
+                          child: TextFormField(
+                            controller: controller
+                                .whatAreYouDoingToAdaptOrMitigateYourBusinessFormSuchClimateChangeEffectsController,
+                            validator: (value) {
+                              return;
+                            },
+                            cursorColor: const Color(0xff2bad4b),
+                            style: const TextStyle(
+                                letterSpacing: 0.1, color: Color(0xff4a4a4a)),
+                            decoration: const InputDecoration(
+                              filled: true,
+                              fillColor: Color(0xffe7fff9),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 1, color: Color(0xff2bad4b)),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 1, color: Color(0xff2bad4b)),
+                              ),
+                            ),
+                          ),
+                        ),
+
                         SizedBox(height: 47.v),
                         Center(
                           child: CustomOutlinedButton(

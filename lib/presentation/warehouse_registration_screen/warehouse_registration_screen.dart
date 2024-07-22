@@ -279,6 +279,50 @@ class WarehouseRegistrationScreen
                             top: 22.v,
                           ),
                           child: Text(
+                            "designation".tr,
+                            style: CustomTextStyles.titleSmallBluegray400,
+                          ),
+                        ),
+                        SizedBox(height: 9.v),
+                        CustomTextFormField(
+                          controller: controller.designationController,
+                          hintText: "designation".tr,
+                          hintStyle: theme.textTheme.titleSmall!,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 5.h,
+                            top: 22.v,
+                          ),
+                          child: Text(
+                            "selectGender".tr,
+                            style: CustomTextStyles.titleSmallBluegray400,
+                          ),
+                        ),
+                        SizedBox(height: 9.v),
+                        CustomDropDown(
+                          icon: Icon(
+                            Icons.keyboard_arrow_down,
+                            color: appTheme.blueGray10002,
+                          ),
+                          hintText: "selectGender".tr,
+                          items: controller.genderList,
+                          onChanged: (value) {
+                            for (var element in controller.genderList) {
+                              element.isSelected = false;
+                              if (element.id == value.id) {
+                                element.isSelected = true;
+                                controller.selectedGender.value = value;
+                              }
+                            }
+                          },
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 5.h,
+                            top: 22.v,
+                          ),
+                          child: Text(
                             "selectLevelOfEducation".tr,
                             style: CustomTextStyles.titleSmallBluegray400,
                           ),
@@ -627,7 +671,7 @@ class WarehouseRegistrationScreen
                                 defaultVerticalAlignment:
                                     TableCellVerticalAlignment.middle,
                                 children: [
-                                  "inputCostIncludingFertilizer".tr,
+                                  "generalExpenses".tr,
                                   "laborCost".tr,
                                   "otherOperationalCost".tr
                                 ].map((order) {
@@ -661,8 +705,7 @@ class WarehouseRegistrationScreen
                                             // controller: quantityController,
                                             keyboardType: TextInputType.number,
                                             onChanged: (value) {
-                                              if ("inputCostIncludingFertilizer"
-                                                      .tr ==
+                                              if ("generalExpenses".tr ==
                                                   order) {
                                                 controller.annualCost.value
                                                         .generalExpenses =
@@ -1145,8 +1188,7 @@ class WarehouseRegistrationScreen
                           ),
                         ),
                         SizedBox(height: 9.v),
-                        for (String competitor
-                            in controller.currentCompetitors)
+                        for (String competitor in controller.currentCompetitors)
                           CustomTextFormField(
                             // controller: controller.nambariyatinController,
                             hintText: "competitor".tr,

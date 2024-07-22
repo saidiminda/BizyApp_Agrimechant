@@ -34,21 +34,52 @@ class EquipmentProviderRegistrationController extends GetxController {
   TextEditingController majinakamiliController = TextEditingController();
 
   TextEditingController anwaniController = TextEditingController();
+  TextEditingController howDoYouEnsureThatTheRightQualityController =
+      TextEditingController();
+  TextEditingController
+      whatInputsEquipmentDoYouDealInSpecificToTheValueChainPleaseConfirmNameAndBrandController =
+      TextEditingController();
+  TextEditingController
+      howDoYouEnsureThatTheRightQualityOfInputsAndOrEquipmentAreProvidedByYourSuppliersController =
+      TextEditingController();
+  TextEditingController
+      howDoYouEnsureThatTheQualityOfInputsAndOrEquipmentSuppliedToYourClientsAreOfTheRightTypeAndQualityController =
+      TextEditingController();
+  TextEditingController howDoYouUnderstandBySustainabilityController =
+      TextEditingController();
+  TextEditingController
+      hasClimateChangeAffectedYourBusinessIfYesExplainHowController =
+      TextEditingController();
+  TextEditingController
+      whatAreYouDoingToAdaptOrMitigateYourBusinessFormSuchClimateChangeEffectsController =
+      TextEditingController();
+  Rx<SelectionPopupModel> selectedTypeOfEquipment =
+      SelectionPopupModel(title: "").obs;
+  RxList<SelectionPopupModel> typeOfEquipmentList = <SelectionPopupModel>[].obs;
+  Rx<SelectionPopupModel> selectedSourceOfInputs =
+      SelectionPopupModel(title: "").obs;
+  RxList<SelectionPopupModel> sourceOfInputsList = <SelectionPopupModel>[].obs;
+  List<SelectionPopupModel> yesNoList = [
+    SelectionPopupModel(title: "yes".tr, value: "YES"),
+    SelectionPopupModel(title: "no".tr, value: "NO")
+  ];
+  List<SelectionPopupModel> certificationsList = [
+    SelectionPopupModel(title: " ISO 9000", value: "ISO 9000"),
+    SelectionPopupModel(title: "ISO 14000", value: "ISO 14000"),
+    SelectionPopupModel(
+        title: "Corporate Social Responsibility",
+        value: "Corporate Social Responsibility")
+  ];
+  TextEditingController designationController = TextEditingController();
+  Rx<InputsStorageFacility>inputsStorageFacility = InputsStorageFacility().obs;
+  Rx<InputsStorageFacility> technicalAdviceToProducers = InputsStorageFacility().obs;
+  Rx<TrainingRegulation> trainingRegulation = TrainingRegulation().obs;    
+           
 
   TextEditingController otherValueChainsDoYouOperateInController =
       TextEditingController();
-      TextEditingController howDoYouEnsureThatTheRightQualityController =
-      TextEditingController();
   Rx<QuestionnaireResponse> currentQuestionnaireResponse =
       QuestionnaireResponse().obs;
-  Rx<SelectionPopupModel> selectedDifficulties =
-      SelectionPopupModel(title: "").obs;
-  RxList<SelectionPopupModel> difficultiesDropdownList =
-      <SelectionPopupModel>[].obs;
-  Rx<SelectionPopupModel> selectedMarketInformation =
-      SelectionPopupModel(title: "").obs;
-  RxList<SelectionPopupModel> marketInformationDropdownList =
-      <SelectionPopupModel>[].obs;
   Rx<ProfileResponse> userProfile = ProfileResponse().obs;
   Rx<InitialDataResponse> dashboardResponse = InitialDataResponse().obs;
   List<SelectionPopupModel> genderList = [
@@ -121,7 +152,14 @@ class EquipmentProviderRegistrationController extends GetxController {
       <SelectionPopupModel>[].obs;
   RxList<SelectionPopupModel> otherValueChainsDropdownList =
       <SelectionPopupModel>[].obs;
-
+  Rx<SelectionPopupModel> selectedDifficulties =
+      SelectionPopupModel(title: "").obs;
+  RxList<SelectionPopupModel> difficultiesDropdownList =
+      <SelectionPopupModel>[].obs;
+  Rx<SelectionPopupModel> selectedMarketInformation =
+      SelectionPopupModel(title: "").obs;
+  RxList<SelectionPopupModel> marketInformationDropdownList =
+      <SelectionPopupModel>[].obs;
   List<SelectionPopupModel> areYouCurrentlyAMemberOfAnyValueChainList = [
     SelectionPopupModel(title: "yes".tr, value: "YES"),
     SelectionPopupModel(title: "no".tr, value: "NO")
@@ -167,10 +205,10 @@ class EquipmentProviderRegistrationController extends GetxController {
     FinanceUsed(title: "familyAndRelations".tr, name: "Family and Relations"),
     FinanceUsed(title: "grants".tr, name: "Grants")
   ].obs;
-  RxList<Production> annualProductionList = <Production>[
-    Production(year: DateTime.now().year - 3),
-    Production(year: DateTime.now().year - 2),
-    Production(year: DateTime.now().year - 1)
+  RxList<AnnualTradingVolumes> annualTradingVolumesList = <AnnualTradingVolumes>[
+    AnnualTradingVolumes(year: DateTime.now().year - 3),
+    AnnualTradingVolumes(year: DateTime.now().year - 2),
+    AnnualTradingVolumes(year: DateTime.now().year - 1)
   ].obs;
   RxList<CropProductionAggregation> cropProductionAggregationList =
       <CropProductionAggregation>[
@@ -225,10 +263,9 @@ class EquipmentProviderRegistrationController extends GetxController {
         Get.back();
         ResponseHandler().responseHandlerOnSinglePage(response);
       }
-    }else{
+    } else {
       Get.back();
       showErrorToast("noInternet".tr);
-    
     }
   }
 
@@ -329,6 +366,28 @@ class EquipmentProviderRegistrationController extends GetxController {
                 );
               }).toList()
             : [];
+    selectedTypeOfEquipment.value = SelectionPopupModel(title: "");
+    typeOfEquipmentList.value = dashboardResponse.value.typeOfEquipment != null
+        ? dashboardResponse.value.typeOfEquipment!
+            .map<SelectionPopupModel>((Crops value) {
+            return SelectionPopupModel(
+              id: value.id,
+              value: value,
+              title: value.name.toString(),
+            );
+          }).toList()
+        : [];
+    selectedSourceOfInputs.value = SelectionPopupModel(title: "");
+    sourceOfInputsList.value = dashboardResponse.value.sourceInputs != null
+        ? dashboardResponse.value.sourceInputs!
+            .map<SelectionPopupModel>((Crops value) {
+            return SelectionPopupModel(
+              id: value.id,
+              value: value,
+              title: value.name.toString(),
+            );
+          }).toList()
+        : [];
   }
 
   void registerQuestionnaireResponse() async {
@@ -352,15 +411,17 @@ class EquipmentProviderRegistrationController extends GetxController {
           educationLevelId: selectedEducationLevel.value.id,
           type: "PROVIDER",
           age: nambariyatinController.text,
-          contactPerson: ContactPerson(
+           contactPerson: ContactPerson(
               name: jinaController.text,
-              designation: "",
-              gender: "",
+              designation: designationController.text,
+              gender: selectedGender.value.value,
               emailAddress: baruapepeyaController.text,
               phoneNo: nambariyaController.text)),
       socioEconomic: SocioEconomic(
           businessRegistrationTypeId: selectedBusinessType.value.id,
-          valueChainActivities: [selectedOtherValueChain.value.id ?? 0],
+          valueChainActivities: selectedOtherValueChain.value.id != null
+              ? [selectedOtherValueChain.value.id!]
+              : [],
           entityPromote: [selectedHowDoesYourEntityPromoter.value.title],
           competitors: currentCompetitors,
           difficulties: selectedDifficulties.value.id != null
@@ -383,17 +444,38 @@ class EquipmentProviderRegistrationController extends GetxController {
           buyers: currentBuyers),
       coreBusinesses: CoreBusinesses(
           warehouseSourceEnergy: selectedSourceOfEnergy.value.title,
-          typeOfEquipment: [],
-          sourceOfInputs: [],
+          equipmentValueChain:
+              whatInputsEquipmentDoYouDealInSpecificToTheValueChainPleaseConfirmNameAndBrandController
+                  .text,
+          qualityOfInputsClients:
+              howDoYouEnsureThatTheQualityOfInputsAndOrEquipmentSuppliedToYourClientsAreOfTheRightTypeAndQualityController
+                  .text,
+          sustainability: howDoYouUnderstandBySustainabilityController.text,
+          climateChangeAffects:
+              hasClimateChangeAffectedYourBusinessIfYesExplainHowController
+                  .text,
+          mitigateBusiness:
+              whatAreYouDoingToAdaptOrMitigateYourBusinessFormSuchClimateChangeEffectsController
+                  .text,
+          typeOfEquipment: selectedTypeOfEquipment.value.id != null
+              ? [selectedTypeOfEquipment.value.id!]
+              : [],
+          sourceOfInputs: selectedSourceOfInputs.value.id != null
+              ? [selectedSourceOfInputs.value.id!]
+              : [],
+              inputsStorageFacility: inputsStorageFacility.value,
+              technicalAdviceToProducers: technicalAdviceToProducers.value,
+              trainingRegulation: trainingRegulation.value,
           cropProductionAggregation: cropProductionAggregationList,
           sourceProductionInputs: [],
           logisticsActivities: [],
           logisticsCrops: [],
           qualityOfInputsSuppliers:
-              howDoYouEnsureThatTheRightQualityController.text,
-          productionAggregation: ProductionAggregation(
-              production: annualProductionList, aggregation: []),
-          annualTradingVolumes: []),
+              howDoYouEnsureThatTheRightQualityOfInputsAndOrEquipmentAreProvidedByYourSuppliersController
+                  .text,
+          productionAggregation:
+              ProductionAggregation(production: [], aggregation: []),
+          annualTradingVolumes: annualTradingVolumesList),
     ).obs;
     QuestionnairesRequest registerfarmerrequest = QuestionnairesRequest(
         // imeiNumber: deviceid.value,

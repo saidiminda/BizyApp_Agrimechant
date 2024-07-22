@@ -941,5 +941,22 @@ final Map<String, String> enUs = {
   'producerRegistration':'Producer Registration',
   'producersList':'Producers List',
   'producersManagement':'Producers management',
-  'logisticsRegistration':'Logistic registration'
+  'logisticsRegistration':'Logistic registration',
+  'whatInputsEquipmentDoYouDealInSpecificToTheValueChainPleaseConfirmNameAndBrand':'What inputs/equipment do you deal in specific to the value chain? Please confirm name and brand:',
+  'typeOfInputsAndOrEquipmentTheEntityDealsIn':'Type (s) of inputs and/or equipment the entity deals in',
+  'whereIsTheSourceOfYourInputs':'Where is the source of your inputs?',
+  'provideTheAnnualTradingVolumesOfYourEntityForThePastThree3Years':'Provide the annual trading volumes of your entity for the past three (3) years',
+  'doYouHaveStorageFacilityForYourInputsAndOrEquipment':'Do you have storage facility for your inputs and/or equipment?',
+  'sourceOfInputsAndOrEquipment':'Source of inputs and/or equipment',
+  'doYouOfferTechnicalAdviceToProducersOnWhatInputsAndOrEquipmentToUse':'Do you offer technical advice to producers on what inputs and/or equipment to use (application rate, time of application, technical specification for equipment)?',
+  'isThereASpecificTrainingAndOrRegulationNeededToEnhanceYourWorkAsAnInputEquipmentProvider':'Is there a specific training and/or regulation needed to enhance your work as an input/equipment provider?',
+  'howDoYouEnsureThatTheRightQualityOfInputsAndOrEquipmentAreProvidedByYourSuppliers':'How do you ensure that the right quality of inputs and/or equipment are provided by your suppliers?',
+  'howDoYouEnsureThatTheQualityOfInputsAndOrEquipmentSuppliedToYourClientsAreOfTheRightTypeAndQuality':'How do you ensure that the quality of inputs and/or equipment supplied to your clients are of the right type and quality?',
+  'doYouHaveAnyOfTheFollowingCertifications':'Do you have any of the following certifications?',
+  'howDoYouUnderstandBySustainability':'How do you understand by sustainability?',
+  'hasClimateChangeAffectedYourBusinessIfYesExplainHow':'Has climate change affected your business? If yes explain how?',
+  'whatAreYouDoingToAdaptOrMitigateYourBusinessFormSuchClimateChangeEffects':'What are you doing to adapt or mitigate your business form such climate change effects?',
+  'designation':'Designation',
+  'volume':'Volume',
+  'generalExpenses':'General Expenses'
 };

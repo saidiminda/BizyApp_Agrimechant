@@ -36,7 +36,7 @@ class ProducersRegistrationController extends GetxController {
   TextEditingController anwaniController = TextEditingController();
   TextEditingController howDoYouEnsureThatTheRightQualityController =
       TextEditingController();
-
+ TextEditingController designationController = TextEditingController();
   TextEditingController otherValueChainsDoYouOperateInController =
       TextEditingController();
 
@@ -362,8 +362,8 @@ class ProducersRegistrationController extends GetxController {
           age: nambariyatinController.text,
           contactPerson: ContactPerson(
               name: jinaController.text,
-              designation: "",
-              gender: "",
+              designation: designationController.text,
+              gender: selectedGender.value.value,
               emailAddress: baruapepeyaController.text,
               phoneNo: nambariyaController.text)),
       socioEconomic: SocioEconomic(

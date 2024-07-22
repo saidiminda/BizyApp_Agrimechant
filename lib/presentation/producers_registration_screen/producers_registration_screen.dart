@@ -271,6 +271,50 @@ class ProducersRegistrationScreen
                             }
                           },
                         ),
+                          Padding(
+                          padding: EdgeInsets.only(
+                            left: 5.h,
+                            top: 22.v,
+                          ),
+                          child: Text(
+                            "designation".tr,
+                            style: CustomTextStyles.titleSmallBluegray400,
+                          ),
+                        ),
+                        SizedBox(height: 9.v),
+                        CustomTextFormField(
+                          controller: controller.designationController,
+                          hintText: "designation".tr,
+                          hintStyle: theme.textTheme.titleSmall!,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 5.h,
+                            top: 22.v,
+                          ),
+                          child: Text(
+                            "selectGender".tr,
+                            style: CustomTextStyles.titleSmallBluegray400,
+                          ),
+                        ),
+                        SizedBox(height: 9.v),
+                        CustomDropDown(
+                          icon: Icon(
+                            Icons.keyboard_arrow_down,
+                            color: appTheme.blueGray10002,
+                          ),
+                          hintText: "selectGender".tr,
+                          items: controller.genderList,
+                          onChanged: (value) {
+                            for (var element in controller.genderList) {
+                              element.isSelected = false;
+                              if (element.id == value.id) {
+                                element.isSelected = true;
+                                controller.selectedGender.value = value;
+                              }
+                            }
+                          },
+                        ),
                         Padding(
                           padding: EdgeInsets.only(
                             left: 5.h,

@@ -948,5 +948,23 @@ final Map<String, String> swTZ = {
   'producerRegistration':'Usajili wa Mtayarishaji',
   'producersList':'Orodha ya Watayarishaji',
   'producersManagement':'Usimamizi wa wazalishaji',
-  'logisticsRegistration':'Usajili wa ugavi'
+  'logisticsRegistration':'Usajili wa ugavi',
+  'whatInputsEquipmentDoYouDealInSpecificToTheValueChainPleaseConfirmNameAndBrand':'Je, ni pembejeo/vifaa gani unashughulikia mahususi kwa mnyororo wa thamani? Tafadhali thibitisha jina na chapa:',
+  'typeOfInputsAndOrEquipmentTheEntityDealsIn':'Aina za pembejeo na/au vifaa ambavyo huluki inashughulikia',
+  'whereIsTheSourceOfYourInputs':'Chanzo cha pembejeo zako kiko wapi?',
+  'provideTheAnnualTradingVolumesOfYourEntityForThePastThree3Years':'Toa kiasi cha biashara cha kila mwaka cha shirika lako kwa miaka mitatu (3) iliyopita',
+  'doYouHaveStorageFacilityForYourInputsAndOrEquipment':'Je! una nafasi ya kuhifadhi pembejeo na/au vifaa vyako?',
+  'sourceOfInputsAndOrEquipment':'Chanzo cha pembejeo na/au vifaa',
+  'doYouOfferTechnicalAdviceToProducersOnWhatInputsAndOrEquipmentToUse':'Je, unatoa ushauri wa kiufundi kwa wazalishaji kuhusu pembejeo na/au vifaa vya kutumia (kiwango cha maombi, muda wa kutuma maombi, maelezo ya kiufundi ya vifaa)?',
+  'isThereASpecificTrainingAndOrRegulationNeededToEnhanceYourWorkAsAnInputEquipmentProvider':'Je, kuna mafunzo na/au kanuni mahususi zinazohitajika ili kuboresha kazi yako kama mtoaji wa pembejeo/vifaa?',
+  'howDoYouEnsureThatTheRightQualityOfInputsAndOrEquipmentAreProvidedByYourSuppliers':'Je, unahakikishaje kwamba ubora unaofaa wa pembejeo na/au vifaa vinatolewa na wasambazaji wako?',
+  'howDoYouEnsureThatTheQualityOfInputsAndOrEquipmentSuppliedToYourClientsAreOfTheRightTypeAndQuality':'Je, unahakikishaje kwamba ubora wa pembejeo na/au vifaa vinavyotolewa kwa wateja wako ni vya aina na ubora unaofaa?',
+  'doYouHaveAnyOfTheFollowingCertifications':'Je, una vyeti vyovyote vifuatavyo?',
+  'howDoYouUnderstandBySustainability':'Unaelewaje kwa uendelevu?',
+  'hasClimateChangeAffectedYourBusinessIfYesExplainHow':'Je, mabadiliko ya hali ya hewa yameathiri biashara yako? Kama ndio eleza vipi?',
+  'whatAreYouDoingToAdaptOrMitigateYourBusinessFormSuchClimateChangeEffects':'Je, unafanya nini kurekebisha au kupunguza hali ya biashara yako kama athari za mabadiliko ya tabianchi?',
+  'designation':'Cheo',
+  'volume':'Kiasi',
+  'generalExpenses':'Gharama za Jumla'
+
 };
