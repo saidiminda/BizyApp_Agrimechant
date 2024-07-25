@@ -10,7 +10,7 @@ import '../../../data/apiClient/api_client.dart';
 import '../../../data/databases/shared_preferences_db.dart';
 import '../../../data/models/apiModels/initial_data_response_model.dart';
 import '../../../data/models/apiModels/register_farmer_request_model.dart';
-import '../../../data/models/questionnaires_request_model.dart';
+import '../../../data/models/apiModels/questionnaires_request_model.dart';
 import '../../../theme/custom_text_style.dart';
 import '../../../theme/theme_helper.dart';
 import '../../../widgets/custom_image_view.dart';

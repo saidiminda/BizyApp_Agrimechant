@@ -123,6 +123,7 @@ class Coordinates {
   }
 }
 
+
 class BasicInformation {
   int? id;
   int? cropId;
@@ -256,10 +257,13 @@ class SocioEconomic {
   SocioEconomic.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     businessRegistrationTypeId = json['business_registration_type_id'];
-    valueChainActivities = json['value_chain_activities'].cast<int>();
+    valueChainActivities = json['value_chain_activities'] != null
+        ? json['value_chain_activities'].cast<int>()
+        : null;
     licensedEntity = json['licensed_entity'];
     otherValueChains = json['other_value_chains'];
-    competitors = json['competitors'].cast<String>();
+    competitors =
+        json['competitors'] != null ? json['competitors'].cast<String>() : null;
     if (json['annual_sales'] != null) {
       annualSales = <AnnualSales>[];
       json['annual_sales'].forEach((v) {
@@ -278,16 +282,23 @@ class SocioEconomic {
         numberOfEmployees?.add(NumberOfEmployees.fromJson(v));
       });
     }
-    entityPromote = json['entity_promote'].cast<String>();
+    entityPromote = json['entity_promote'] != null
+        ? json['entity_promote'].cast<String>()
+        : null;
     if (json['buyers'] != null) {
       buyers = <Buyers>[];
       json['buyers'].forEach((v) {
         buyers?.add(Buyers.fromJson(v));
       });
     }
-    difficulties = json['difficulties'].cast<int>();
-    otherDifficulties = json['other_difficulties'].cast<String>();
-    marketInformations = json['market_informations'].cast<int>();
+    difficulties =
+        json['difficulties'] != null ? json['difficulties'].cast<int>() : null;
+    otherDifficulties = json['other_difficulties'] != null
+        ? json['other_difficulties'].cast<String>()
+        : null;
+    marketInformations = json['market_informations'] != null
+        ? json['market_informations'].cast<int>()
+        : null;
     valueChainOrganization = json['value_chain_organization'] != null
         ? ValueChainOrganization?.fromJson(json['value_chain_organization'])
         : null;
@@ -300,7 +311,9 @@ class SocioEconomic {
     formalRecord = json['formal_record'] != null
         ? FormalRecord?.fromJson(json['formal_record'])
         : null;
-    problemsRelatedPolicy = json['problems_related_policy'].cast<String>();
+    problemsRelatedPolicy = json['problems_related_policy'] != null
+        ? json['problems_related_policy'].cast<String>()
+        : null;
     if (json['significant_challenges'] != null) {
       significantChallenges = <SignificantChallenges>[];
       json['significant_challenges'].forEach((v) {
@@ -423,9 +436,9 @@ class NumberOfEmployees {
 class Buyers {
   int? id;
   String? name;
-  String? region;
+  int? region;
   String? measure;
-  double? volume;
+  num? volume;
 
   Buyers({this.id, this.name, this.region, this.measure, this.volume});
 
@@ -456,7 +469,9 @@ class ValueChainOrganization {
 
   ValueChainOrganization.fromJson(Map<String, dynamic> json) {
     isYes = json['isYes'];
-    valueChains = json['value_chains'].cast<String>();
+    valueChains = json['value_chains'] != null
+        ? json['value_chains'].cast<String>()
+        : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -532,7 +547,9 @@ class SignificantChallenges {
   SignificantChallenges.fromJson(Map<String, dynamic> json) {
     challenge = json['challenge'];
     solution = json['solution'];
-    stakeholderRoles = json['stakeholder_roles'].cast<String>();
+    stakeholderRoles = json['stakeholder_roles'] != null
+        ? json['stakeholder_roles'].cast<String>()
+        : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -601,8 +618,12 @@ class CoreBusinesses {
   CoreBusinesses.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     equipmentValueChain = json['equipment_value_chain'];
-    typeOfEquipment = json['type_of_equipment'].cast<int>();
-    sourceOfInputs = json['source_of_inputs'].cast<int>();
+    typeOfEquipment = json['type_of_equipment'] != null
+        ? json['type_of_equipment'].cast<int>()
+        : null;
+    sourceOfInputs = json['source_of_inputs'] != null
+        ? json['source_of_inputs'].cast<int>()
+        : null;
     if (json['annual_trading_volumes'] != null) {
       annualTradingVolumes = <AnnualTradingVolumes>[];
       json['annual_trading_volumes'].forEach((v) {
@@ -732,7 +753,7 @@ class CoreBusinesses {
 class AnnualTradingVolumes {
   int? year;
   String? measure;
-  double? volumes;
+  num? volumes;
 
   AnnualTradingVolumes({this.year, this.measure, this.volumes});
 
@@ -759,7 +780,7 @@ class InputsStorageFacility {
 
   InputsStorageFacility.fromJson(Map<String, dynamic> json) {
     isYes = json['isYes'];
-    size = json['size'].cast<String>();
+    size = json['size'] != null ? json['size'].cast<String>() : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -816,7 +837,7 @@ class PlanToApplyCertification {
 
   PlanToApplyCertification.fromJson(Map<String, dynamic> json) {
     isYes = json['isYes'];
-    mention = json['mention'].cast<String>();
+    mention = json['mention'] != null ? json['mention'].cast<String>() : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -864,7 +885,7 @@ class Production {
   int? year;
   String? cultivationArea;
   String? measure;
-  double? volumes;
+  num? volumes;
 
   Production({this.year, this.cultivationArea, this.measure, this.volumes});
 
@@ -889,14 +910,14 @@ class CropProductionAggregation {
   int? year;
   List<String>? crops;
   int? production;
-  double? aggregation;
+  num? aggregation;
 
   CropProductionAggregation(
       {this.year, this.crops, this.production, this.aggregation});
 
   CropProductionAggregation.fromJson(Map<String, dynamic> json) {
     year = json['year'];
-    crops = json['crops'].cast<String>();
+    crops = json['crops'] != null ? json['crops'].cast<String>() : null;
     production = json['production'];
     aggregation = json['aggregation'];
   }
@@ -936,8 +957,8 @@ class SourceProductionInputs {
 class LogisticsActivities {
   String? title;
   String? activity;
-  double? capacity;
-  double? volumes;
+  num? capacity;
+  num? volumes;
 
   LogisticsActivities({this.title, this.activity, this.capacity, this.volumes});
 
@@ -960,10 +981,10 @@ class LogisticsActivities {
 
 class LogisticsCrops {
   String? name;
-  double? transportation;
-  double? warehousing;
-  double? materialHandling;
-  double? others;
+  num? transportation;
+  num? warehousing;
+  num? materialHandling;
+  num? others;
 
   LogisticsCrops(
       {this.name,

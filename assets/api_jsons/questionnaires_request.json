@@ -10,6 +10,10 @@
             "editing_status": 1,
             "registration_status": "",
             "questionnaire_category_id": 1,
+            "coordinates" : {
+                "long" : "39.0000",
+                "lat" : "-9.00000"
+            },
             "basic_information": {
                 "id": 37,
                 "crop_id": 1,
@@ -62,13 +66,13 @@
                 ],
                 "number_of_employees": [
                     {
-                        "title":"",
+                        "title": "",
                         "type": "PERMANENT",
                         "male": 20,
                         "female": 100
                     },
                     {
-                        "title":"",
+                        "title": "",
                         "type": "TEMPORARY",
                         "male": 20,
                         "female": 100
@@ -122,7 +126,7 @@
                 },
                 "finance_used": [
                     {
-                        "title":"",
+                        "title": "",
                         "name": "Owner's Equity",
                         "amount": 20
                     }
@@ -264,7 +268,7 @@
                 ],
                 "logistics_activities": [
                     {
-                        "title":"",
+                        "title": "",
                         "activity": "Transportaion",
                         "capacity": 230.0,
                         "volumes": 450.0
@@ -273,22 +277,22 @@
                 "logistics_crops": [
                     {
                         "name": "Mahindi",
-                        "transportation":  230.0,
-                        "warehousing":  230.0,
+                        "transportation": 230.0,
+                        "warehousing": 230.0,
                         "material_handling": 230.0,
                         "others": 230.0
                     },
                     {
                         "name": "Mahindi",
-                        "transportation":  230.0,
-                        "warehousing":  230.0,
+                        "transportation": 230.0,
+                        "warehousing": 230.0,
                         "material_handling": 230.0,
                         "others": 230.0
                     },
                     {
                         "name": "Mahindi",
-                        "transportation":  230.0,
-                        "warehousing":  230.0,
+                        "transportation": 230.0,
+                        "warehousing": 230.0,
                         "material_handling": 230.0,
                         "others": 230.0
                     }

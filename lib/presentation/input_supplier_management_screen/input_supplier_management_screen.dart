@@ -3,7 +3,7 @@ import 'package:saidi_s_application3/core/utils/size_utils.dart';
 
 import '../../core/utils/functions/global.dart';
 import '../../data/models/apiModels/register_farmer_request_model.dart';
-import '../../data/models/questionnaires_request_model.dart';
+import '../../data/models/apiModels/questionnaires_request_model.dart';
 import '../../routes/app_routes.dart';
 import '../../theme/custom_button_style.dart';
 import '../../theme/custom_text_style.dart';

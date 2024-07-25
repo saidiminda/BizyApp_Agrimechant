@@ -4,7 +4,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:saidi_s_application3/core/utils/size_utils.dart';
-import 'package:saidi_s_application3/data/models/questionnaires_request_model.dart';
+import 'package:saidi_s_application3/data/models/apiModels/questionnaires_request_model.dart';
 
 import '../../../core/utils/functions/global.dart';
 import '../../../core/utils/functions/response_handeler.dart';

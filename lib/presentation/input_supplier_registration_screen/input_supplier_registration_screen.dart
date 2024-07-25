@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:saidi_s_application3/core/utils/size_utils.dart';
 
 import '../../core/utils/image_constant.dart';
+import '../../data/models/apiModels/initial_data_response_model.dart';
 import '../../data/models/selectionPopupModel/selection_popup_model.dart';
 import '../../routes/app_routes.dart';
 import '../../theme/app_decoration.dart';
@@ -321,6 +322,127 @@ class InputSupplierRegistrationScreen
                             top: 22.v,
                           ),
                           child: Text(
+                            "selectRegion".tr,
+                            style: CustomTextStyles.titleSmallBluegray400,
+                          ),
+                        ),
+                        SizedBox(height: 9.v),
+                        CustomDropDown(
+                          icon: Icon(
+                            Icons.keyboard_arrow_down,
+                            color: appTheme.blueGray10002,
+                          ),
+                          hintText: "selectRegion".tr,
+                          value: controller.selectedRegion.value,
+                          items: controller.regionList,
+                          onChanged: (value) {
+                            controller.selectedRegion.value = value;
+                            controller.selectedDistrict.value =
+                                SelectionPopupModel(title: "");
+                            controller.selectedWard.value =
+                                SelectionPopupModel(title: "");
+                            controller.selectedVillage.value =
+                                SelectionPopupModel(title: "");
+                            controller.wardList.value = [];
+                            controller.villageList.value = [];
+
+                            Regions region =
+                                controller.selectedRegion.value.value;
+                            controller.districtList.value = region.districts !=
+                                    null
+                                ? region.districts!.map<SelectionPopupModel>(
+                                    (Districts value) {
+                                    return SelectionPopupModel(
+                                      id: value.id,
+                                      value: value,
+                                      title: value.name.toString(),
+                                    );
+                                  }).toList()
+                                : [];
+                          },
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 5.h,
+                            top: 22.v,
+                          ),
+                          child: Text(
+                            "selectDistrict".tr,
+                            style: CustomTextStyles.titleSmallBluegray400,
+                          ),
+                        ),
+                        SizedBox(height: 9.v),
+                        CustomDropDown(
+                          icon: Icon(
+                            Icons.keyboard_arrow_down,
+                            color: appTheme.blueGray10002,
+                          ),
+                          hintText: "selectDistrict".tr,
+                          value: controller.selectedDistrict.value,
+                          items: controller.districtList,
+                          onChanged: (value) {
+                            controller.selectedDistrict.value = value;
+                            controller.selectedWard.value =
+                                SelectionPopupModel(title: "");
+                            controller.selectedVillage.value =
+                                SelectionPopupModel(title: "");
+                            controller.villageList.value = [];
+                            Districts district =
+                                controller.selectedDistrict.value.value;
+                            controller.wardList.value = district.wards != null
+                                ? district.wards!
+                                    .map<SelectionPopupModel>((Wards value) {
+                                    return SelectionPopupModel(
+                                      id: value.id,
+                                      value: value,
+                                      title: value.name.toString(),
+                                    );
+                                  }).toList()
+                                : [];
+                          },
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 5.h,
+                            top: 22.v,
+                          ),
+                          child: Text(
+                            "selectWard".tr,
+                            style: CustomTextStyles.titleSmallBluegray400,
+                          ),
+                        ),
+                        SizedBox(height: 9.v),
+                        CustomDropDown(
+                          icon: Icon(
+                            Icons.keyboard_arrow_down,
+                            color: appTheme.blueGray10002,
+                          ),
+                          hintText: "selectWard".tr,
+                          value: controller.selectedWard.value,
+                          items: controller.wardList,
+                          onChanged: (value) {
+                            controller.selectedWard.value = value;
+                            controller.selectedVillage.value =
+                                SelectionPopupModel(title: "");
+                            Wards ward = controller.selectedWard.value.value;
+                            controller.villageList.value = ward.villages != null
+                                ? ward.villages!
+                                    .map<SelectionPopupModel>((Villages value) {
+                                    return SelectionPopupModel(
+                                      id: value.id,
+                                      value: value,
+                                      title: value.name.toString(),
+                                    );
+                                  }).toList()
+                                : [];
+                          },
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 5.h,
+                            top: 22.v,
+                          ),
+                          child: Text(
                             "selectVillage".tr,
                             style: CustomTextStyles.titleSmallBluegray400,
                           ),
@@ -332,20 +454,13 @@ class InputSupplierRegistrationScreen
                             color: appTheme.blueGray10002,
                           ),
                           hintText: "selectVillage".tr,
-                          items: controller.villagesDropdownList,
+                          value: controller.selectedVillage.value,
+                          items: controller.villageList,
                           onChanged: (value) {
-                            for (var element
-                                in controller.villagesDropdownList) {
-                              element.isSelected = false;
-                              if (element.id == value.id) {
-                                element.isSelected = true;
-                                controller.selectedVillage.value = value;
-                              }
-                            }
-                            controller.villagesDropdownList.refresh();
+                            controller.selectedVillage.value = value;
                           },
                         ),
-                        SizedBox(height: 20.v),
+                       SizedBox(height: 20.v),
                         Align(
                           alignment: Alignment.center,
                           child: Text(

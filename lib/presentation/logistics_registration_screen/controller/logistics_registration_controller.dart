@@ -10,7 +10,7 @@ import '../../../data/apiClient/api_client.dart';
 import '../../../data/databases/shared_preferences_db.dart';
 import '../../../data/models/apiModels/initial_data_response_model.dart';
 import '../../../data/models/apiModels/profile_response_model.dart';
-import '../../../data/models/questionnaires_request_model.dart';
+import '../../../data/models/apiModels/questionnaires_request_model.dart';
 import '../../../data/models/selectionPopupModel/selection_popup_model.dart';
 
 /// A controller class for the FarmerRegistrationScreen.
@@ -36,7 +36,7 @@ class LogisticsRegistrationController extends GetxController {
   TextEditingController anwaniController = TextEditingController();
   TextEditingController howDoYouEnsureThatTheRightQualityController =
       TextEditingController();
-       TextEditingController designationController = TextEditingController();
+  TextEditingController designationController = TextEditingController();
 
   TextEditingController otherValueChainsDoYouOperateInController =
       TextEditingController();
@@ -97,7 +97,6 @@ class LogisticsRegistrationController extends GetxController {
       SelectionPopupModel(title: "").obs;
   Rx<SelectionPopupModel> selectedLogisticActivity =
       SelectionPopupModel(title: "").obs;
-  Rx<SelectionPopupModel> selectedVillage = SelectionPopupModel(title: "").obs;
   Rx<SelectionPopupModel> selectedRelevantCrop =
       SelectionPopupModel(title: "").obs;
   Rx<SelectionPopupModel> selectedEducationLevel =
@@ -146,6 +145,12 @@ class LogisticsRegistrationController extends GetxController {
 
   Rx<SelectionPopupModel> selectedRegion = SelectionPopupModel(title: "").obs;
   RxList<SelectionPopupModel> regionList = <SelectionPopupModel>[].obs;
+  Rx<SelectionPopupModel> selectedDistrict = SelectionPopupModel(title: "").obs;
+  RxList<SelectionPopupModel> districtList = <SelectionPopupModel>[].obs;
+  Rx<SelectionPopupModel> selectedWard = SelectionPopupModel(title: "").obs;
+  RxList<SelectionPopupModel> wardList = <SelectionPopupModel>[].obs;
+  Rx<SelectionPopupModel> selectedVillage = SelectionPopupModel(title: "").obs;
+  RxList<SelectionPopupModel> villageList = <SelectionPopupModel>[].obs;
   RxList<Buyers> currentCustomer = <Buyers>[Buyers(), Buyers(), Buyers()].obs;
   RxList<LogisticsCrops> currentLogisticsCrops = <LogisticsCrops>[
     LogisticsCrops(),
@@ -230,16 +235,18 @@ class LogisticsRegistrationController extends GetxController {
       SelectionPopupModel(title: "").obs;
   RxList<SelectionPopupModel> marketInformationDropdownList =
       <SelectionPopupModel>[].obs;
+  Rx<Coordinates> currentCoordinate = Coordinates().obs;
   @override
   void onInit() {
     super.onInit();
-     getFarmerOffline(offlineFarmer);
+    getFarmerOffline(offlineFarmer);
   }
 
-   @override
+  @override
   void onReady() {
     super.onReady();
     getDashoardDataOnline();
+    getCoordinate();
   }
 
   @override
@@ -276,10 +283,9 @@ class LogisticsRegistrationController extends GetxController {
         Get.back();
         ResponseHandler().responseHandlerOnSinglePage(response);
       }
-    }else{
+    } else {
       Get.back();
       showErrorToast("noInternet".tr);
-    
     }
   }
 
@@ -348,7 +354,7 @@ class LogisticsRegistrationController extends GetxController {
     selectedRegion.value = SelectionPopupModel(title: "");
     regionList.value = dashboardResponse.value.regions != null
         ? dashboardResponse.value.regions!
-            .map<SelectionPopupModel>((Crops value) {
+            .map<SelectionPopupModel>((Regions value) {
             return SelectionPopupModel(
               id: value.id,
               value: value,
@@ -356,7 +362,7 @@ class LogisticsRegistrationController extends GetxController {
             );
           }).toList()
         : [];
-         selectedDifficulties.value = SelectionPopupModel(title: "");
+    selectedDifficulties.value = SelectionPopupModel(title: "");
     difficultiesDropdownList.value =
         dashboardResponse.value.difficulties != null
             ? dashboardResponse.value.difficulties!
@@ -368,7 +374,7 @@ class LogisticsRegistrationController extends GetxController {
                 );
               }).toList()
             : [];
-            selectedMarketInformation.value = SelectionPopupModel(title: "");
+    selectedMarketInformation.value = SelectionPopupModel(title: "");
     marketInformationDropdownList.value =
         dashboardResponse.value.marketInformation != null
             ? dashboardResponse.value.marketInformation!
@@ -382,8 +388,15 @@ class LogisticsRegistrationController extends GetxController {
             : [];
   }
 
+  void getCoordinate() async {
+    var coordinate = await determinePosition();
+    currentCoordinate.value.lat = coordinate.latitude.toString();
+    currentCoordinate.value.long = coordinate.longitude.toString();
+  }
+
   void registerQuestionnaireResponse() async {
     loadingDialog();
+    getCoordinate();
     bool internetTest = await checkInternetConnection();
     String token = await getAccessToken();
     DateTime calender = DateTime.now();
@@ -394,54 +407,104 @@ class LogisticsRegistrationController extends GetxController {
     int nowMinute = calender.minute;
     String todayDate = "$nowDay/$nowMonth/$nowYear";
     String time = "$nowHour:$nowMinute";
-    currentQuestionnaireResponse = QuestionnaireResponse(
-      questionnaireCategoryId: 3,
-      basicInformation: BasicInformation(
-          cropId: selectedRelevantCrop.value.id,
-          nameOfEntity: jinalaController.text,
-          villageId: selectedVillage.value.id,
-          educationLevelId: selectedEducationLevel.value.id,
-          type: "LOGISTICS",
-          age: nambariyatinController.text,
-          contactPerson: ContactPerson(
-              name: jinaController.text,
-              designation: designationController.text,
-              gender: selectedGender.value.value,
-              emailAddress: baruapepeyaController.text,
-              phoneNo: nambariyaController.text)),
-      socioEconomic: SocioEconomic(
-          businessRegistrationTypeId: selectedBusinessType.value.id,
-          valueChainActivities: [selectedOtherValueChain.value.id ?? 0],
-          entityPromote: [selectedHowDoesYourEntityPromoter.value.title],
-          competitors: currentCompetitors,
-          difficulties: [],
-          otherDifficulties: currentDifficulties,
-          marketInformations: [],
-          annualCost: [annualCost.value],
-          annualSales: annualSalesList,
-          problemsRelatedPolicy: [],
-          financeUsed: financeUsedList,
-          significantChallenges: [],
-          formalRecord: FormalRecord(),
-          valueChainOrganization: ValueChainOrganization(
-              isYes: selectedAreYouCurrentlyAMember.value.value),
-          numberOfEmployees: employees,
-          otherValueChains: otherValueChainsDoYouOperateInController.text,
-          buyers: currentCustomer),
-      coreBusinesses: CoreBusinesses(
-          warehouseSourceEnergy: selectedSourceOfEnergy.value.title,
-          typeOfEquipment: [],
-          sourceOfInputs: [],
-          cropProductionAggregation: cropProductionAggregationList,
-          sourceProductionInputs: [],
-          logisticsActivities: [],
-          logisticsCrops: currentLogisticsCrops,
-          qualityOfInputsSuppliers:
-              howDoYouEnsureThatTheRightQualityController.text,
-          productionAggregation: ProductionAggregation(
-              production: annualProductionList, aggregation: []),
-          annualTradingVolumes: []),
-    ).obs;
+
+    currentQuestionnaireResponse.value.questionnaireCategoryId = 3;
+    currentQuestionnaireResponse.value.coordinates = currentCoordinate.value;
+
+    //******************** Basic Information ***************//
+    currentQuestionnaireResponse.value.basicInformation ??= BasicInformation();
+    currentQuestionnaireResponse.value.basicInformation!.cropId =
+        selectedRelevantCrop.value.id;
+    currentQuestionnaireResponse.value.basicInformation!.nameOfEntity =
+        jinalaController.text;
+    currentQuestionnaireResponse.value.basicInformation!.villageId =
+        selectedVillage.value.id;
+    currentQuestionnaireResponse.value.basicInformation!.educationLevelId =
+        selectedEducationLevel.value.id;
+    currentQuestionnaireResponse.value.basicInformation!.type = "LOGISTICS";
+    currentQuestionnaireResponse.value.basicInformation!.age =
+        nambariyatinController.text;
+    currentQuestionnaireResponse.value.basicInformation!.contactPerson ??=
+        ContactPerson();
+    currentQuestionnaireResponse.value.basicInformation!.contactPerson!.name =
+        jinaController.text;
+    currentQuestionnaireResponse.value.basicInformation!.contactPerson!
+        .designation = designationController.text;
+    currentQuestionnaireResponse.value.basicInformation!.contactPerson!.gender =
+        selectedGender.value.value;
+    currentQuestionnaireResponse.value.basicInformation!.contactPerson!
+        .emailAddress = baruapepeyaController.text;
+    currentQuestionnaireResponse.value.basicInformation!.contactPerson!
+        .phoneNo = nambariyaController.text;
+    //******************** End Basic Information ***************//
+
+    //******************** Social Economic ***************//
+    currentQuestionnaireResponse.value.socioEconomic ??= SocioEconomic();
+    currentQuestionnaireResponse.value.socioEconomic!
+        .businessRegistrationTypeId = selectedBusinessType.value.id;
+    currentQuestionnaireResponse.value.socioEconomic!.valueChainActivities =
+        selectedOtherValueChain.value.id != null
+            ? [selectedOtherValueChain.value.id!]
+            : [];
+    currentQuestionnaireResponse.value.socioEconomic!.entityPromote = [
+      selectedHowDoesYourEntityPromoter.value.title
+    ];
+    currentQuestionnaireResponse.value.socioEconomic!.competitors =
+        currentCompetitors;
+    currentQuestionnaireResponse.value.socioEconomic!.difficulties = [];
+    currentQuestionnaireResponse.value.socioEconomic!.otherDifficulties =
+        currentDifficulties;
+    currentQuestionnaireResponse.value.socioEconomic!.marketInformations = [];
+    currentQuestionnaireResponse.value.socioEconomic!.annualCost = [
+      annualCost.value
+    ];
+    currentQuestionnaireResponse.value.socioEconomic!.annualSales =
+        annualSalesList;
+    currentQuestionnaireResponse.value.socioEconomic!.problemsRelatedPolicy =
+        [];
+    currentQuestionnaireResponse.value.socioEconomic!.financeUsed =
+        financeUsedList;
+    currentQuestionnaireResponse.value.socioEconomic!.significantChallenges =
+        [];
+    currentQuestionnaireResponse.value.socioEconomic!.formalRecord =
+        FormalRecord();
+    currentQuestionnaireResponse.value.socioEconomic!.valueChainOrganization ??=
+        ValueChainOrganization();
+    currentQuestionnaireResponse.value.socioEconomic!.valueChainOrganization!
+        .isYes = selectedAreYouCurrentlyAMember.value.value;
+    currentQuestionnaireResponse.value.socioEconomic!.numberOfEmployees =
+        employees;
+    currentQuestionnaireResponse.value.socioEconomic!.otherValueChains =
+        otherValueChainsDoYouOperateInController.text;
+    currentQuestionnaireResponse.value.socioEconomic!.buyers = currentCustomer;
+    //******************** End Social Economic ***************//
+
+    //******************** Core Businesses ***************//
+    currentQuestionnaireResponse.value.coreBusinesses ??= CoreBusinesses();
+    currentQuestionnaireResponse.value.coreBusinesses!.warehouseSourceEnergy =
+        selectedSourceOfEnergy.value.title;
+    currentQuestionnaireResponse.value.coreBusinesses!.typeOfEquipment = [];
+    currentQuestionnaireResponse.value.coreBusinesses!.sourceOfInputs = [];
+    currentQuestionnaireResponse.value.coreBusinesses!
+        .cropProductionAggregation = cropProductionAggregationList;
+    currentQuestionnaireResponse.value.coreBusinesses!.sourceProductionInputs =
+        [];
+    currentQuestionnaireResponse.value.coreBusinesses!.logisticsActivities = [];
+    currentQuestionnaireResponse.value.coreBusinesses!.logisticsCrops =
+        currentLogisticsCrops;
+    currentQuestionnaireResponse
+            .value.coreBusinesses!.qualityOfInputsSuppliers =
+        howDoYouEnsureThatTheRightQualityController.text;
+    currentQuestionnaireResponse.value.coreBusinesses!.productionAggregation ??=
+        ProductionAggregation();
+    currentQuestionnaireResponse.value.coreBusinesses!.productionAggregation!
+        .production = annualProductionList;
+    currentQuestionnaireResponse
+        .value.coreBusinesses!.productionAggregation!.aggregation = [];
+    currentQuestionnaireResponse.value.coreBusinesses!.annualTradingVolumes =
+        [];
+    //******************** End Core Businesses ***************//
+
     QuestionnairesRequest registerfarmerrequest = QuestionnairesRequest(
         // imeiNumber: deviceid.value,
         // appVersionName: applicationVersion.value,
@@ -454,7 +517,7 @@ class LogisticsRegistrationController extends GetxController {
           .postSendQuestionnaireResponsesRequest(registerfarmerrequest, token);
       if (response.statusCode == 200) {
         if ((response.body["code"] ?? 0) == 1) {
-          //
+          currentQuestionnaireResponse.value = QuestionnaireResponse();
           selectedGender.value = SelectionPopupModel(title: "");
           selectedMembership.value = SelectionPopupModel(title: "");
           // selectedRegistrationType.value = SelectionPopupModel(title: "");
@@ -555,7 +618,7 @@ class LogisticsRegistrationController extends GetxController {
     }
   }
 
-    void getFarmerOffline(QuestionnaireResponse? farmer) async {
+  void getFarmerOffline(QuestionnaireResponse? farmer) async {
     if (farmer != null) {
       edit.value = true;
       currentQuestionnaireResponse.value = farmer;
@@ -631,7 +694,16 @@ class LogisticsRegistrationController extends GetxController {
                       .value.socioEconomic!.otherValueChains ??
                   ""
               : "";
+              designationController.text =
+          currentQuestionnaireResponse.value.basicInformation != null
+              ? currentQuestionnaireResponse
+                          .value.basicInformation!.contactPerson !=
+                      null
+                  ? currentQuestionnaireResponse
+                          .value.basicInformation!.contactPerson!.designation ??
+                      ""
+                  : ""
+              : "";
     }
   }
-
 }

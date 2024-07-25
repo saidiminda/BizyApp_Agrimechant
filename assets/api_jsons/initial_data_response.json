@@ -41,20 +41,4548 @@
     ],
     "regions": [
         {
-            "name": "MTWARA",
-            "id": 1
+            "id": 1,
+            "name": "SINGIDA",
+            "districts": [
+                {
+                    "id": 1,
+                    "name": "IRAMBA DISTRICT COUNCIL",
+                    "region_id": 1,
+                    "wards": [
+                        {
+                            "id": 1,
+                            "name": "SHELUI WARD",
+                            "district_id": 1,
+                            "villages": [
+                                {
+                                    "id": 1,
+                                    "name": "NSELEMBWE VILLAGE",
+                                    "ward_id": 1
+                                },
+                                {
+                                    "id": 47,
+                                    "name": "WEMBERE VILLAGE",
+                                    "ward_id": 1
+                                },
+                                {
+                                    "id": 218,
+                                    "name": "TINTIGULU VILLAGE",
+                                    "ward_id": 1
+                                },
+                                {
+                                    "id": 250,
+                                    "name": "NKYALA VILLAGE",
+                                    "ward_id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "id": 91,
+                            "name": "URUGHU WARD",
+                            "district_id": 1,
+                            "villages": [
+                                {
+                                    "id": 210,
+                                    "name": "MLANDALA VILLAGE",
+                                    "ward_id": 91
+                                },
+                                {
+                                    "id": 307,
+                                    "name": "MASIMBA VILLAGE",
+                                    "ward_id": 91
+                                },
+                                {
+                                    "id": 319,
+                                    "name": "URUGHU VILLAGE",
+                                    "ward_id": 91
+                                }
+                            ]
+                        },
+                        {
+                            "id": 104,
+                            "name": "MGONGO WARD",
+                            "district_id": 1,
+                            "villages": [
+                                {
+                                    "id": 237,
+                                    "name": "KISONGO SHELUI VILLAGE",
+                                    "ward_id": 104
+                                },
+                                {
+                                    "id": 238,
+                                    "name": "MGONGO VILLAGE",
+                                    "ward_id": 104
+                                },
+                                {
+                                    "id": 247,
+                                    "name": "MSEKO VILLAGE",
+                                    "ward_id": 104
+                                },
+                                {
+                                    "id": 248,
+                                    "name": "KIZONZO VILLAGE",
+                                    "ward_id": 104
+                                }
+                            ]
+                        },
+                        {
+                            "id": 106,
+                            "name": "NDAGO WARD",
+                            "district_id": 1,
+                            "villages": [
+                                {
+                                    "id": 242,
+                                    "name": "MDONGOLO VILLAGE",
+                                    "ward_id": 106
+                                },
+                                {
+                                    "id": 243,
+                                    "name": "ZINZILIGI VILLAGE",
+                                    "ward_id": 106
+                                },
+                                {
+                                    "id": 308,
+                                    "name": "SONGAMBELE VILLAGE",
+                                    "ward_id": 106
+                                }
+                            ]
+                        },
+                        {
+                            "id": 109,
+                            "name": "KIDARU WARD",
+                            "district_id": 1,
+                            "villages": [
+                                {
+                                    "id": 249,
+                                    "name": "TYEGELO VILLAGE",
+                                    "ward_id": 109
+                                },
+                                {
+                                    "id": 274,
+                                    "name": "NDURUMO VILLAGE.",
+                                    "ward_id": 109
+                                },
+                                {
+                                    "id": 276,
+                                    "name": "LUONO VILLAGE",
+                                    "ward_id": 109
+                                }
+                            ]
+                        },
+                        {
+                            "id": 110,
+                            "name": "MTOA WARD",
+                            "district_id": 1,
+                            "villages": [
+                                {
+                                    "id": 251,
+                                    "name": "MASAGI VILLAGE",
+                                    "ward_id": 110
+                                },
+                                {
+                                    "id": 280,
+                                    "name": "MGELA VILLAGE",
+                                    "ward_id": 110
+                                },
+                                {
+                                    "id": 284,
+                                    "name": "KINKUNGU VILLAGE",
+                                    "ward_id": 110
+                                },
+                                {
+                                    "id": 296,
+                                    "name": "MTOA VILLAGE",
+                                    "ward_id": 110
+                                },
+                                {
+                                    "id": 300,
+                                    "name": "MSAI VILLAGE",
+                                    "ward_id": 110
+                                },
+                                {
+                                    "id": 304,
+                                    "name": "TYEME VILLAGE",
+                                    "ward_id": 110
+                                }
+                            ]
+                        },
+                        {
+                            "id": 111,
+                            "name": "KISIRIRI WARD",
+                            "district_id": 1,
+                            "villages": [
+                                {
+                                    "id": 252,
+                                    "name": "KINALILYA VILLAGE",
+                                    "ward_id": 111
+                                },
+                                {
+                                    "id": 265,
+                                    "name": "KISANA VILLAGE",
+                                    "ward_id": 111
+                                },
+                                {
+                                    "id": 266,
+                                    "name": "KISIMBA VILLAGE",
+                                    "ward_id": 111
+                                },
+                                {
+                                    "id": 267,
+                                    "name": "KISIRIRI VILLAGE",
+                                    "ward_id": 111
+                                }
+                            ]
+                        },
+                        {
+                            "id": 113,
+                            "name": "KIOMBOI WARD",
+                            "district_id": 1,
+                            "villages": [
+                                {
+                                    "id": 260,
+                                    "name": "MGULUKO VILLAGE",
+                                    "ward_id": 113
+                                },
+                                {
+                                    "id": 261,
+                                    "name": "TUTU \"B\" VILLAGE",
+                                    "ward_id": 113
+                                },
+                                {
+                                    "id": 262,
+                                    "name": "MLUTANI VILLAGE",
+                                    "ward_id": 113
+                                },
+                                {
+                                    "id": 263,
+                                    "name": "LIKE VILLAGE",
+                                    "ward_id": 113
+                                },
+                                {
+                                    "id": 264,
+                                    "name": "TUTU \"A\" VILLAGE",
+                                    "ward_id": 113
+                                },
+                                {
+                                    "id": 268,
+                                    "name": "RURUMA VILLAGE",
+                                    "ward_id": 113
+                                },
+                                {
+                                    "id": 269,
+                                    "name": "LOWA B VILLAGE",
+                                    "ward_id": 113
+                                },
+                                {
+                                    "id": 271,
+                                    "name": "MGULUKA VILLAGE",
+                                    "ward_id": 113
+                                },
+                                {
+                                    "id": 272,
+                                    "name": "LULUMBA VILLAGE",
+                                    "ward_id": 113
+                                },
+                                {
+                                    "id": 275,
+                                    "name": "SHATI VILLAGE",
+                                    "ward_id": 113
+                                }
+                            ]
+                        },
+                        {
+                            "id": 115,
+                            "name": "MTEKENTE WARD",
+                            "district_id": 1,
+                            "villages": [
+                                {
+                                    "id": 283,
+                                    "name": "UJUNGU VILLAGE",
+                                    "ward_id": 115
+                                },
+                                {
+                                    "id": 301,
+                                    "name": "LUNSANGA VILLAGE",
+                                    "ward_id": 115
+                                },
+                                {
+                                    "id": 305,
+                                    "name": "MSANSAO VILLAGE",
+                                    "ward_id": 115
+                                }
+                            ]
+                        },
+                        {
+                            "id": 116,
+                            "name": "MUKULU WARD",
+                            "district_id": 1,
+                            "villages": [
+                                {
+                                    "id": 285,
+                                    "name": "MOTOMOTO VILLAGE",
+                                    "ward_id": 116
+                                },
+                                {
+                                    "id": 322,
+                                    "name": "SIMBALUNGWALA VILLAGE",
+                                    "ward_id": 116
+                                }
+                            ]
+                        },
+                        {
+                            "id": 121,
+                            "name": "OLD KIOMBOI WARD",
+                            "district_id": 1,
+                            "villages": [
+                                {
+                                    "id": 295,
+                                    "name": "MAMPAMPA VILLAGE",
+                                    "ward_id": 121
+                                },
+                                {
+                                    "id": 329,
+                                    "name": "KINAMBEU VILLAGE",
+                                    "ward_id": 121
+                                },
+                                {
+                                    "id": 330,
+                                    "name": "OLD KIOMBOI VILLAGE",
+                                    "ward_id": 121
+                                }
+                            ]
+                        },
+                        {
+                            "id": 125,
+                            "name": "KASELYA WARD",
+                            "district_id": 1,
+                            "villages": [
+                                {
+                                    "id": 309,
+                                    "name": "MGUNGIA VILLAGE",
+                                    "ward_id": 125
+                                },
+                                {
+                                    "id": 311,
+                                    "name": "KASELYA VILLAGE",
+                                    "ward_id": 125
+                                }
+                            ]
+                        },
+                        {
+                            "id": 126,
+                            "name": "NDULUNGU WARD",
+                            "district_id": 1,
+                            "villages": [
+                                {
+                                    "id": 310,
+                                    "name": "NDULUNGU VILLAGE",
+                                    "ward_id": 126
+                                },
+                                {
+                                    "id": 313,
+                                    "name": "MAHOLA VILLAGE",
+                                    "ward_id": 126
+                                }
+                            ]
+                        },
+                        {
+                            "id": 129,
+                            "name": "KYENGENGE WARD",
+                            "district_id": 1,
+                            "villages": [
+                                {
+                                    "id": 320,
+                                    "name": "MAKUNDA VILLAGE",
+                                    "ward_id": 129
+                                },
+                                {
+                                    "id": 324,
+                                    "name": "KYENGEGE VILLAGE",
+                                    "ward_id": 129
+                                }
+                            ]
+                        },
+                        {
+                            "id": 130,
+                            "name": "KINAMPANDA WARD",
+                            "district_id": 1,
+                            "villages": [
+                                {
+                                    "id": 321,
+                                    "name": "GALANGALA VILLAGE",
+                                    "ward_id": 130
+                                },
+                                {
+                                    "id": 325,
+                                    "name": "KYALOSANGI VILLAGE",
+                                    "ward_id": 130
+                                },
+                                {
+                                    "id": 326,
+                                    "name": "KISHARITA VILLAGE",
+                                    "ward_id": 130
+                                },
+                                {
+                                    "id": 328,
+                                    "name": "UWANZA VILLAGE",
+                                    "ward_id": 130
+                                }
+                            ]
+                        },
+                        {
+                            "id": 131,
+                            "name": "ULEMO WARD",
+                            "district_id": 1,
+                            "villages": [
+                                {
+                                    "id": 323,
+                                    "name": "ULEMO VILLAGE",
+                                    "ward_id": 131
+                                },
+                                {
+                                    "id": 336,
+                                    "name": "MISIGIRI VILLAGE",
+                                    "ward_id": 131
+                                },
+                                {
+                                    "id": 341,
+                                    "name": "KITUKUTU VILLAGE",
+                                    "ward_id": 131
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "name": "IKUNGI DISTRICT COUNCIL",
+                    "region_id": 1,
+                    "wards": [
+                        {
+                            "id": 3,
+                            "name": "IKUNGI DISTRICT COUNCIL WARD",
+                            "district_id": 3,
+                            "villages": [
+                                {
+                                    "id": 3,
+                                    "name": "MATONGO VILLAGE",
+                                    "ward_id": 3
+                                }
+                            ]
+                        },
+                        {
+                            "id": 12,
+                            "name": "DUNG'UNYI WARD",
+                            "district_id": 3,
+                            "villages": [
+                                {
+                                    "id": 14,
+                                    "name": "MUNKINYA VILLAGE",
+                                    "ward_id": 12
+                                },
+                                {
+                                    "id": 26,
+                                    "name": "KIPUMBUIKO VILLAGE",
+                                    "ward_id": 12
+                                },
+                                {
+                                    "id": 182,
+                                    "name": "DAMANKIA VILLAGE",
+                                    "ward_id": 12
+                                },
+                                {
+                                    "id": 183,
+                                    "name": "SAMAKA VILLAGE",
+                                    "ward_id": 12
+                                },
+                                {
+                                    "id": 564,
+                                    "name": "DUNG'UNYI VILLAGE",
+                                    "ward_id": 12
+                                }
+                            ]
+                        },
+                        {
+                            "id": 168,
+                            "name": "MTUNDURU WARD",
+                            "district_id": 3,
+                            "villages": [
+                                {
+                                    "id": 432,
+                                    "name": "KIPUNDA VILLAGE",
+                                    "ward_id": 168
+                                },
+                                {
+                                    "id": 495,
+                                    "name": "MTUNDURU VILLAGE",
+                                    "ward_id": 168
+                                }
+                            ]
+                        },
+                        {
+                            "id": 169,
+                            "name": "MINYUGHE WARD",
+                            "district_id": 3,
+                            "villages": [
+                                {
+                                    "id": 433,
+                                    "name": "MINYUGHE VILLAGE",
+                                    "ward_id": 169
+                                },
+                                {
+                                    "id": 504,
+                                    "name": "MAYAHA VILLAGE",
+                                    "ward_id": 169
+                                }
+                            ]
+                        },
+                        {
+                            "id": 184,
+                            "name": "ISSUNA WARD",
+                            "district_id": 3,
+                            "villages": [
+                                {
+                                    "id": 466,
+                                    "name": "NG'ONGOSORO VILLAGE",
+                                    "ward_id": 184
+                                },
+                                {
+                                    "id": 574,
+                                    "name": "ISSUNA VILLAGE",
+                                    "ward_id": 184
+                                }
+                            ]
+                        },
+                        {
+                            "id": 187,
+                            "name": "MWARU WARD",
+                            "district_id": 3,
+                            "villages": [
+                                {
+                                    "id": 470,
+                                    "name": "MPUGUZI VILLAGE",
+                                    "ward_id": 187
+                                },
+                                {
+                                    "id": 481,
+                                    "name": "MWARU VILLAGE",
+                                    "ward_id": 187
+                                }
+                            ]
+                        },
+                        {
+                            "id": 190,
+                            "name": "IRISYA WARD",
+                            "district_id": 3,
+                            "villages": [
+                                {
+                                    "id": 473,
+                                    "name": "MWASUTIANGA VILLAGE",
+                                    "ward_id": 190
+                                },
+                                {
+                                    "id": 474,
+                                    "name": "IRISYA VILLAGE",
+                                    "ward_id": 190
+                                },
+                                {
+                                    "id": 475,
+                                    "name": "MUNYU VILLAGE",
+                                    "ward_id": 190
+                                }
+                            ]
+                        },
+                        {
+                            "id": 192,
+                            "name": "SEPUKA WARD",
+                            "district_id": 3,
+                            "villages": [
+                                {
+                                    "id": 480,
+                                    "name": "MSUNGUA VILLAGE _OLD",
+                                    "ward_id": 192
+                                },
+                                {
+                                    "id": 487,
+                                    "name": "MNANG'ANA VILLAGE",
+                                    "ward_id": 192
+                                }
+                            ]
+                        },
+                        {
+                            "id": 194,
+                            "name": "IGOMBWE WARD",
+                            "district_id": 3,
+                            "villages": [
+                                {
+                                    "id": 484,
+                                    "name": "MAHONDA VILLAGE",
+                                    "ward_id": 194
+                                },
+                                {
+                                    "id": 491,
+                                    "name": "GERMANI VILLAGE",
+                                    "ward_id": 194
+                                }
+                            ]
+                        },
+                        {
+                            "id": 199,
+                            "name": "IGLANSONI WARD",
+                            "district_id": 3,
+                            "villages": [
+                                {
+                                    "id": 498,
+                                    "name": "MNYANGE VILLAGE",
+                                    "ward_id": 199
+                                },
+                                {
+                                    "id": 505,
+                                    "name": "IGLANSONI VILLAGE",
+                                    "ward_id": 199
+                                }
+                            ]
+                        },
+                        {
+                            "id": 200,
+                            "name": "MAKILAWA WARD",
+                            "district_id": 3,
+                            "villages": [
+                                {
+                                    "id": 501,
+                                    "name": "MAKILAWA VILLAGE",
+                                    "ward_id": 200
+                                },
+                                {
+                                    "id": 503,
+                                    "name": "MTAVIRA VILLAGE",
+                                    "ward_id": 200
+                                }
+                            ]
+                        },
+                        {
+                            "id": 201,
+                            "name": "NTUNTU WARD",
+                            "district_id": 3,
+                            "villages": [
+                                {
+                                    "id": 509,
+                                    "name": "NTUNTU VILLAGE",
+                                    "ward_id": 201
+                                },
+                                {
+                                    "id": 510,
+                                    "name": "MAMPAMBO VILLAGE",
+                                    "ward_id": 201
+                                }
+                            ]
+                        },
+                        {
+                            "id": 202,
+                            "name": "KITUNTU WARD",
+                            "district_id": 3,
+                            "villages": [
+                                {
+                                    "id": 513,
+                                    "name": "MATYUKU VILLAGE",
+                                    "ward_id": 202
+                                }
+                            ]
+                        },
+                        {
+                            "id": 204,
+                            "name": "KIKIO WARD",
+                            "district_id": 3,
+                            "villages": [
+                                {
+                                    "id": 515,
+                                    "name": "MKUNGUAKIHENDO VILLAGE",
+                                    "ward_id": 204
+                                },
+                                {
+                                    "id": 519,
+                                    "name": "NKUNDI VILLAGE",
+                                    "ward_id": 204
+                                },
+                                {
+                                    "id": 537,
+                                    "name": "MNANE VILLAGE",
+                                    "ward_id": 204
+                                },
+                                {
+                                    "id": 538,
+                                    "name": "MUNANE VILLAGE",
+                                    "ward_id": 204
+                                }
+                            ]
+                        },
+                        {
+                            "id": 205,
+                            "name": "MISUGHAA WARD",
+                            "district_id": 3,
+                            "villages": [
+                                {
+                                    "id": 521,
+                                    "name": "MISUGHAA VILLAGE",
+                                    "ward_id": 205
+                                },
+                                {
+                                    "id": 528,
+                                    "name": "SAKAA VILLAGE",
+                                    "ward_id": 205
+                                },
+                                {
+                                    "id": 532,
+                                    "name": "MSULE VILLAGE",
+                                    "ward_id": 205
+                                }
+                            ]
+                        },
+                        {
+                            "id": 208,
+                            "name": "MAKIUNGU WARD",
+                            "district_id": 3,
+                            "villages": [
+                                {
+                                    "id": 533,
+                                    "name": "KIMBWI VILLAGE",
+                                    "ward_id": 208
+                                }
+                            ]
+                        },
+                        {
+                            "id": 209,
+                            "name": "MANG'ONYI WARD",
+                            "district_id": 3,
+                            "villages": [
+                                {
+                                    "id": 534,
+                                    "name": "SAMBARU VILLAGE",
+                                    "ward_id": 209
+                                },
+                                {
+                                    "id": 545,
+                                    "name": "MANG'ONYI VILLAGE",
+                                    "ward_id": 209
+                                }
+                            ]
+                        },
+                        {
+                            "id": 211,
+                            "name": "PUMA WARD",
+                            "district_id": 3,
+                            "villages": [
+                                {
+                                    "id": 541,
+                                    "name": "WIBIA VILLAGE",
+                                    "ward_id": 211
+                                },
+                                {
+                                    "id": 547,
+                                    "name": "NKHUNINKANA VILLAGE",
+                                    "ward_id": 211
+                                },
+                                {
+                                    "id": 551,
+                                    "name": "PUMA VILLAGE",
+                                    "ward_id": 211
+                                }
+                            ]
+                        },
+                        {
+                            "id": 212,
+                            "name": "IHANJA WARD",
+                            "district_id": 3,
+                            "villages": [
+                                {
+                                    "id": 542,
+                                    "name": "NDURU VILLAGE",
+                                    "ward_id": 212
+                                },
+                                {
+                                    "id": 546,
+                                    "name": "IHANJA VILLAGE",
+                                    "ward_id": 212
+                                }
+                            ]
+                        },
+                        {
+                            "id": 213,
+                            "name": "UNYAHATI WARD",
+                            "district_id": 3,
+                            "villages": [
+                                {
+                                    "id": 543,
+                                    "name": "ULYAMPITI VILLAGE",
+                                    "ward_id": 213
+                                },
+                                {
+                                    "id": 567,
+                                    "name": "MUUNGANO VILLAGE.",
+                                    "ward_id": 213
+                                }
+                            ]
+                        },
+                        {
+                            "id": 214,
+                            "name": "MKIWA WARD",
+                            "district_id": 3,
+                            "villages": [
+                                {
+                                    "id": 544,
+                                    "name": "MKIWA VILLAGE",
+                                    "ward_id": 214
+                                },
+                                {
+                                    "id": 573,
+                                    "name": "CHODA VILLAGE",
+                                    "ward_id": 214
+                                }
+                            ]
+                        },
+                        {
+                            "id": 215,
+                            "name": "MUNGAA WARD",
+                            "district_id": 3,
+                            "villages": [
+                                {
+                                    "id": 553,
+                                    "name": "UNYAGHUMPI VILLAGE",
+                                    "ward_id": 215
+                                },
+                                {
+                                    "id": 562,
+                                    "name": "KINKU VILLAGE",
+                                    "ward_id": 215
+                                },
+                                {
+                                    "id": 566,
+                                    "name": "MUNGAA VILLAGE",
+                                    "ward_id": 215
+                                }
+                            ]
+                        },
+                        {
+                            "id": 217,
+                            "name": "IKUNGI WARD",
+                            "district_id": 3,
+                            "villages": [
+                                {
+                                    "id": 560,
+                                    "name": "MATONGO VILLAGE",
+                                    "ward_id": 217
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "name": "MKALAMA  DISTRICT COUNCIL",
+                    "region_id": 1,
+                    "wards": [
+                        {
+                            "id": 5,
+                            "name": "MATONGO WARD",
+                            "district_id": 5,
+                            "villages": [
+                                {
+                                    "id": 6,
+                                    "name": "MATONGO VILLAGE",
+                                    "ward_id": 5
+                                }
+                            ]
+                        },
+                        {
+                            "id": 89,
+                            "name": "MSINGI WARD",
+                            "district_id": 5,
+                            "villages": [
+                                {
+                                    "id": 204,
+                                    "name": "KIDII VILLAGE",
+                                    "ward_id": 89
+                                },
+                                {
+                                    "id": 215,
+                                    "name": "NDURUMO VILLAGE",
+                                    "ward_id": 89
+                                },
+                                {
+                                    "id": 217,
+                                    "name": "ISHINSI VILLAGE",
+                                    "ward_id": 89
+                                }
+                            ]
+                        },
+                        {
+                            "id": 95,
+                            "name": "GUMANGA WARD",
+                            "district_id": 5,
+                            "villages": [
+                                {
+                                    "id": 216,
+                                    "name": "MGIMBA VILLAGE",
+                                    "ward_id": 95
+                                },
+                                {
+                                    "id": 222,
+                                    "name": "KINANKAMBA VILLAGE",
+                                    "ward_id": 95
+                                },
+                                {
+                                    "id": 223,
+                                    "name": "IKUNGU VILLAGE",
+                                    "ward_id": 95
+                                }
+                            ]
+                        },
+                        {
+                            "id": 100,
+                            "name": "ILUNDA WARD",
+                            "district_id": 5,
+                            "villages": [
+                                {
+                                    "id": 229,
+                                    "name": "IAMBI VILLAGE",
+                                    "ward_id": 100
+                                }
+                            ]
+                        },
+                        {
+                            "id": 101,
+                            "name": "NKALAKALA WARD",
+                            "district_id": 5,
+                            "villages": [
+                                {
+                                    "id": 230,
+                                    "name": "MALAJA VILLAGE",
+                                    "ward_id": 101
+                                }
+                            ]
+                        },
+                        {
+                            "id": 102,
+                            "name": "NDUGUTI WARD",
+                            "district_id": 5,
+                            "villages": [
+                                {
+                                    "id": 232,
+                                    "name": "MNG'ANDA VILLAGE",
+                                    "ward_id": 102
+                                },
+                                {
+                                    "id": 235,
+                                    "name": "MAZILIGA VILLAGE",
+                                    "ward_id": 102
+                                },
+                                {
+                                    "id": 240,
+                                    "name": "MWANDO VILLAGE",
+                                    "ward_id": 102
+                                }
+                            ]
+                        },
+                        {
+                            "id": 103,
+                            "name": "MIGANGA WARD",
+                            "district_id": 5,
+                            "villages": [
+                                {
+                                    "id": 233,
+                                    "name": "IPULI VILLAGE",
+                                    "ward_id": 103
+                                },
+                                {
+                                    "id": 234,
+                                    "name": "KINANDILI VILLAGE",
+                                    "ward_id": 103
+                                },
+                                {
+                                    "id": 236,
+                                    "name": "MGOLOMBYO VILLAGE",
+                                    "ward_id": 103
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 7,
+                    "name": "SINGIDA CBD DISTRICT COUNCIL",
+                    "region_id": 1,
+                    "wards": [
+                        {
+                            "id": 11,
+                            "name": "UNYAMIKUMBI WARD",
+                            "district_id": 7,
+                            "villages": [
+                                {
+                                    "id": 13,
+                                    "name": "UGHAUGHA A VILLAGE",
+                                    "ward_id": 11
+                                },
+                                {
+                                    "id": 104,
+                                    "name": "KIHADE VILLAGE",
+                                    "ward_id": 11
+                                },
+                                {
+                                    "id": 105,
+                                    "name": "UGHAUGHA B VILLAGE",
+                                    "ward_id": 11
+                                },
+                                {
+                                    "id": 436,
+                                    "name": "UNYAMIKUMBI A VILLAGE",
+                                    "ward_id": 11
+                                }
+                            ]
+                        },
+                        {
+                            "id": 16,
+                            "name": "KISAKI WARD",
+                            "district_id": 7,
+                            "villages": [
+                                {
+                                    "id": 19,
+                                    "name": "UNYAMIKUMBI B VILLAGE",
+                                    "ward_id": 16
+                                }
+                            ]
+                        },
+                        {
+                            "id": 133,
+                            "name": "MTAMAA WARD",
+                            "district_id": 7,
+                            "villages": [
+                                {
+                                    "id": 331,
+                                    "name": "MTISI VILLAGE",
+                                    "ward_id": 133
+                                },
+                                {
+                                    "id": 463,
+                                    "name": "MTAMAA A VILLAGE",
+                                    "ward_id": 133
+                                }
+                            ]
+                        },
+                        {
+                            "id": 137,
+                            "name": "UNYIANGA WARD",
+                            "district_id": 7,
+                            "villages": [
+                                {
+                                    "id": 343,
+                                    "name": "UNYIANGA A VILLAGE",
+                                    "ward_id": 137
+                                },
+                                {
+                                    "id": 344,
+                                    "name": "UNYIANGA B VILLAGE",
+                                    "ward_id": 137
+                                }
+                            ]
+                        },
+                        {
+                            "id": 150,
+                            "name": "MTIPA WARD",
+                            "district_id": 7,
+                            "villages": [
+                                {
+                                    "id": 381,
+                                    "name": "MANGA VILLAGE",
+                                    "ward_id": 150
+                                }
+                            ]
+                        },
+                        {
+                            "id": 166,
+                            "name": "MWANKOKO WARD",
+                            "district_id": 7,
+                            "villages": [
+                                {
+                                    "id": 427,
+                                    "name": "MWANKOKO B VILLAGE",
+                                    "ward_id": 166
+                                },
+                                {
+                                    "id": 444,
+                                    "name": "MWANKOKO A VILLAGE",
+                                    "ward_id": 166
+                                }
+                            ]
+                        },
+                        {
+                            "id": 171,
+                            "name": "UNYAMBWA WARD",
+                            "district_id": 7,
+                            "villages": [
+                                {
+                                    "id": 438,
+                                    "name": "IPUNGI VILLAGE",
+                                    "ward_id": 171
+                                },
+                                {
+                                    "id": 440,
+                                    "name": "KISASIDA VILLAGE",
+                                    "ward_id": 171
+                                }
+                            ]
+                        },
+                        {
+                            "id": 172,
+                            "name": "MUNGU MAJI WARD",
+                            "district_id": 7,
+                            "villages": [
+                                {
+                                    "id": 443,
+                                    "name": "MUNGUMAJI VILLAGE",
+                                    "ward_id": 172
+                                }
+                            ]
+                        },
+                        {
+                            "id": 175,
+                            "name": "MANDEWA WARD",
+                            "district_id": 7,
+                            "villages": [
+                                {
+                                    "id": 447,
+                                    "name": "MANGWANYUKI VILLAGE",
+                                    "ward_id": 175
+                                }
+                            ]
+                        },
+                        {
+                            "id": 176,
+                            "name": "UHAMAKA WARD",
+                            "district_id": 7,
+                            "villages": [
+                                {
+                                    "id": 451,
+                                    "name": "UHAMAKA VILLAGE",
+                                    "ward_id": 176
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 9,
+                    "name": "ITIGI DISTRICT COUNCIL",
+                    "region_id": 1,
+                    "wards": [
+                        {
+                            "id": 19,
+                            "name": "IDODYANDOLE WARD",
+                            "district_id": 9,
+                            "villages": [
+                                {
+                                    "id": 27,
+                                    "name": "IPANGAMASASI VILLAGE",
+                                    "ward_id": 19
+                                },
+                                {
+                                    "id": 143,
+                                    "name": "MBUGANI VILLAGE.",
+                                    "ward_id": 19
+                                },
+                                {
+                                    "id": 152,
+                                    "name": "IDODYANDOLE VILLAGE",
+                                    "ward_id": 19
+                                },
+                                {
+                                    "id": 153,
+                                    "name": "KASHANGU VILLAGE",
+                                    "ward_id": 19
+                                },
+                                {
+                                    "id": 165,
+                                    "name": "JEJE VILLAGE",
+                                    "ward_id": 19
+                                }
+                            ]
+                        },
+                        {
+                            "id": 25,
+                            "name": "MWAMAGEMBE WARD",
+                            "district_id": 9,
+                            "villages": [
+                                {
+                                    "id": 37,
+                                    "name": "MWAMAGEMBE VILLAGE",
+                                    "ward_id": 25
+                                },
+                                {
+                                    "id": 118,
+                                    "name": "KINTANULA VILLAGE",
+                                    "ward_id": 25
+                                }
+                            ]
+                        },
+                        {
+                            "id": 29,
+                            "name": "MAJENGO WARD",
+                            "district_id": 9,
+                            "villages": [
+                                {
+                                    "id": 43,
+                                    "name": "ZINGINALI VILLAGE",
+                                    "ward_id": 29
+                                },
+                                {
+                                    "id": 164,
+                                    "name": "MAJENGO VILLAGE",
+                                    "ward_id": 29
+                                }
+                            ]
+                        },
+                        {
+                            "id": 31,
+                            "name": "TAMBUKARELI WARD",
+                            "district_id": 9,
+                            "villages": [
+                                {
+                                    "id": 45,
+                                    "name": "KIHANJU VILLAGE",
+                                    "ward_id": 31
+                                },
+                                {
+                                    "id": 202,
+                                    "name": "SONGAMBELE VILLAGE,",
+                                    "ward_id": 31
+                                },
+                                {
+                                    "id": 203,
+                                    "name": "TAMBUKARELI VILLAGE",
+                                    "ward_id": 31
+                                }
+                            ]
+                        },
+                        {
+                            "id": 49,
+                            "name": "MGANDU WARD",
+                            "district_id": 9,
+                            "villages": [
+                                {
+                                    "id": 91,
+                                    "name": "KAYUI VILLAGE",
+                                    "ward_id": 49
+                                },
+                                {
+                                    "id": 119,
+                                    "name": "MTUNDU VILLAGE",
+                                    "ward_id": 49
+                                },
+                                {
+                                    "id": 136,
+                                    "name": "CHABUTWA VILLAGE",
+                                    "ward_id": 49
+                                },
+                                {
+                                    "id": 140,
+                                    "name": "LULANGA VILLAGE",
+                                    "ward_id": 49
+                                },
+                                {
+                                    "id": 141,
+                                    "name": "ITAGATA VILLAGE",
+                                    "ward_id": 49
+                                },
+                                {
+                                    "id": 142,
+                                    "name": "MTAKUJA VILLAGE,",
+                                    "ward_id": 49
+                                }
+                            ]
+                        },
+                        {
+                            "id": 57,
+                            "name": "ITIGI  WARD",
+                            "district_id": 9,
+                            "villages": [
+                                {
+                                    "id": 102,
+                                    "name": "MLOWA VILLAGE",
+                                    "ward_id": 57
+                                },
+                                {
+                                    "id": 103,
+                                    "name": "ITIGI MJINI VILLAGE",
+                                    "ward_id": 57
+                                }
+                            ]
+                        },
+                        {
+                            "id": 59,
+                            "name": "KALANGALI WARD",
+                            "district_id": 9,
+                            "villages": [
+                                {
+                                    "id": 108,
+                                    "name": "MNAZI MMOJA VILLAGE",
+                                    "ward_id": 59
+                                },
+                                {
+                                    "id": 127,
+                                    "name": "TULIENI VILLAGE",
+                                    "ward_id": 59
+                                },
+                                {
+                                    "id": 129,
+                                    "name": "KALANGALI VILLAGE",
+                                    "ward_id": 59
+                                }
+                            ]
+                        },
+                        {
+                            "id": 66,
+                            "name": "MITUNDU WARD",
+                            "district_id": 9,
+                            "villages": [
+                                {
+                                    "id": 126,
+                                    "name": "IPALALYU VILLAGE",
+                                    "ward_id": 66
+                                },
+                                {
+                                    "id": 139,
+                                    "name": "MAKALE VILLAGE",
+                                    "ward_id": 66
+                                }
+                            ]
+                        },
+                        {
+                            "id": 67,
+                            "name": "RUNGWA WARD",
+                            "district_id": 9,
+                            "villages": [
+                                {
+                                    "id": 128,
+                                    "name": "RUNGWA VILLAGE",
+                                    "ward_id": 67
+                                }
+                            ]
+                        },
+                        {
+                            "id": 71,
+                            "name": "KITARAKA WARD",
+                            "district_id": 9,
+                            "villages": [
+                                {
+                                    "id": 137,
+                                    "name": "DOROTO VILLAGE",
+                                    "ward_id": 71
+                                },
+                                {
+                                    "id": 166,
+                                    "name": "KITARAKA VILLAGE",
+                                    "ward_id": 71
+                                },
+                                {
+                                    "id": 185,
+                                    "name": "KAZIKAZI VILLAGE",
+                                    "ward_id": 71
+                                }
+                            ]
+                        },
+                        {
+                            "id": 76,
+                            "name": "IPANDE WARD",
+                            "district_id": 9,
+                            "villages": [
+                                {
+                                    "id": 150,
+                                    "name": "IPANDE VILLAGE",
+                                    "ward_id": 76
+                                },
+                                {
+                                    "id": 158,
+                                    "name": "MUHANGA VILLAGE",
+                                    "ward_id": 76
+                                },
+                                {
+                                    "id": 200,
+                                    "name": "DAMWELU VILLAGE",
+                                    "ward_id": 76
+                                }
+                            ]
+                        },
+                        {
+                            "id": 78,
+                            "name": "SANJARANDA WARD",
+                            "district_id": 9,
+                            "villages": [
+                                {
+                                    "id": 162,
+                                    "name": "KITOPENI VILLAGE",
+                                    "ward_id": 78
+                                },
+                                {
+                                    "id": 163,
+                                    "name": "SANJARANDA VILLAGE",
+                                    "ward_id": 78
+                                },
+                                {
+                                    "id": 186,
+                                    "name": "GURUNGU VILLAGE",
+                                    "ward_id": 78
+                                }
+                            ]
+                        },
+                        {
+                            "id": 85,
+                            "name": "AGHONDI WARD",
+                            "district_id": 9,
+                            "villages": [
+                                {
+                                    "id": 187,
+                                    "name": "NJIRII VILLAGE",
+                                    "ward_id": 85
+                                },
+                                {
+                                    "id": 190,
+                                    "name": "MABONDENI VILLAGE",
+                                    "ward_id": 85
+                                },
+                                {
+                                    "id": 192,
+                                    "name": "KAMENYANGA VILLAGE",
+                                    "ward_id": 85
+                                },
+                                {
+                                    "id": 193,
+                                    "name": "AGHONDI VILLAGE",
+                                    "ward_id": 85
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 10,
+                    "name": "MANYONI DISTRICT COUNCIL",
+                    "region_id": 1,
+                    "wards": [
+                        {
+                            "id": 26,
+                            "name": "MAJIRI WARD",
+                            "district_id": 10,
+                            "villages": [
+                                {
+                                    "id": 39,
+                                    "name": "MAJIRI VILLAGE",
+                                    "ward_id": 26
+                                }
+                            ]
+                        },
+                        {
+                            "id": 28,
+                            "name": "KINTINKU WARD",
+                            "district_id": 10,
+                            "villages": [
+                                {
+                                    "id": 42,
+                                    "name": "LUSILILE VILLAGE",
+                                    "ward_id": 28
+                                },
+                                {
+                                    "id": 63,
+                                    "name": "UDIMAA VILLAGE",
+                                    "ward_id": 28
+                                }
+                            ]
+                        },
+                        {
+                            "id": 32,
+                            "name": "MANYONI URBAN WARD",
+                            "district_id": 10,
+                            "villages": [
+                                {
+                                    "id": 46,
+                                    "name": "TAMBUKARELI VILLAGE",
+                                    "ward_id": 32
+                                },
+                                {
+                                    "id": 53,
+                                    "name": "MITOO CHINI VILLAGE",
+                                    "ward_id": 32
+                                },
+                                {
+                                    "id": 59,
+                                    "name": "KIPONDODA VILLAGE",
+                                    "ward_id": 32
+                                },
+                                {
+                                    "id": 62,
+                                    "name": "MASIGATI VILLAGE",
+                                    "ward_id": 32
+                                },
+                                {
+                                    "id": 66,
+                                    "name": "MWEMBENI VILLAGE",
+                                    "ward_id": 32
+                                },
+                                {
+                                    "id": 67,
+                                    "name": "MJINI VILLAGE",
+                                    "ward_id": 32
+                                },
+                                {
+                                    "id": 68,
+                                    "name": "MAJENGO VILLAGE",
+                                    "ward_id": 32
+                                },
+                                {
+                                    "id": 69,
+                                    "name": "SAMARIA VILLAGE",
+                                    "ward_id": 32
+                                }
+                            ]
+                        },
+                        {
+                            "id": 33,
+                            "name": "MUHALALA WARD",
+                            "district_id": 10,
+                            "villages": [
+                                {
+                                    "id": 48,
+                                    "name": "KAPITI VILLAGE",
+                                    "ward_id": 33
+                                },
+                                {
+                                    "id": 55,
+                                    "name": "MBWEKOO VILLAGE",
+                                    "ward_id": 33
+                                },
+                                {
+                                    "id": 88,
+                                    "name": "BARABARANI VILLAGE",
+                                    "ward_id": 33
+                                }
+                            ]
+                        },
+                        {
+                            "id": 34,
+                            "name": "CHIKOLA WARD",
+                            "district_id": 10,
+                            "villages": [
+                                {
+                                    "id": 49,
+                                    "name": "ITETEMA VILLAGE",
+                                    "ward_id": 34
+                                },
+                                {
+                                    "id": 50,
+                                    "name": "CHIKOLA VILLAGE",
+                                    "ward_id": 34
+                                },
+                                {
+                                    "id": 57,
+                                    "name": "KASANII VILLAGE",
+                                    "ward_id": 34
+                                }
+                            ]
+                        },
+                        {
+                            "id": 35,
+                            "name": "MKWESE WARD",
+                            "district_id": 10,
+                            "villages": [
+                                {
+                                    "id": 51,
+                                    "name": "KINANGALI VILLAGE",
+                                    "ward_id": 35
+                                },
+                                {
+                                    "id": 60,
+                                    "name": "STENDI VILLAGE",
+                                    "ward_id": 35
+                                },
+                                {
+                                    "id": 61,
+                                    "name": "MIYOMBONI VILLAGE",
+                                    "ward_id": 35
+                                },
+                                {
+                                    "id": 64,
+                                    "name": "MBUYUNI VILLAGE",
+                                    "ward_id": 35
+                                }
+                            ]
+                        },
+                        {
+                            "id": 37,
+                            "name": "ISSEKE WARD",
+                            "district_id": 10,
+                            "villages": [
+                                {
+                                    "id": 54,
+                                    "name": "MPAPA VILLAGE",
+                                    "ward_id": 37
+                                },
+                                {
+                                    "id": 75,
+                                    "name": "IGWAMADETE VILLAGE",
+                                    "ward_id": 37
+                                },
+                                {
+                                    "id": 78,
+                                    "name": "ISSEKE VILLAGE",
+                                    "ward_id": 37
+                                }
+                            ]
+                        },
+                        {
+                            "id": 38,
+                            "name": "HEKA WARD",
+                            "district_id": 10,
+                            "villages": [
+                                {
+                                    "id": 56,
+                                    "name": "HEKA AZIMIO VILLAGE",
+                                    "ward_id": 38
+                                },
+                                {
+                                    "id": 173,
+                                    "name": "CHIKOMBO VILLAGE",
+                                    "ward_id": 38
+                                }
+                            ]
+                        },
+                        {
+                            "id": 39,
+                            "name": "SOLYA WARD",
+                            "district_id": 10,
+                            "villages": [
+                                {
+                                    "id": 65,
+                                    "name": "KILIMATINDE VILLAGE",
+                                    "ward_id": 39
+                                },
+                                {
+                                    "id": 83,
+                                    "name": "SOLYA VILLAGE",
+                                    "ward_id": 39
+                                },
+                                {
+                                    "id": 99,
+                                    "name": "SUKAMAHELA VILLAGE",
+                                    "ward_id": 39
+                                }
+                            ]
+                        },
+                        {
+                            "id": 40,
+                            "name": "NKONKO WARD",
+                            "district_id": 10,
+                            "villages": [
+                                {
+                                    "id": 70,
+                                    "name": "NKONKO VILLAGE",
+                                    "ward_id": 40
+                                },
+                                {
+                                    "id": 73,
+                                    "name": "NTUMBI VILLAGE",
+                                    "ward_id": 40
+                                }
+                            ]
+                        },
+                        {
+                            "id": 41,
+                            "name": "SANZA WARD",
+                            "district_id": 10,
+                            "villages": [
+                                {
+                                    "id": 71,
+                                    "name": "NTOPE VILLAGE",
+                                    "ward_id": 41
+                                },
+                                {
+                                    "id": 72,
+                                    "name": "SANZA VILLAGE",
+                                    "ward_id": 41
+                                }
+                            ]
+                        },
+                        {
+                            "id": 44,
+                            "name": "SASILO WARD",
+                            "district_id": 10,
+                            "villages": [
+                                {
+                                    "id": 80,
+                                    "name": "IMALAMPAKA VILLAGE",
+                                    "ward_id": 44
+                                },
+                                {
+                                    "id": 84,
+                                    "name": "CHISINGISA VILLAGE",
+                                    "ward_id": 44
+                                },
+                                {
+                                    "id": 90,
+                                    "name": "SASILO VILLAGE",
+                                    "ward_id": 44
+                                },
+                                {
+                                    "id": 92,
+                                    "name": "MWITIKILA VILLAGE",
+                                    "ward_id": 44
+                                }
+                            ]
+                        },
+                        {
+                            "id": 48,
+                            "name": "MAKURU WARD",
+                            "district_id": 10,
+                            "villages": [
+                                {
+                                    "id": 89,
+                                    "name": "MSEMEMBO VILLAGE",
+                                    "ward_id": 48
+                                },
+                                {
+                                    "id": 98,
+                                    "name": "MAKURU VILLAGE",
+                                    "ward_id": 48
+                                }
+                            ]
+                        },
+                        {
+                            "id": 53,
+                            "name": "SARANDA WARD",
+                            "district_id": 10,
+                            "villages": [
+                                {
+                                    "id": 96,
+                                    "name": "SARANDA VILLAGE",
+                                    "ward_id": 53
+                                },
+                                {
+                                    "id": 179,
+                                    "name": "ILALOO VILLAGE",
+                                    "ward_id": 53
+                                }
+                            ]
+                        },
+                        {
+                            "id": 54,
+                            "name": "CHIKUYU WARD",
+                            "district_id": 10,
+                            "villages": [
+                                {
+                                    "id": 97,
+                                    "name": "CHIKUYU VILLAGE",
+                                    "ward_id": 54
+                                },
+                                {
+                                    "id": 107,
+                                    "name": "MWIBOO VILLAGE",
+                                    "ward_id": 54
+                                }
+                            ]
+                        },
+                        {
+                            "id": 55,
+                            "name": "MAWENI WARD",
+                            "district_id": 10,
+                            "villages": [
+                                {
+                                    "id": 100,
+                                    "name": "MAWENI VILLAGE",
+                                    "ward_id": 55
+                                }
+                            ]
+                        },
+                        {
+                            "id": 61,
+                            "name": "MAKUTOPORA WARD.",
+                            "district_id": 10,
+                            "villages": [
+                                {
+                                    "id": 110,
+                                    "name": "MAKUTOPORA VILLAGE",
+                                    "ward_id": 61
+                                },
+                                {
+                                    "id": 113,
+                                    "name": "MBWASA VILLAGE",
+                                    "ward_id": 61
+                                }
+                            ]
+                        },
+                        {
+                            "id": 62,
+                            "name": "SASAJILA WARD",
+                            "district_id": 10,
+                            "villages": [
+                                {
+                                    "id": 111,
+                                    "name": "SASAJILA VILLAGE",
+                                    "ward_id": 62
+                                },
+                                {
+                                    "id": 112,
+                                    "name": "CHIBUMAGWA VILLAGE",
+                                    "ward_id": 62
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 13,
+                    "name": "SINGIDA DISTRICT COUNCIL",
+                    "region_id": 1,
+                    "wards": [
+                        {
+                            "id": 80,
+                            "name": "MSISI WARD",
+                            "district_id": 13,
+                            "villages": [
+                                {
+                                    "id": 169,
+                                    "name": "MSISI VILLAGE",
+                                    "ward_id": 80
+                                },
+                                {
+                                    "id": 380,
+                                    "name": "MNUNG'UNA VILLAGE",
+                                    "ward_id": 80
+                                },
+                                {
+                                    "id": 391,
+                                    "name": "NKWAE VILLAGE",
+                                    "ward_id": 80
+                                }
+                            ]
+                        },
+                        {
+                            "id": 138,
+                            "name": "ILONGERO WARD",
+                            "district_id": 13,
+                            "villages": [
+                                {
+                                    "id": 345,
+                                    "name": "SEKOUTOURE VILLAGE",
+                                    "ward_id": 138
+                                },
+                                {
+                                    "id": 353,
+                                    "name": "MWAHANGO VILLAGE",
+                                    "ward_id": 138
+                                },
+                                {
+                                    "id": 354,
+                                    "name": "MADAMIGHA VILLAGE",
+                                    "ward_id": 138
+                                }
+                            ]
+                        },
+                        {
+                            "id": 141,
+                            "name": "KINYAGIGI WARD",
+                            "district_id": 13,
+                            "villages": [
+                                {
+                                    "id": 348,
+                                    "name": "MITULA VILLAGE",
+                                    "ward_id": 141
+                                },
+                                {
+                                    "id": 352,
+                                    "name": "KINYAGIGI VILLAGE",
+                                    "ward_id": 141
+                                }
+                            ]
+                        },
+                        {
+                            "id": 142,
+                            "name": "MTINKO WARD",
+                            "district_id": 13,
+                            "villages": [
+                                {
+                                    "id": 355,
+                                    "name": "MPAMBAA VILLAGE",
+                                    "ward_id": 142
+                                },
+                                {
+                                    "id": 356,
+                                    "name": "MWAKICHENCHE VILLAGE",
+                                    "ward_id": 142
+                                },
+                                {
+                                    "id": 363,
+                                    "name": "MALOLO VILLAGE",
+                                    "ward_id": 142
+                                },
+                                {
+                                    "id": 367,
+                                    "name": "MINYENYE VILLAGE",
+                                    "ward_id": 142
+                                },
+                                {
+                                    "id": 368,
+                                    "name": "NDUGHIRWA VILLAGE",
+                                    "ward_id": 142
+                                }
+                            ]
+                        },
+                        {
+                            "id": 143,
+                            "name": "MAKURO WARD",
+                            "district_id": 13,
+                            "villages": [
+                                {
+                                    "id": 357,
+                                    "name": "MWALALA VILLAGE",
+                                    "ward_id": 143
+                                },
+                                {
+                                    "id": 365,
+                                    "name": "MIKUYU VILLAGE",
+                                    "ward_id": 143
+                                },
+                                {
+                                    "id": 366,
+                                    "name": "MAKURO VILLAGE",
+                                    "ward_id": 143
+                                },
+                                {
+                                    "id": 369,
+                                    "name": "IGAURI VILLAGE.",
+                                    "ward_id": 143
+                                },
+                                {
+                                    "id": 372,
+                                    "name": "MKENGE VILLAGE",
+                                    "ward_id": 143
+                                },
+                                {
+                                    "id": 373,
+                                    "name": "MATUMBO VILLAGE",
+                                    "ward_id": 143
+                                },
+                                {
+                                    "id": 374,
+                                    "name": "NG'ONG'OA MPOKU VILLAGE",
+                                    "ward_id": 143
+                                },
+                                {
+                                    "id": 375,
+                                    "name": "GHALUNYANGU VILLAGE",
+                                    "ward_id": 143
+                                },
+                                {
+                                    "id": 377,
+                                    "name": "NG’ONGOAMPOKU VILLAGE",
+                                    "ward_id": 143
+                                }
+                            ]
+                        },
+                        {
+                            "id": 144,
+                            "name": "MUDIDA WARD",
+                            "district_id": 13,
+                            "villages": [
+                                {
+                                    "id": 358,
+                                    "name": "KIBAONI VILLAGE",
+                                    "ward_id": 144
+                                },
+                                {
+                                    "id": 370,
+                                    "name": "MIGUGU VILLAGE",
+                                    "ward_id": 144
+                                },
+                                {
+                                    "id": 371,
+                                    "name": "MPIPITI VILLAGE",
+                                    "ward_id": 144
+                                }
+                            ]
+                        },
+                        {
+                            "id": 145,
+                            "name": "UGHANDI WARD",
+                            "district_id": 13,
+                            "villages": [
+                                {
+                                    "id": 359,
+                                    "name": "UGHANDI B VILLAGE",
+                                    "ward_id": 145
+                                },
+                                {
+                                    "id": 378,
+                                    "name": "LAGHANIDA VILLAGE",
+                                    "ward_id": 145
+                                },
+                                {
+                                    "id": 388,
+                                    "name": "MISINKO VILLAGE",
+                                    "ward_id": 145
+                                },
+                                {
+                                    "id": 389,
+                                    "name": "UGHANDI A VILLAGE",
+                                    "ward_id": 145
+                                },
+                                {
+                                    "id": 390,
+                                    "name": "SEMFURU VILLAGE",
+                                    "ward_id": 145
+                                }
+                            ]
+                        },
+                        {
+                            "id": 146,
+                            "name": "MERYA WARD",
+                            "district_id": 13,
+                            "villages": [
+                                {
+                                    "id": 360,
+                                    "name": "MWARUFYU VILLAGE",
+                                    "ward_id": 146
+                                },
+                                {
+                                    "id": 361,
+                                    "name": "KINYAMWAMBO VILLAGE",
+                                    "ward_id": 146
+                                },
+                                {
+                                    "id": 404,
+                                    "name": "MERYA VILLAGE",
+                                    "ward_id": 146
+                                },
+                                {
+                                    "id": 411,
+                                    "name": "MVAE VILLAGE",
+                                    "ward_id": 146
+                                }
+                            ]
+                        },
+                        {
+                            "id": 147,
+                            "name": "MAGHOJOA WARD",
+                            "district_id": 13,
+                            "villages": [
+                                {
+                                    "id": 362,
+                                    "name": "MIPILO VILLAGE",
+                                    "ward_id": 147
+                                },
+                                {
+                                    "id": 422,
+                                    "name": "GHATA VILLAGE",
+                                    "ward_id": 147
+                                },
+                                {
+                                    "id": 423,
+                                    "name": "MAGHOJOA VILLAGE",
+                                    "ward_id": 147
+                                },
+                                {
+                                    "id": 426,
+                                    "name": "MWACHAMBIA VILLAGE",
+                                    "ward_id": 147
+                                }
+                            ]
+                        },
+                        {
+                            "id": 149,
+                            "name": "NGIMU WARD",
+                            "district_id": 13,
+                            "villages": [
+                                {
+                                    "id": 379,
+                                    "name": "POHAMA VILLAGE",
+                                    "ward_id": 149
+                                },
+                                {
+                                    "id": 397,
+                                    "name": "MWIGHANJI VILLAGE",
+                                    "ward_id": 149
+                                },
+                                {
+                                    "id": 398,
+                                    "name": "LAMBA VILLAGE",
+                                    "ward_id": 149
+                                },
+                                {
+                                    "id": 399,
+                                    "name": "NGIMU VILLAGE",
+                                    "ward_id": 149
+                                }
+                            ]
+                        },
+                        {
+                            "id": 155,
+                            "name": "MUGHAMO WARD",
+                            "district_id": 13,
+                            "villages": [
+                                {
+                                    "id": 394,
+                                    "name": "MUGHAMO VILLAGE",
+                                    "ward_id": 155
+                                },
+                                {
+                                    "id": 401,
+                                    "name": "MSIKII VILLAGE",
+                                    "ward_id": 155
+                                }
+                            ]
+                        },
+                        {
+                            "id": 157,
+                            "name": "MWASAUYA WARD",
+                            "district_id": 13,
+                            "villages": [
+                                {
+                                    "id": 396,
+                                    "name": "MWASAUYA VILLAGE",
+                                    "ward_id": 157
+                                },
+                                {
+                                    "id": 414,
+                                    "name": "MDILU VILLAGE",
+                                    "ward_id": 157
+                                },
+                                {
+                                    "id": 424,
+                                    "name": "NGAMU VILLAGE",
+                                    "ward_id": 157
+                                }
+                            ]
+                        },
+                        {
+                            "id": 160,
+                            "name": "MRAMA WARD",
+                            "district_id": 13,
+                            "villages": [
+                                {
+                                    "id": 407,
+                                    "name": "ITAMKA VILLAGE",
+                                    "ward_id": 160
+                                },
+                                {
+                                    "id": 412,
+                                    "name": "MWAKITI VILLAGE",
+                                    "ward_id": 160
+                                }
+                            ]
+                        },
+                        {
+                            "id": 195,
+                            "name": "SEPUKA WARD",
+                            "district_id": 13,
+                            "villages": [
+                                {
+                                    "id": 486,
+                                    "name": "MNANG'ANA VILLAGE",
+                                    "ward_id": 195
+                                },
+                                {
+                                    "id": 489,
+                                    "name": "MSUNGUA VILLAGE",
+                                    "ward_id": 195
+                                }
+                            ]
+                        },
+                        {
+                            "id": 210,
+                            "name": "PUMA WARD",
+                            "district_id": 13,
+                            "villages": [
+                                {
+                                    "id": 540,
+                                    "name": "WIBIA VILLAGE",
+                                    "ward_id": 210
+                                },
+                                {
+                                    "id": 550,
+                                    "name": "NKUNINKANA VILLAGE",
+                                    "ward_id": 210
+                                },
+                                {
+                                    "id": 552,
+                                    "name": "PUMA VILLAGE",
+                                    "ward_id": 210
+                                }
+                            ]
+                        },
+                        {
+                            "id": 219,
+                            "name": "MUHINTIRI WARD",
+                            "district_id": 13,
+                            "villages": [
+                                {
+                                    "id": 565,
+                                    "name": "MPETU VILLAGE",
+                                    "ward_id": 219
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
-            "name": "PWANI",
-            "id": 2
-        },
-        {
-            "name": "ARUSHA",
-            "id": 3
-        },
-        {
-            "name": "MOROGORO",
-            "id": 4
+            "id": 2,
+            "name": "DODOMA",
+            "districts": [
+                {
+                    "id": 2,
+                    "name": "KONDOA DISTRICT COUNCIL",
+                    "region_id": 2,
+                    "wards": [
+                        {
+                            "id": 2,
+                            "name": "SALANKA WARD",
+                            "district_id": 2,
+                            "villages": [
+                                {
+                                    "id": 2,
+                                    "name": "ALAGWA VILLAGE",
+                                    "ward_id": 2
+                                },
+                                {
+                                    "id": 38,
+                                    "name": "LEMBO VILLAGE",
+                                    "ward_id": 2
+                                },
+                                {
+                                    "id": 82,
+                                    "name": "SALANKA VILLAGE",
+                                    "ward_id": 2
+                                },
+                                {
+                                    "id": 239,
+                                    "name": "MASAWI VILLAGE",
+                                    "ward_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "id": 27,
+                            "name": "THAWI WARD",
+                            "district_id": 2,
+                            "villages": [
+                                {
+                                    "id": 40,
+                                    "name": "SAKAMI VILLAGE",
+                                    "ward_id": 27
+                                },
+                                {
+                                    "id": 125,
+                                    "name": "THAWI JUU VILLAGE",
+                                    "ward_id": 27
+                                }
+                            ]
+                        },
+                        {
+                            "id": 68,
+                            "name": "KALAMBA WARD",
+                            "district_id": 2,
+                            "villages": [
+                                {
+                                    "id": 132,
+                                    "name": "KALAMBA JUU VILLAGE",
+                                    "ward_id": 68
+                                },
+                                {
+                                    "id": 176,
+                                    "name": "HEBI JUU VILLAGE",
+                                    "ward_id": 68
+                                },
+                                {
+                                    "id": 177,
+                                    "name": "KALAMBA CHINI VILLAGE",
+                                    "ward_id": 68
+                                },
+                                {
+                                    "id": 178,
+                                    "name": "LOO VILLAGE",
+                                    "ward_id": 68
+                                },
+                                {
+                                    "id": 180,
+                                    "name": "BAURA VILLAGE",
+                                    "ward_id": 68
+                                },
+                                {
+                                    "id": 181,
+                                    "name": "HEBI CHINI VILLAGE",
+                                    "ward_id": 68
+                                }
+                            ]
+                        },
+                        {
+                            "id": 70,
+                            "name": "BUMBUTA WARD",
+                            "district_id": 2,
+                            "villages": [
+                                {
+                                    "id": 135,
+                                    "name": "MKUNDULU VILLAGE",
+                                    "ward_id": 70
+                                },
+                                {
+                                    "id": 221,
+                                    "name": "BUMBUTA VILLAGE",
+                                    "ward_id": 70
+                                }
+                            ]
+                        },
+                        {
+                            "id": 72,
+                            "name": "SOERA WARD",
+                            "district_id": 2,
+                            "villages": [
+                                {
+                                    "id": 144,
+                                    "name": "KWADINU VILLAGE",
+                                    "ward_id": 72
+                                },
+                                {
+                                    "id": 168,
+                                    "name": "HUMAI VILLAGE",
+                                    "ward_id": 72
+                                },
+                                {
+                                    "id": 208,
+                                    "name": "BUKULU VILLAGE",
+                                    "ward_id": 72
+                                },
+                                {
+                                    "id": 257,
+                                    "name": "SOERA VILLAGE",
+                                    "ward_id": 72
+                                }
+                            ]
+                        },
+                        {
+                            "id": 74,
+                            "name": "PAHI WARD",
+                            "district_id": 2,
+                            "villages": [
+                                {
+                                    "id": 146,
+                                    "name": "PAHI VILLAGE",
+                                    "ward_id": 74
+                                }
+                            ]
+                        },
+                        {
+                            "id": 81,
+                            "name": "BEREKO WARD",
+                            "district_id": 2,
+                            "villages": [
+                                {
+                                    "id": 170,
+                                    "name": "BEREKO VILLAGE",
+                                    "ward_id": 81
+                                },
+                                {
+                                    "id": 175,
+                                    "name": "PUHI VILLAGE",
+                                    "ward_id": 81
+                                }
+                            ]
+                        },
+                        {
+                            "id": 90,
+                            "name": "HONDOMAIRO WARD",
+                            "district_id": 2,
+                            "villages": [
+                                {
+                                    "id": 205,
+                                    "name": "MTIRYANGWI VILLAGE",
+                                    "ward_id": 90
+                                },
+                                {
+                                    "id": 209,
+                                    "name": "HONDOMAIRO VILLAGE",
+                                    "ward_id": 90
+                                }
+                            ]
+                        },
+                        {
+                            "id": 93,
+                            "name": "KISESE WARD",
+                            "district_id": 2,
+                            "villages": [
+                                {
+                                    "id": 213,
+                                    "name": "KISESE-DISA VILLAGE",
+                                    "ward_id": 93
+                                },
+                                {
+                                    "id": 228,
+                                    "name": "MAPINDUZI VILLAGE",
+                                    "ward_id": 93
+                                },
+                                {
+                                    "id": 281,
+                                    "name": "MADISA VILLAGE",
+                                    "ward_id": 93
+                                },
+                                {
+                                    "id": 282,
+                                    "name": "ATTA VILLAGE",
+                                    "ward_id": 93
+                                }
+                            ]
+                        },
+                        {
+                            "id": 94,
+                            "name": "KEIKEI WARD",
+                            "district_id": 2,
+                            "villages": [
+                                {
+                                    "id": 214,
+                                    "name": "SAMBWA VILLAGE",
+                                    "ward_id": 94
+                                }
+                            ]
+                        },
+                        {
+                            "id": 97,
+                            "name": "MNENIA WARD",
+                            "district_id": 2,
+                            "villages": [
+                                {
+                                    "id": 224,
+                                    "name": "MNENIA VILLAGE",
+                                    "ward_id": 97
+                                },
+                                {
+                                    "id": 225,
+                                    "name": "BAMBARE VILLAGE",
+                                    "ward_id": 97
+                                }
+                            ]
+                        },
+                        {
+                            "id": 108,
+                            "name": "KIKORE WARD",
+                            "district_id": 2,
+                            "villages": [
+                                {
+                                    "id": 246,
+                                    "name": "KIKORE VILLAGE",
+                                    "ward_id": 108
+                                },
+                                {
+                                    "id": 258,
+                                    "name": "HURUI VILLAGE",
+                                    "ward_id": 108
+                                },
+                                {
+                                    "id": 259,
+                                    "name": "MADEGE VILLAGE",
+                                    "ward_id": 108
+                                }
+                            ]
+                        },
+                        {
+                            "id": 112,
+                            "name": "ITOLOLO WARD",
+                            "district_id": 2,
+                            "villages": [
+                                {
+                                    "id": 253,
+                                    "name": "ITOLOLO VILLAGE",
+                                    "ward_id": 112
+                                },
+                                {
+                                    "id": 254,
+                                    "name": "MKEKENA VILLAGE",
+                                    "ward_id": 112
+                                },
+                                {
+                                    "id": 255,
+                                    "name": "MACHINJONI VILLAGE",
+                                    "ward_id": 112
+                                },
+                                {
+                                    "id": 256,
+                                    "name": "MONGOLO VILLAGE",
+                                    "ward_id": 112
+                                }
+                            ]
+                        },
+                        {
+                            "id": 114,
+                            "name": "HAUBI WARD",
+                            "district_id": 2,
+                            "villages": [
+                                {
+                                    "id": 270,
+                                    "name": "NTOMOKO VILLAGE",
+                                    "ward_id": 114
+                                },
+                                {
+                                    "id": 273,
+                                    "name": "HAUBI VILLAGE",
+                                    "ward_id": 114
+                                },
+                                {
+                                    "id": 277,
+                                    "name": "MAFAI VILLAGE",
+                                    "ward_id": 114
+                                },
+                                {
+                                    "id": 278,
+                                    "name": "MWISANGA VILLAGE",
+                                    "ward_id": 114
+                                }
+                            ]
+                        },
+                        {
+                            "id": 136,
+                            "name": "BUSI WARD",
+                            "district_id": 2,
+                            "villages": [
+                                {
+                                    "id": 334,
+                                    "name": "ISUSUMYA VILLAGE",
+                                    "ward_id": 136
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "name": "KONGWA DISTRICT COUNCIL",
+                    "region_id": 2,
+                    "wards": [
+                        {
+                            "id": 4,
+                            "name": "NGHUMBI WARD",
+                            "district_id": 4,
+                            "villages": [
+                                {
+                                    "id": 4,
+                                    "name": "NGHUMBI VILLAGE",
+                                    "ward_id": 4
+                                },
+                                {
+                                    "id": 5,
+                                    "name": "MBAGILWA VILLAGE",
+                                    "ward_id": 4
+                                }
+                            ]
+                        },
+                        {
+                            "id": 21,
+                            "name": "KIBAIGWA WARD",
+                            "district_id": 4,
+                            "villages": [
+                                {
+                                    "id": 31,
+                                    "name": "KAWAWA VILLAGE",
+                                    "ward_id": 21
+                                },
+                                {
+                                    "id": 535,
+                                    "name": "KIBAIGWA VILLAGE",
+                                    "ward_id": 21
+                                },
+                                {
+                                    "id": 536,
+                                    "name": "NDUNGURUMO VILLAGE",
+                                    "ward_id": 21
+                                }
+                            ]
+                        },
+                        {
+                            "id": 98,
+                            "name": "CHITEGO WARD",
+                            "district_id": 4,
+                            "villages": [
+                                {
+                                    "id": 226,
+                                    "name": "CHITEGO VILLAGE",
+                                    "ward_id": 98
+                                },
+                                {
+                                    "id": 476,
+                                    "name": "MANYUSI VILLAGE",
+                                    "ward_id": 98
+                                },
+                                {
+                                    "id": 477,
+                                    "name": "NGUTOTO VILLAGE",
+                                    "ward_id": 98
+                                },
+                                {
+                                    "id": 499,
+                                    "name": "LEGANGA VILLAGE",
+                                    "ward_id": 98
+                                }
+                            ]
+                        },
+                        {
+                            "id": 153,
+                            "name": "MKOKA WARD",
+                            "district_id": 4,
+                            "villages": [
+                                {
+                                    "id": 392,
+                                    "name": "MKOKA VILLAGE",
+                                    "ward_id": 153
+                                },
+                                {
+                                    "id": 497,
+                                    "name": "MVUNGURUMO VILLAGE",
+                                    "ward_id": 153
+                                },
+                                {
+                                    "id": 507,
+                                    "name": "MNUKU VILLAGE",
+                                    "ward_id": 153
+                                }
+                            ]
+                        },
+                        {
+                            "id": 173,
+                            "name": "MAKAWA WARD",
+                            "district_id": 4,
+                            "villages": [
+                                {
+                                    "id": 445,
+                                    "name": "MAKAWA VILLAGE",
+                                    "ward_id": 173
+                                },
+                                {
+                                    "id": 483,
+                                    "name": "MAGESENI VILLAGE",
+                                    "ward_id": 173
+                                },
+                                {
+                                    "id": 485,
+                                    "name": "SILALE VILLAGE",
+                                    "ward_id": 173
+                                },
+                                {
+                                    "id": 492,
+                                    "name": "MUUNGANO VILLAGE,.",
+                                    "ward_id": 173
+                                }
+                            ]
+                        },
+                        {
+                            "id": 182,
+                            "name": "ZOISSA WARD",
+                            "district_id": 4,
+                            "villages": [
+                                {
+                                    "id": 464,
+                                    "name": "PINGALAME VILLAGE",
+                                    "ward_id": 182
+                                },
+                                {
+                                    "id": 502,
+                                    "name": "ZOISSA VILLAGE",
+                                    "ward_id": 182
+                                },
+                                {
+                                    "id": 508,
+                                    "name": "KINANGALI VILLAGE",
+                                    "ward_id": 182
+                                }
+                            ]
+                        },
+                        {
+                            "id": 183,
+                            "name": "CHAMKOROMA WARD",
+                            "district_id": 4,
+                            "villages": [
+                                {
+                                    "id": 465,
+                                    "name": "CHAMKOROMA VILLAGE",
+                                    "ward_id": 183
+                                },
+                                {
+                                    "id": 527,
+                                    "name": "MAKOLE VILLAGE",
+                                    "ward_id": 183
+                                },
+                                {
+                                    "id": 531,
+                                    "name": "MSETA VILLAGE",
+                                    "ward_id": 183
+                                },
+                                {
+                                    "id": 539,
+                                    "name": "TUBUGWE JUU VILLAGE",
+                                    "ward_id": 183
+                                },
+                                {
+                                    "id": 575,
+                                    "name": "MANGHWETA VILLAGE",
+                                    "ward_id": 183
+                                }
+                            ]
+                        },
+                        {
+                            "id": 185,
+                            "name": "CHIWE WARD",
+                            "district_id": 4,
+                            "villages": [
+                                {
+                                    "id": 467,
+                                    "name": "LENGAJI VILLAGE",
+                                    "ward_id": 185
+                                },
+                                {
+                                    "id": 468,
+                                    "name": "VIHINGO VILLAGE",
+                                    "ward_id": 185
+                                }
+                            ]
+                        },
+                        {
+                            "id": 186,
+                            "name": "PANDAMBILI WARD",
+                            "district_id": 4,
+                            "villages": [
+                                {
+                                    "id": 469,
+                                    "name": "SILWA VILLAGE",
+                                    "ward_id": 186
+                                }
+                            ]
+                        },
+                        {
+                            "id": 189,
+                            "name": "HOGORO WARD",
+                            "district_id": 4,
+                            "villages": [
+                                {
+                                    "id": 472,
+                                    "name": "BANYIBANYI VILLAGE",
+                                    "ward_id": 189
+                                },
+                                {
+                                    "id": 517,
+                                    "name": "HOGORO VILLAGE",
+                                    "ward_id": 189
+                                },
+                                {
+                                    "id": 518,
+                                    "name": "NYERERE VILLAGE.",
+                                    "ward_id": 189
+                                },
+                                {
+                                    "id": 520,
+                                    "name": "MKUTANI VILLAGE",
+                                    "ward_id": 189
+                                }
+                            ]
+                        },
+                        {
+                            "id": 191,
+                            "name": "NJOGE WARD",
+                            "district_id": 4,
+                            "villages": [
+                                {
+                                    "id": 478,
+                                    "name": "NJOGE VILLAGE",
+                                    "ward_id": 191
+                                },
+                                {
+                                    "id": 479,
+                                    "name": "HEMBAHEMBA VILLAGE",
+                                    "ward_id": 191
+                                }
+                            ]
+                        },
+                        {
+                            "id": 196,
+                            "name": "MATONGORO WARD",
+                            "district_id": 4,
+                            "villages": [
+                                {
+                                    "id": 488,
+                                    "name": "NORINI VILLAGE",
+                                    "ward_id": 196
+                                },
+                                {
+                                    "id": 490,
+                                    "name": "MLANJE VILLAGE",
+                                    "ward_id": 196
+                                },
+                                {
+                                    "id": 494,
+                                    "name": "MATONGORO VILLAGE",
+                                    "ward_id": 196
+                                }
+                            ]
+                        },
+                        {
+                            "id": 197,
+                            "name": "SONGAMBELE WARD",
+                            "district_id": 4,
+                            "villages": [
+                                {
+                                    "id": 493,
+                                    "name": "MUUNGANO VILLAGE",
+                                    "ward_id": 197
+                                },
+                                {
+                                    "id": 500,
+                                    "name": "MATANGA VILLAGE",
+                                    "ward_id": 197
+                                },
+                                {
+                                    "id": 506,
+                                    "name": "MASENHA VILLAGE",
+                                    "ward_id": 197
+                                },
+                                {
+                                    "id": 511,
+                                    "name": "SONGAMBELE A VILLAGE",
+                                    "ward_id": 197
+                                },
+                                {
+                                    "id": 512,
+                                    "name": "SONGAMBELE B VILLAGE",
+                                    "ward_id": 197
+                                }
+                            ]
+                        },
+                        {
+                            "id": 198,
+                            "name": "NGOMAI WARD",
+                            "district_id": 4,
+                            "villages": [
+                                {
+                                    "id": 496,
+                                    "name": "CHILANJILINZI VILLAGE",
+                                    "ward_id": 198
+                                },
+                                {
+                                    "id": 523,
+                                    "name": "NGOMAI VILLAGE",
+                                    "ward_id": 198
+                                },
+                                {
+                                    "id": 548,
+                                    "name": "SAIGONI VILLAGE",
+                                    "ward_id": 198
+                                },
+                                {
+                                    "id": 549,
+                                    "name": "MANYATA VILLAGE",
+                                    "ward_id": 198
+                                }
+                            ]
+                        },
+                        {
+                            "id": 203,
+                            "name": "SEJELI WARD",
+                            "district_id": 4,
+                            "villages": [
+                                {
+                                    "id": 514,
+                                    "name": "MBANDE VILLAGE",
+                                    "ward_id": 203
+                                },
+                                {
+                                    "id": 516,
+                                    "name": "SEJELI VILLAGE",
+                                    "ward_id": 203
+                                }
+                            ]
+                        },
+                        {
+                            "id": 206,
+                            "name": "MTANANA WARD",
+                            "district_id": 4,
+                            "villages": [
+                                {
+                                    "id": 522,
+                                    "name": "SOITI VILLAGE",
+                                    "ward_id": 206
+                                },
+                                {
+                                    "id": 524,
+                                    "name": "CHIGWINGWINGILI VILLAGE",
+                                    "ward_id": 206
+                                },
+                                {
+                                    "id": 525,
+                                    "name": "MTANANA'B' VILLAGE",
+                                    "ward_id": 206
+                                },
+                                {
+                                    "id": 526,
+                                    "name": "NDALIBO VILLAGE",
+                                    "ward_id": 206
+                                },
+                                {
+                                    "id": 530,
+                                    "name": "MTANANA'A' VILLAGE",
+                                    "ward_id": 206
+                                }
+                            ]
+                        },
+                        {
+                            "id": 207,
+                            "name": "UGOGONI WARD",
+                            "district_id": 4,
+                            "villages": [
+                                {
+                                    "id": 529,
+                                    "name": "UGOGONI VILLAGE",
+                                    "ward_id": 207
+                                },
+                                {
+                                    "id": 556,
+                                    "name": "NGUJI VILLAGE",
+                                    "ward_id": 207
+                                },
+                                {
+                                    "id": 557,
+                                    "name": "CHIMOTOLO VILLAGE",
+                                    "ward_id": 207
+                                }
+                            ]
+                        },
+                        {
+                            "id": 216,
+                            "name": "LENJULU WARD",
+                            "district_id": 4,
+                            "villages": [
+                                {
+                                    "id": 554,
+                                    "name": "MAJAWANGA VILLAGE",
+                                    "ward_id": 216
+                                },
+                                {
+                                    "id": 555,
+                                    "name": "LOBILO VILLAGE",
+                                    "ward_id": 216
+                                },
+                                {
+                                    "id": 558,
+                                    "name": "LENJULU VILLAGE",
+                                    "ward_id": 216
+                                },
+                                {
+                                    "id": 559,
+                                    "name": "KITETO VILLAGE",
+                                    "ward_id": 216
+                                }
+                            ]
+                        },
+                        {
+                            "id": 220,
+                            "name": "MLALI WARD",
+                            "district_id": 4,
+                            "villages": [
+                                {
+                                    "id": 568,
+                                    "name": "MLALI IYEGU VILLAGE",
+                                    "ward_id": 220
+                                },
+                                {
+                                    "id": 569,
+                                    "name": "MLALI BONDENI VILLAGE",
+                                    "ward_id": 220
+                                },
+                                {
+                                    "id": 571,
+                                    "name": "IHANDA VILLAGE",
+                                    "ward_id": 220
+                                }
+                            ]
+                        },
+                        {
+                            "id": 221,
+                            "name": "IDUO WARD",
+                            "district_id": 4,
+                            "villages": [
+                                {
+                                    "id": 570,
+                                    "name": "SUGUTA VILLAGE",
+                                    "ward_id": 221
+                                },
+                                {
+                                    "id": 572,
+                                    "name": "IDUO VILLAGE",
+                                    "ward_id": 221
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 6,
+                    "name": "CHAMWINO DISTRICT COUNCIL",
+                    "region_id": 2,
+                    "wards": [
+                        {
+                            "id": 6,
+                            "name": "DABALO WARD",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 7,
+                                    "name": "DABALO \"A' VILLAGE",
+                                    "ward_id": 6
+                                },
+                                {
+                                    "id": 10,
+                                    "name": "NAYU VILLAGE",
+                                    "ward_id": 6
+                                },
+                                {
+                                    "id": 24,
+                                    "name": "MANYEMBA VILLAGE",
+                                    "ward_id": 6
+                                },
+                                {
+                                    "id": 29,
+                                    "name": "CHIWONDO VILLAGE",
+                                    "ward_id": 6
+                                }
+                            ]
+                        },
+                        {
+                            "id": 7,
+                            "name": "CHILONWA WARD",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 8,
+                                    "name": "NZALI VILLAGE",
+                                    "ward_id": 7
+                                },
+                                {
+                                    "id": 196,
+                                    "name": "MAHAMA VILLAGE",
+                                    "ward_id": 7
+                                }
+                            ]
+                        },
+                        {
+                            "id": 8,
+                            "name": "MAKANG'WA WARD",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 9,
+                                    "name": "CHIWONA VILLAGE",
+                                    "ward_id": 8
+                                },
+                                {
+                                    "id": 131,
+                                    "name": "MAKANG'WA VILLAGE",
+                                    "ward_id": 8
+                                }
+                            ]
+                        },
+                        {
+                            "id": 9,
+                            "name": "SEGALA WARD",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 11,
+                                    "name": "SEGALA VILLAGE.",
+                                    "ward_id": 9
+                                },
+                                {
+                                    "id": 58,
+                                    "name": "KIMEJI VILLAGE",
+                                    "ward_id": 9
+                                },
+                                {
+                                    "id": 115,
+                                    "name": "IZAVA VILLAGE",
+                                    "ward_id": 9
+                                },
+                                {
+                                    "id": 138,
+                                    "name": "UMOJA VILLAGE",
+                                    "ward_id": 9
+                                }
+                            ]
+                        },
+                        {
+                            "id": 10,
+                            "name": "ZAJILWA WARD",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 12,
+                                    "name": "ZAJILWA VILLAGE",
+                                    "ward_id": 10
+                                },
+                                {
+                                    "id": 21,
+                                    "name": "GWANDU VILLAGE",
+                                    "ward_id": 10
+                                }
+                            ]
+                        },
+                        {
+                            "id": 13,
+                            "name": "MUUNGANO WARD",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 15,
+                                    "name": "MZULA VILLAGE",
+                                    "ward_id": 13
+                                },
+                                {
+                                    "id": 16,
+                                    "name": "MUUNGANO VILLAGE'",
+                                    "ward_id": 13
+                                },
+                                {
+                                    "id": 159,
+                                    "name": "ILOLO VILLAGE",
+                                    "ward_id": 13
+                                }
+                            ]
+                        },
+                        {
+                            "id": 17,
+                            "name": "MANCHALI WARD",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 20,
+                                    "name": "WILUNZE VILLAGE",
+                                    "ward_id": 17
+                                },
+                                {
+                                    "id": 151,
+                                    "name": "MANCHALI 'B' VILLAGE",
+                                    "ward_id": 17
+                                },
+                                {
+                                    "id": 188,
+                                    "name": "CHALINZE VILLAGE",
+                                    "ward_id": 17
+                                },
+                                {
+                                    "id": 189,
+                                    "name": "MANCHALI \"A\" VILLAGE",
+                                    "ward_id": 17
+                                },
+                                {
+                                    "id": 342,
+                                    "name": "CHALINZE NYAMA VILLAGE",
+                                    "ward_id": 17
+                                }
+                            ]
+                        },
+                        {
+                            "id": 18,
+                            "name": "BUIGIRI WARD",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 23,
+                                    "name": "CHINANGALI II VILLAGE",
+                                    "ward_id": 18
+                                },
+                                {
+                                    "id": 25,
+                                    "name": "BUIGIRI VILLAGE",
+                                    "ward_id": 18
+                                },
+                                {
+                                    "id": 114,
+                                    "name": "MWEGAMILE VILLAGE",
+                                    "ward_id": 18
+                                }
+                            ]
+                        },
+                        {
+                            "id": 20,
+                            "name": "MSAMALO WARD.",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 30,
+                                    "name": "MULEBE VILLAGE",
+                                    "ward_id": 20
+                                }
+                            ]
+                        },
+                        {
+                            "id": 22,
+                            "name": "MSANGA WARD",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 32,
+                                    "name": "KAWAWA VILLAGE",
+                                    "ward_id": 22
+                                },
+                                {
+                                    "id": 34,
+                                    "name": "MSANGA VILLAGE",
+                                    "ward_id": 22
+                                }
+                            ]
+                        },
+                        {
+                            "id": 23,
+                            "name": "CHAMWINO IKULU WARD",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 33,
+                                    "name": "CHAMWINO IKULU VILLAGE",
+                                    "ward_id": 23
+                                }
+                            ]
+                        },
+                        {
+                            "id": 30,
+                            "name": "CHIBOLI WARD",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 44,
+                                    "name": "CHIBOLI VILLAGE",
+                                    "ward_id": 30
+                                }
+                            ]
+                        },
+                        {
+                            "id": 36,
+                            "name": "HANETI WARD",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 52,
+                                    "name": "KWAHEMU VILLAGE",
+                                    "ward_id": 36
+                                },
+                                {
+                                    "id": 149,
+                                    "name": "HUMEKWA VILLAGE",
+                                    "ward_id": 36
+                                },
+                                {
+                                    "id": 154,
+                                    "name": "CHENENE VILLAGE",
+                                    "ward_id": 36
+                                },
+                                {
+                                    "id": 160,
+                                    "name": "HANETI VILLAGE",
+                                    "ward_id": 36
+                                }
+                            ]
+                        },
+                        {
+                            "id": 43,
+                            "name": "FUFU WARD",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 76,
+                                    "name": "FUFU VILLAGE",
+                                    "ward_id": 43
+                                },
+                                {
+                                    "id": 130,
+                                    "name": "SULI VILLAGE",
+                                    "ward_id": 43
+                                }
+                            ]
+                        },
+                        {
+                            "id": 46,
+                            "name": "MVUMI MAKULU WARD",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 85,
+                                    "name": "MVUMI MAKULU VILLAGE",
+                                    "ward_id": 46
+                                },
+                                {
+                                    "id": 86,
+                                    "name": "MAZENGO VILLAGE",
+                                    "ward_id": 46
+                                },
+                                {
+                                    "id": 124,
+                                    "name": "CHALULA  VILLAGE",
+                                    "ward_id": 46
+                                }
+                            ]
+                        },
+                        {
+                            "id": 47,
+                            "name": "MLOWA BARABARANI WARD",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 87,
+                                    "name": "MLOWA BARABARANI VILLAGE",
+                                    "ward_id": 47
+                                },
+                                {
+                                    "id": 123,
+                                    "name": "MLODA VILLAGE.",
+                                    "ward_id": 47
+                                },
+                                {
+                                    "id": 133,
+                                    "name": "MLOWA B VILLAGE",
+                                    "ward_id": 47
+                                }
+                            ]
+                        },
+                        {
+                            "id": 51,
+                            "name": "MEMBE WARD",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 94,
+                                    "name": "MEMBE VILLAGE",
+                                    "ward_id": 51
+                                },
+                                {
+                                    "id": 191,
+                                    "name": "MLIMWA VILLAGE",
+                                    "ward_id": 51
+                                },
+                                {
+                                    "id": 194,
+                                    "name": "CHITABULI VILLAGE",
+                                    "ward_id": 51
+                                }
+                            ]
+                        },
+                        {
+                            "id": 58,
+                            "name": "CHAMWINO WARD",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 106,
+                                    "name": "CHAMWINO VILLAGE",
+                                    "ward_id": 58
+                                }
+                            ]
+                        },
+                        {
+                            "id": 63,
+                            "name": "HANDALI WARD",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 116,
+                                    "name": "MJELO VILLAGE",
+                                    "ward_id": 63
+                                },
+                                {
+                                    "id": 117,
+                                    "name": "HANDALI VILLAGE",
+                                    "ward_id": 63
+                                },
+                                {
+                                    "id": 122,
+                                    "name": "CHANHUMBA  VILLAGE",
+                                    "ward_id": 63
+                                },
+                                {
+                                    "id": 157,
+                                    "name": "CHANUMBA VILLAGE",
+                                    "ward_id": 63
+                                }
+                            ]
+                        },
+                        {
+                            "id": 64,
+                            "name": "NGAMBAKU WARD",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 120,
+                                    "name": "NDOGOWE VILLAGE",
+                                    "ward_id": 64
+                                }
+                            ]
+                        },
+                        {
+                            "id": 65,
+                            "name": "HUZI WARD",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 121,
+                                    "name": "CHIFUKULO VILLAGE",
+                                    "ward_id": 65
+                                }
+                            ]
+                        },
+                        {
+                            "id": 69,
+                            "name": "MAJELEKO WARD",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 134,
+                                    "name": "MBELEZUNGU VILLAGE",
+                                    "ward_id": 69
+                                },
+                                {
+                                    "id": 198,
+                                    "name": "MAJELEKO VILLAGE",
+                                    "ward_id": 69
+                                },
+                                {
+                                    "id": 201,
+                                    "name": "CHINANGALI I VILLAGE",
+                                    "ward_id": 69
+                                }
+                            ]
+                        },
+                        {
+                            "id": 75,
+                            "name": "MVUMI MISHENI WARD",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 147,
+                                    "name": "NDEBWE VILLAGE",
+                                    "ward_id": 75
+                                },
+                                {
+                                    "id": 148,
+                                    "name": "MVUMI MISHENI VILLAGE",
+                                    "ward_id": 75
+                                },
+                                {
+                                    "id": 161,
+                                    "name": "CHIHEMBE VILLAGE",
+                                    "ward_id": 75
+                                }
+                            ]
+                        },
+                        {
+                            "id": 77,
+                            "name": "ITISO WARD.",
+                            "district_id": 6,
+                            "villages": [
+                                {
+                                    "id": 155,
+                                    "name": "ITISO VILLAGE.",
+                                    "ward_id": 77
+                                },
+                                {
+                                    "id": 156,
+                                    "name": "IKOMBO VILLAGE.",
+                                    "ward_id": 77
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "name": "BAHI DISTRICT COUNCIL",
+                    "region_id": 2,
+                    "wards": [
+                        {
+                            "id": 14,
+                            "name": "CHIFUTUKA WARD",
+                            "district_id": 8,
+                            "villages": [
+                                {
+                                    "id": 17,
+                                    "name": "MAGAGA VILLAGE",
+                                    "ward_id": 14
+                                },
+                                {
+                                    "id": 77,
+                                    "name": "IKUMBULU VILLAGE",
+                                    "ward_id": 14
+                                },
+                                {
+                                    "id": 79,
+                                    "name": "CHIFUTUKA VILLAGE",
+                                    "ward_id": 14
+                                }
+                            ]
+                        },
+                        {
+                            "id": 15,
+                            "name": "BAHI WARD",
+                            "district_id": 8,
+                            "villages": [
+                                {
+                                    "id": 18,
+                                    "name": "UHELELA VILLAGE",
+                                    "ward_id": 15
+                                },
+                                {
+                                    "id": 22,
+                                    "name": "BAHI SOKONI VILLAGE",
+                                    "ward_id": 15
+                                },
+                                {
+                                    "id": 28,
+                                    "name": "NAGULO BAHI VILLAGE",
+                                    "ward_id": 15
+                                }
+                            ]
+                        },
+                        {
+                            "id": 24,
+                            "name": "MPAMAMTWA WARD",
+                            "district_id": 8,
+                            "villages": [
+                                {
+                                    "id": 35,
+                                    "name": "MPAMANTWA VILLAGE",
+                                    "ward_id": 24
+                                },
+                                {
+                                    "id": 36,
+                                    "name": "BAHI MAKULU VILLAGE",
+                                    "ward_id": 24
+                                },
+                                {
+                                    "id": 41,
+                                    "name": "MKAKATIKA VILLAGE",
+                                    "ward_id": 24
+                                }
+                            ]
+                        },
+                        {
+                            "id": 50,
+                            "name": "CHIKOLA WARD",
+                            "district_id": 8,
+                            "villages": [
+                                {
+                                    "id": 93,
+                                    "name": "CHIKOLA VILLAGE",
+                                    "ward_id": 50
+                                }
+                            ]
+                        },
+                        {
+                            "id": 52,
+                            "name": "BABAYU WARD",
+                            "district_id": 8,
+                            "villages": [
+                                {
+                                    "id": 95,
+                                    "name": "ASANJE VILLAGE",
+                                    "ward_id": 52
+                                }
+                            ]
+                        },
+                        {
+                            "id": 92,
+                            "name": "MSISI WARD",
+                            "district_id": 8,
+                            "villages": [
+                                {
+                                    "id": 211,
+                                    "name": "MSISI VILLAGE",
+                                    "ward_id": 92
+                                },
+                                {
+                                    "id": 231,
+                                    "name": "MCHITO VILLAGE",
+                                    "ward_id": 92
+                                }
+                            ]
+                        },
+                        {
+                            "id": 99,
+                            "name": "KIGWE WARD",
+                            "district_id": 8,
+                            "villages": [
+                                {
+                                    "id": 227,
+                                    "name": "MAPINDUZI VILLAGE",
+                                    "ward_id": 99
+                                }
+                            ]
+                        },
+                        {
+                            "id": 164,
+                            "name": "MPINGA WARD",
+                            "district_id": 8,
+                            "villages": [
+                                {
+                                    "id": 416,
+                                    "name": "MZOGOLE VILLAGE",
+                                    "ward_id": 164
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 11,
+                    "name": "MPWAPWA DISTRICT COUNCIL",
+                    "region_id": 2,
+                    "wards": [
+                        {
+                            "id": 42,
+                            "name": "MATOMONDO WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 74,
+                                    "name": "TAMBI VILLAGE",
+                                    "ward_id": 42
+                                },
+                                {
+                                    "id": 384,
+                                    "name": "MBORI VILLAGE",
+                                    "ward_id": 42
+                                }
+                            ]
+                        },
+                        {
+                            "id": 60,
+                            "name": "CHUNYU WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 109,
+                                    "name": "DARAJANI VILLAGE",
+                                    "ward_id": 60
+                                },
+                                {
+                                    "id": 458,
+                                    "name": "CHUNYU VILLAGE",
+                                    "ward_id": 60
+                                }
+                            ]
+                        },
+                        {
+                            "id": 73,
+                            "name": "IPERA WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 145,
+                                    "name": "KINUSI VILLAGE",
+                                    "ward_id": 73
+                                },
+                                {
+                                    "id": 406,
+                                    "name": "LUTALAWE VILLAGE",
+                                    "ward_id": 73
+                                },
+                                {
+                                    "id": 408,
+                                    "name": "IPERA VILLAGE",
+                                    "ward_id": 73
+                                }
+                            ]
+                        },
+                        {
+                            "id": 127,
+                            "name": "KIBAKWE WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 312,
+                                    "name": "KIBAKWE VILLAGE",
+                                    "ward_id": 127
+                                }
+                            ]
+                        },
+                        {
+                            "id": 140,
+                            "name": "MASSA WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 347,
+                                    "name": "MKOLEKO VILLAGE",
+                                    "ward_id": 140
+                                }
+                            ]
+                        },
+                        {
+                            "id": 148,
+                            "name": "MALOLO WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 364,
+                                    "name": "MALOLO VILLAGE",
+                                    "ward_id": 148
+                                },
+                                {
+                                    "id": 376,
+                                    "name": "IDODOMA VILLAGE",
+                                    "ward_id": 148
+                                }
+                            ]
+                        },
+                        {
+                            "id": 151,
+                            "name": "MLEMBULE WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 382,
+                                    "name": "MWENZELE VILLAGE",
+                                    "ward_id": 151
+                                },
+                                {
+                                    "id": 383,
+                                    "name": "NAMBA 30 VILLAGE",
+                                    "ward_id": 151
+                                },
+                                {
+                                    "id": 385,
+                                    "name": "MLEMBULE VILLAGE",
+                                    "ward_id": 151
+                                },
+                                {
+                                    "id": 387,
+                                    "name": "NANA VILLAGE",
+                                    "ward_id": 151
+                                }
+                            ]
+                        },
+                        {
+                            "id": 152,
+                            "name": "CHITEMO WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 386,
+                                    "name": "MKANANA VILLAGE",
+                                    "ward_id": 152
+                                },
+                                {
+                                    "id": 462,
+                                    "name": "CHIBWEGERE VILLAGE",
+                                    "ward_id": 152
+                                }
+                            ]
+                        },
+                        {
+                            "id": 154,
+                            "name": "VING'HAWE WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 393,
+                                    "name": "VING'HAWE VILLAGE",
+                                    "ward_id": 154
+                                }
+                            ]
+                        },
+                        {
+                            "id": 156,
+                            "name": "LUHUNDWA WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 395,
+                                    "name": "LUHUNDWA VILLAGE",
+                                    "ward_id": 156
+                                },
+                                {
+                                    "id": 400,
+                                    "name": "MPWANILA VILLAGE",
+                                    "ward_id": 156
+                                },
+                                {
+                                    "id": 402,
+                                    "name": "MUUNGANO VILLAGE,",
+                                    "ward_id": 156
+                                }
+                            ]
+                        },
+                        {
+                            "id": 158,
+                            "name": "MPWAPWA MJINI WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 403,
+                                    "name": "ILOLO VILLAGE",
+                                    "ward_id": 158
+                                }
+                            ]
+                        },
+                        {
+                            "id": 159,
+                            "name": "WOTTA WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 405,
+                                    "name": "MLUNGA VILLAGE",
+                                    "ward_id": 159
+                                },
+                                {
+                                    "id": 441,
+                                    "name": "MWANAWOTA VILLAGE",
+                                    "ward_id": 159
+                                },
+                                {
+                                    "id": 442,
+                                    "name": "MWANAWOTTA VILLAGE",
+                                    "ward_id": 159
+                                }
+                            ]
+                        },
+                        {
+                            "id": 161,
+                            "name": "GALIGALI WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 409,
+                                    "name": "GALIGALI VILLAGE",
+                                    "ward_id": 161
+                                },
+                                {
+                                    "id": 410,
+                                    "name": "MATONYA VILLAGE",
+                                    "ward_id": 161
+                                }
+                            ]
+                        },
+                        {
+                            "id": 162,
+                            "name": "LUMUMA WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 413,
+                                    "name": "KITATI VILLAGE",
+                                    "ward_id": 162
+                                },
+                                {
+                                    "id": 419,
+                                    "name": "MAFENE VILLAGE",
+                                    "ward_id": 162
+                                }
+                            ]
+                        },
+                        {
+                            "id": 163,
+                            "name": "GODEGODE WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 415,
+                                    "name": "KISISI VILLAGE",
+                                    "ward_id": 163
+                                },
+                                {
+                                    "id": 417,
+                                    "name": "NZOGOLE VILLAGE",
+                                    "ward_id": 163
+                                },
+                                {
+                                    "id": 418,
+                                    "name": "MGOMA VILLAGE",
+                                    "ward_id": 163
+                                },
+                                {
+                                    "id": 425,
+                                    "name": "MZOGOLE VILLAGE",
+                                    "ward_id": 163
+                                }
+                            ]
+                        },
+                        {
+                            "id": 165,
+                            "name": "MBUGA WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 420,
+                                    "name": "KIZI VILLAGE",
+                                    "ward_id": 165
+                                },
+                                {
+                                    "id": 421,
+                                    "name": "MBUGA VILLAGE",
+                                    "ward_id": 165
+                                }
+                            ]
+                        },
+                        {
+                            "id": 167,
+                            "name": "PWAGA WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 428,
+                                    "name": "IDAHO VILLAGE",
+                                    "ward_id": 167
+                                },
+                                {
+                                    "id": 429,
+                                    "name": "MASWALA VILLAGE",
+                                    "ward_id": 167
+                                },
+                                {
+                                    "id": 430,
+                                    "name": "ITENDE VILLAGE",
+                                    "ward_id": 167
+                                },
+                                {
+                                    "id": 431,
+                                    "name": "PWAGA VILLAGE",
+                                    "ward_id": 167
+                                }
+                            ]
+                        },
+                        {
+                            "id": 170,
+                            "name": "WANGI WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 434,
+                                    "name": "KDABAGA VILLAGE",
+                                    "ward_id": 170
+                                },
+                                {
+                                    "id": 435,
+                                    "name": "KIDABAGA VILLAGE",
+                                    "ward_id": 170
+                                },
+                                {
+                                    "id": 437,
+                                    "name": "WANGI VILLAGE",
+                                    "ward_id": 170
+                                },
+                                {
+                                    "id": 439,
+                                    "name": "LWIHOMELO VILLAGE",
+                                    "ward_id": 170
+                                }
+                            ]
+                        },
+                        {
+                            "id": 174,
+                            "name": "RUDI WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 446,
+                                    "name": "IRAMBA VILLAGE",
+                                    "ward_id": 174
+                                },
+                                {
+                                    "id": 448,
+                                    "name": "SINGHONALI VILLAGE",
+                                    "ward_id": 174
+                                },
+                                {
+                                    "id": 449,
+                                    "name": "SINGONALI VILLAGE",
+                                    "ward_id": 174
+                                },
+                                {
+                                    "id": 450,
+                                    "name": "IGUNGA VILLAGE",
+                                    "ward_id": 174
+                                }
+                            ]
+                        },
+                        {
+                            "id": 177,
+                            "name": "CHIPOGORO WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 452,
+                                    "name": "CHAMSISILI VILLAGE",
+                                    "ward_id": 177
+                                },
+                                {
+                                    "id": 453,
+                                    "name": "CHINOJE VILLAGE",
+                                    "ward_id": 177
+                                },
+                                {
+                                    "id": 455,
+                                    "name": "CHIPOGORO VILLAGE",
+                                    "ward_id": 177
+                                }
+                            ]
+                        },
+                        {
+                            "id": 178,
+                            "name": "MIMA WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 454,
+                                    "name": "MIMA VILLAGE",
+                                    "ward_id": 178
+                                }
+                            ]
+                        },
+                        {
+                            "id": 179,
+                            "name": "BEREGE WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 456,
+                                    "name": "CHIMAZA VILLAGE",
+                                    "ward_id": 179
+                                },
+                                {
+                                    "id": 459,
+                                    "name": "MZASE VILLAGE",
+                                    "ward_id": 179
+                                }
+                            ]
+                        },
+                        {
+                            "id": 180,
+                            "name": "GULWE WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 457,
+                                    "name": "IYOMA VILLAGE",
+                                    "ward_id": 180
+                                }
+                            ]
+                        },
+                        {
+                            "id": 181,
+                            "name": "NGHAMBI WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 460,
+                                    "name": "KIEGEA VILLAGE",
+                                    "ward_id": 181
+                                },
+                                {
+                                    "id": 461,
+                                    "name": "MBUGANI VILLAGE",
+                                    "ward_id": 181
+                                }
+                            ]
+                        },
+                        {
+                            "id": 193,
+                            "name": "LUPETA WARD",
+                            "district_id": 11,
+                            "villages": [
+                                {
+                                    "id": 482,
+                                    "name": "MAKUTUPA VILLAGE",
+                                    "ward_id": 193
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 12,
+                    "name": "CHEMBA DISTRICT COUNCIL",
+                    "region_id": 2,
+                    "wards": [
+                        {
+                            "id": 45,
+                            "name": "CHEMBA WARD",
+                            "district_id": 12,
+                            "villages": [
+                                {
+                                    "id": 81,
+                                    "name": "CHAMBALO VILLAGE",
+                                    "ward_id": 45
+                                },
+                                {
+                                    "id": 349,
+                                    "name": "KAMBI YA NYASA VILLAGE",
+                                    "ward_id": 45
+                                }
+                            ]
+                        },
+                        {
+                            "id": 56,
+                            "name": "SOYA WARD",
+                            "district_id": 12,
+                            "villages": [
+                                {
+                                    "id": 101,
+                                    "name": "SOYA VILLAGE",
+                                    "ward_id": 56
+                                },
+                                {
+                                    "id": 279,
+                                    "name": "MAGANDI VILLAGE",
+                                    "ward_id": 56
+                                },
+                                {
+                                    "id": 351,
+                                    "name": "MBARADA VILLAGE",
+                                    "ward_id": 56
+                                }
+                            ]
+                        },
+                        {
+                            "id": 79,
+                            "name": "FARKWA WARD",
+                            "district_id": 12,
+                            "villages": [
+                                {
+                                    "id": 167,
+                                    "name": "FARKWA VILLAGE",
+                                    "ward_id": 79
+                                }
+                            ]
+                        },
+                        {
+                            "id": 82,
+                            "name": "BABAYU WARD",
+                            "district_id": 12,
+                            "villages": [
+                                {
+                                    "id": 171,
+                                    "name": "MASIMBA VILLAGE.",
+                                    "ward_id": 82
+                                }
+                            ]
+                        },
+                        {
+                            "id": 84,
+                            "name": "KIMAHA WARD",
+                            "district_id": 12,
+                            "villages": [
+                                {
+                                    "id": 184,
+                                    "name": "WISUZAJE VILLAGE",
+                                    "ward_id": 84
+                                },
+                                {
+                                    "id": 290,
+                                    "name": "MWAIKISABE VILLAGE",
+                                    "ward_id": 84
+                                },
+                                {
+                                    "id": 303,
+                                    "name": "MWISUZAJE VILLAGE",
+                                    "ward_id": 84
+                                }
+                            ]
+                        },
+                        {
+                            "id": 86,
+                            "name": "KWAMTORO WARD",
+                            "district_id": 12,
+                            "villages": [
+                                {
+                                    "id": 195,
+                                    "name": "PROBANGUMA VILLAGE",
+                                    "ward_id": 86
+                                },
+                                {
+                                    "id": 206,
+                                    "name": "MIALO VILLAGE",
+                                    "ward_id": 86
+                                },
+                                {
+                                    "id": 207,
+                                    "name": "NDOROBONI VILLAGE",
+                                    "ward_id": 86
+                                },
+                                {
+                                    "id": 244,
+                                    "name": "MSERA VILLAGE",
+                                    "ward_id": 86
+                                },
+                                {
+                                    "id": 293,
+                                    "name": "KWAMTORO VILLAGE",
+                                    "ward_id": 86
+                                }
+                            ]
+                        },
+                        {
+                            "id": 87,
+                            "name": "DALAI WARD",
+                            "district_id": 12,
+                            "villages": [
+                                {
+                                    "id": 197,
+                                    "name": "DALAI VILLAGE",
+                                    "ward_id": 87
+                                },
+                                {
+                                    "id": 315,
+                                    "name": "MTAKUJA VILLAGE",
+                                    "ward_id": 87
+                                },
+                                {
+                                    "id": 316,
+                                    "name": "PIHO VILLAGE",
+                                    "ward_id": 87
+                                },
+                                {
+                                    "id": 317,
+                                    "name": "KELEMA MAZIWANI VILLAGE",
+                                    "ward_id": 87
+                                }
+                            ]
+                        },
+                        {
+                            "id": 88,
+                            "name": "CHANDAMA WARD",
+                            "district_id": 12,
+                            "villages": [
+                                {
+                                    "id": 199,
+                                    "name": "CHANDAMA VILLAGE",
+                                    "ward_id": 88
+                                },
+                                {
+                                    "id": 212,
+                                    "name": "MAPANGO VILLAGE",
+                                    "ward_id": 88
+                                }
+                            ]
+                        },
+                        {
+                            "id": 96,
+                            "name": "PARANGA WARD",
+                            "district_id": 12,
+                            "villages": [
+                                {
+                                    "id": 219,
+                                    "name": "KELEMA MASHARIKI VILLAGE",
+                                    "ward_id": 96
+                                },
+                                {
+                                    "id": 220,
+                                    "name": "PARANGA VILLAGE",
+                                    "ward_id": 96
+                                }
+                            ]
+                        },
+                        {
+                            "id": 105,
+                            "name": "MAKORONGO WARD",
+                            "district_id": 12,
+                            "villages": [
+                                {
+                                    "id": 241,
+                                    "name": "MAKORONGO VILLAGE",
+                                    "ward_id": 105
+                                }
+                            ]
+                        },
+                        {
+                            "id": 107,
+                            "name": "CHURUKU WARD",
+                            "district_id": 12,
+                            "villages": [
+                                {
+                                    "id": 245,
+                                    "name": "JINJO VILLAGE",
+                                    "ward_id": 107
+                                }
+                            ]
+                        },
+                        {
+                            "id": 117,
+                            "name": "JANGALO WARD",
+                            "district_id": 12,
+                            "villages": [
+                                {
+                                    "id": 286,
+                                    "name": "ITOLWA VILLAGE",
+                                    "ward_id": 117
+                                },
+                                {
+                                    "id": 287,
+                                    "name": "MLONGIA VILLAGE",
+                                    "ward_id": 117
+                                }
+                            ]
+                        },
+                        {
+                            "id": 118,
+                            "name": "LALTA WARD",
+                            "district_id": 12,
+                            "villages": [
+                                {
+                                    "id": 288,
+                                    "name": "ILASEE VILLAGE",
+                                    "ward_id": 118
+                                },
+                                {
+                                    "id": 289,
+                                    "name": "MAGAMBUA VILLAGE",
+                                    "ward_id": 118
+                                },
+                                {
+                                    "id": 291,
+                                    "name": "MANANTU VILLAGE",
+                                    "ward_id": 118
+                                }
+                            ]
+                        },
+                        {
+                            "id": 119,
+                            "name": "SANZAWA WARD",
+                            "district_id": 12,
+                            "villages": [
+                                {
+                                    "id": 292,
+                                    "name": "MOTO VILLAGE",
+                                    "ward_id": 119
+                                }
+                            ]
+                        },
+                        {
+                            "id": 120,
+                            "name": "MONDO WARD",
+                            "district_id": 12,
+                            "villages": [
+                                {
+                                    "id": 294,
+                                    "name": "DAKI VILLAGE",
+                                    "ward_id": 120
+                                }
+                            ]
+                        },
+                        {
+                            "id": 122,
+                            "name": "OVADA WARD",
+                            "district_id": 12,
+                            "villages": [
+                                {
+                                    "id": 297,
+                                    "name": "JOGOLO VILLAGE",
+                                    "ward_id": 122
+                                },
+                                {
+                                    "id": 299,
+                                    "name": "OVADA VILLAGE",
+                                    "ward_id": 122
+                                },
+                                {
+                                    "id": 302,
+                                    "name": "BAABA VILLAGE",
+                                    "ward_id": 122
+                                }
+                            ]
+                        },
+                        {
+                            "id": 123,
+                            "name": "GWANDI WARD",
+                            "district_id": 12,
+                            "villages": [
+                                {
+                                    "id": 298,
+                                    "name": "GWANDI VILLAGE",
+                                    "ward_id": 123
+                                }
+                            ]
+                        },
+                        {
+                            "id": 124,
+                            "name": "TUMBAKOSE WARD",
+                            "district_id": 12,
+                            "villages": [
+                                {
+                                    "id": 306,
+                                    "name": "HUMEKWA VILLAGE.",
+                                    "ward_id": 124
+                                }
+                            ]
+                        },
+                        {
+                            "id": 128,
+                            "name": "GOIMA WARD",
+                            "district_id": 12,
+                            "villages": [
+                                {
+                                    "id": 314,
+                                    "name": "JENJELUSE VILLAGE",
+                                    "ward_id": 128
+                                },
+                                {
+                                    "id": 318,
+                                    "name": "IGUNGA VILLAGE.",
+                                    "ward_id": 128
+                                }
+                            ]
+                        },
+                        {
+                            "id": 132,
+                            "name": "MSAADA WARD",
+                            "district_id": 12,
+                            "villages": [
+                                {
+                                    "id": 327,
+                                    "name": "MACHIGA VILLAGE",
+                                    "ward_id": 132
+                                }
+                            ]
+                        },
+                        {
+                            "id": 134,
+                            "name": "MRIJO WARD",
+                            "district_id": 12,
+                            "villages": [
+                                {
+                                    "id": 332,
+                                    "name": "MAGASA VILLAGE",
+                                    "ward_id": 134
+                                },
+                                {
+                                    "id": 335,
+                                    "name": "ISUSUMYA VILLAGE",
+                                    "ward_id": 134
+                                },
+                                {
+                                    "id": 338,
+                                    "name": "NKULARI VILLAGE",
+                                    "ward_id": 134
+                                },
+                                {
+                                    "id": 339,
+                                    "name": "MRIJO CHINI VILLAGE",
+                                    "ward_id": 134
+                                },
+                                {
+                                    "id": 340,
+                                    "name": "MRIJO JUU VILLAGE",
+                                    "ward_id": 134
+                                }
+                            ]
+                        },
+                        {
+                            "id": 135,
+                            "name": "SONGOLO WARD",
+                            "district_id": 12,
+                            "villages": [
+                                {
+                                    "id": 333,
+                                    "name": "HAMAI VILLAGE",
+                                    "ward_id": 135
+                                },
+                                {
+                                    "id": 337,
+                                    "name": "MADAHA VILLAGE",
+                                    "ward_id": 135
+                                }
+                            ]
+                        },
+                        {
+                            "id": 139,
+                            "name": "KIDOKA WARD",
+                            "district_id": 12,
+                            "villages": [
+                                {
+                                    "id": 346,
+                                    "name": "PANGALUA VILLAGE",
+                                    "ward_id": 139
+                                },
+                                {
+                                    "id": 350,
+                                    "name": "KIDOKA VILLAGE",
+                                    "ward_id": 139
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 14,
+                    "name": "DODOMA DISTRICT COUNCIL",
+                    "region_id": 2,
+                    "wards": [
+                        {
+                            "id": 83,
+                            "name": "ITISO WARD",
+                            "district_id": 14,
+                            "villages": [
+                                {
+                                    "id": 172,
+                                    "name": "SOLOWU VILLAGE",
+                                    "ward_id": 83
+                                },
+                                {
+                                    "id": 174,
+                                    "name": "IKOMBO VILLAGE",
+                                    "ward_id": 83
+                                }
+                            ]
+                        },
+                        {
+                            "id": 188,
+                            "name": "MKONZE WARD",
+                            "district_id": 14,
+                            "villages": [
+                                {
+                                    "id": 471,
+                                    "name": "MUUNGANO VILLAGE",
+                                    "ward_id": 188
+                                }
+                            ]
+                        },
+                        {
+                            "id": 218,
+                            "name": "UHURU WARD",
+                            "district_id": 14,
+                            "villages": [
+                                {
+                                    "id": 561,
+                                    "name": "KINKU VILLAGE",
+                                    "ward_id": 218
+                                },
+                                {
+                                    "id": 563,
+                                    "name": "MUNGAA VILLAGE",
+                                    "ward_id": 218
+                                }
+                            ]
+                        },
+                        {
+                            "id": 222,
+                            "name": "BUIGIRI WARD",
+                            "district_id": 14,
+                            "villages": [
+                                {
+                                    "id": 576,
+                                    "name": "BUIGIRI VILLAGE",
+                                    "ward_id": 222
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "questionnaires": [

@@ -1,5 +1,5 @@
 import 'package:saidi_s_application3/core/app_export.dart';
-import 'package:saidi_s_application3/data/models/questionnaires_request_model.dart';
+import 'package:saidi_s_application3/data/models/apiModels/questionnaires_request_model.dart';
 
 import '../../core/utils/string_constant.dart';
 import '../models/apiModels/advisory_request_model.dart';
